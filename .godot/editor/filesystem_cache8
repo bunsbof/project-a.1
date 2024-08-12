@@ -1,0 +1,33 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1723442598
+icon.svg::CompressedTexture2D::3084597527192301210::1722754322::1722754328::1::::<><>::
+::res://assets/::1722757150
+::res://assets/back/::1723444363
+::res://assets/back/base/::1722754909
+base.png::CompressedTexture2D::4492977880159717806::1722754888::1722754909::1::::<><>::
+::res://assets/back/clothes/::1722756606
+panty_removing.png::CompressedTexture2D::8785140788767981994::1722756600::1722756606::1::::<><>::
+pant_removing.png::CompressedTexture2D::7724364226202540443::1722755683::1722755687::1::::<><>::
+::res://assets/back/private/::1723445784
+idle.png::CompressedTexture2D::8660796384560466930::1723445778::1723445784::1::::<><>::
+spread.png::CompressedTexture2D::1749339558505801907::1723444822::1723444824::1::::<><>::
+::res://assets/hands or tongues/::1723445337
+hands_removing_pant.png::CompressedTexture2D::726934679646616482::1722757348::1722757354::1::::<><>::
+hands_removing_panty.png::CompressedTexture2D::1391941735207163991::1722757890::1722757892::1::::<><>::
+hand_spread.png::CompressedTexture2D::6550879070711601676::1723445335::1723445337::1::::<><>::
+::res://scene/::1723209218
+::res://scene/back/::1723469639
+back.tscn::PackedScene::6719695889902682711::1723469639::0::1::::<><>::uid://b5aoxo1o4lc3g::::res://assets/back/base/base.png<>uid://dxft8q75i3loc::::res://assets/back/clothes/panty_removing.png<>uid://dvnmb0ci1012m::::res://assets/back/private/idle.png<>uid://dib0fdx5jpa5x::::res://assets/back/clothes/pant_removing.png<>uid://y6nmqgqlgpl8::::res://assets/back/private/spread.png<>res://scene/back/ClothesControl.gd<>res://scene/back/RightSpreadControl.gd<>uid://kmerjhe8m2lq::::res://assets/hands or tongues/hands_removing_pant.png<>uid://t3jcva7c5y0v::::res://assets/hands or tongues/hands_removing_panty.png<>res://states/BackStateMachine.gd<>uid://c0lkayrhjc533::::res://assets/hands or tongues/hand_spread.png<>res://states/TakeOffPant.gd<>res://states/BackIdle.gd<>res://states/TakeOffPanty.gd<>res://scene/back/Label.gd<>res://states/RightSpread.gd
+ClothesControl.gd::GDScript::-1::1723446141::0::1::::<>Area2D<>::
+Label.gd::GDScript::-1::1723209423::0::1::::<>Label<>::
+LeftSpreadControl.gd::GDScript::-1::1723469981::0::1::::<>Area2D<>::
+RightSpreadControl.gd::GDScript::-1::1723469186::0::1::::<>Area2D<>::
+::res://scene/main/::1723469639
+main.tscn::PackedScene::993908596990877477::1723469639::0::1::::<><>::uid://c20cn6o3gmpcx::::res://scene/back/back.tscn
+::res://states/::1723469639
+BackIdle.gd::GDScript::-1::1723224751::0::1::::BackIdle<>State<>::
+BackStateMachine.gd::GDScript::-1::1723466410::0::1::::<>Node<>::
+RightSpread.gd::GDScript::-1::1723469639::0::1::::<>State<>::
+States.gd::GDScript::-1::1723211186::0::1::::State<>Node<>::
+TakeOffPant.gd::GDScript::-1::1723226946::0::1::::TakeOffPant<>State<>::
+TakeOffPanty.gd::GDScript::-1::1723227249::0::1::::TakeOffPanty<>State<>::

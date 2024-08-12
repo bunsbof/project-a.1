@@ -1,0 +1,10 @@
+Timer
+CollisionShape2D
+Area2D
+Node
+AnimatedSprite2D
+Label
+Sprite2D
+Node2D
+AnimationTree
+AnimationPlayer

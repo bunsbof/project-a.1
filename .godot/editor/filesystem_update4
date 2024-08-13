@@ -1,9 +1,10 @@
 res://scene/main/main.tscn
 res://scene/back/back.tscn
-res://scene/back/ClothesControl.gd
-res://states/RightSpread.gd
-res://scene/back/RightSpreadControl.gd
-res://states/BackStateMachine.gd
-res://scene/back/LeftSpreadControl.gd
+res://scene/back/ClitControl.gd
+res://scene/back/VagagaHoleControl.gd
 res://global/Global.gd
 res://states/LeftSpread.gd
+res://states/PussyFingering.gd
+res://states/BackStateMachine.gd
+res://scene/back/AnalControl.gd
+res://states/AnalFingering.gd

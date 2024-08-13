@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723442598
+::res://::1723535155
 icon.svg::CompressedTexture2D::3084597527192301210::1722754322::1722754328::1::::<><>::
 ::res://assets/::1722757150
 ::res://assets/back/::1723444363
@@ -8,26 +8,42 @@ base.png::CompressedTexture2D::4492977880159717806::1722754888::1722754909::1:::
 ::res://assets/back/clothes/::1722756606
 panty_removing.png::CompressedTexture2D::8785140788767981994::1722756600::1722756606::1::::<><>::
 pant_removing.png::CompressedTexture2D::7724364226202540443::1722755683::1722755687::1::::<><>::
-::res://assets/back/private/::1723445784
+::res://assets/back/private/::1723517935
+clit_caress.png::CompressedTexture2D::1995816040646815266::1723506188::1723506189::1::::<><>::
+clit_lick.png::CompressedTexture2D::3586780435526508236::1723517934::1723517935::1::::<><>::
 idle.png::CompressedTexture2D::8660796384560466930::1723445778::1723445784::1::::<><>::
 spread.png::CompressedTexture2D::1749339558505801907::1723444822::1723444824::1::::<><>::
-::res://assets/hands or tongues/::1723445337
+::res://assets/hands or tongues/::1723548536
 hands_removing_pant.png::CompressedTexture2D::726934679646616482::1722757348::1722757354::1::::<><>::
 hands_removing_panty.png::CompressedTexture2D::1391941735207163991::1722757890::1722757892::1::::<><>::
+hand_clit_caress.png::CompressedTexture2D::6353959494348645594::1723509438::1723509441::1::::<><>::
+hand_fingering_anal.png::CompressedTexture2D::8395509650355998861::1723548536::1723548537::1::::<><>::
+hand_fingering_vag.png::CompressedTexture2D::1260237626307190060::1723540737::1723540741::1::::<><>::
 hand_spread.png::CompressedTexture2D::6550879070711601676::1723445335::1723445337::1::::<><>::
+tongue_clit_lick.png::CompressedTexture2D::4090965743645217124::1723516492::1723516493::1::::<><>::
+::res://global/::1723541612
+Global.gd::GDScript::-1::1723541612::0::1::::<>Node<>::
 ::res://scene/::1723209218
-::res://scene/back/::1723469639
-back.tscn::PackedScene::6719695889902682711::1723469639::0::1::::<><>::uid://b5aoxo1o4lc3g::::res://assets/back/base/base.png<>uid://dxft8q75i3loc::::res://assets/back/clothes/panty_removing.png<>uid://dvnmb0ci1012m::::res://assets/back/private/idle.png<>uid://dib0fdx5jpa5x::::res://assets/back/clothes/pant_removing.png<>uid://y6nmqgqlgpl8::::res://assets/back/private/spread.png<>res://scene/back/ClothesControl.gd<>res://scene/back/RightSpreadControl.gd<>uid://kmerjhe8m2lq::::res://assets/hands or tongues/hands_removing_pant.png<>uid://t3jcva7c5y0v::::res://assets/hands or tongues/hands_removing_panty.png<>res://states/BackStateMachine.gd<>uid://c0lkayrhjc533::::res://assets/hands or tongues/hand_spread.png<>res://states/TakeOffPant.gd<>res://states/BackIdle.gd<>res://states/TakeOffPanty.gd<>res://scene/back/Label.gd<>res://states/RightSpread.gd
+::res://scene/back/::1723548464
+back.tscn::PackedScene::6719695889902682711::1723548464::0::1::::<><>::uid://b5aoxo1o4lc3g::::res://assets/back/base/base.png<>uid://dxft8q75i3loc::::res://assets/back/clothes/panty_removing.png<>uid://dvnmb0ci1012m::::res://assets/back/private/idle.png<>uid://3o12fgca7e31::::res://assets/back/private/clit_caress.png<>uid://dib0fdx5jpa5x::::res://assets/back/clothes/pant_removing.png<>uid://brdp0qxx2jd6k::::res://assets/back/private/clit_lick.png<>uid://y6nmqgqlgpl8::::res://assets/back/private/spread.png<>res://scene/back/ClothesControl.gd<>res://scene/back/RightSpreadControl.gd<>uid://kmerjhe8m2lq::::res://assets/hands or tongues/hands_removing_pant.png<>res://scene/back/LeftSpreadControl.gd<>uid://t3jcva7c5y0v::::res://assets/hands or tongues/hands_removing_panty.png<>res://scene/back/ClitControl.gd<>res://states/BackStateMachine.gd<>uid://c0lkayrhjc533::::res://assets/hands or tongues/hand_spread.png<>res://states/TakeOffPant.gd<>res://states/BackIdle.gd<>res://scene/back/VagagaHoleControl.gd<>res://states/TakeOffPanty.gd<>res://scene/back/Label.gd<>res://scene/back/AnalControl.gd<>uid://cwr51w63frkik::::res://assets/hands or tongues/hand_clit_caress.png<>uid://r7p6uukibcgq::::res://assets/hands or tongues/hand_fingering_vag.png<>res://states/RightSpread.gd<>uid://dru32132uyciv::::res://assets/hands or tongues/hand_fingering_anal.png<>uid://byjxuw71jhfyy::::res://assets/hands or tongues/tongue_clit_lick.png<>res://states/LeftSpread.gd<>res://states/ClitCaress.gd<>res://states/ClitLick.gd<>res://states/PussyFingering.gd<>res://states/AnalFingering.gd
+ClitControl.gd::GDScript::-1::1723539173::0::1::::<>Area2D<>::
 ClothesControl.gd::GDScript::-1::1723446141::0::1::::<>Area2D<>::
 Label.gd::GDScript::-1::1723209423::0::1::::<>Label<>::
-LeftSpreadControl.gd::GDScript::-1::1723469981::0::1::::<>Area2D<>::
-RightSpreadControl.gd::GDScript::-1::1723469186::0::1::::<>Area2D<>::
-::res://scene/main/::1723469639
-main.tscn::PackedScene::993908596990877477::1723469639::0::1::::<><>::uid://c20cn6o3gmpcx::::res://scene/back/back.tscn
-::res://states/::1723469639
-BackIdle.gd::GDScript::-1::1723224751::0::1::::BackIdle<>State<>::
-BackStateMachine.gd::GDScript::-1::1723466410::0::1::::<>Node<>::
-RightSpread.gd::GDScript::-1::1723469639::0::1::::<>State<>::
+LeftSpreadControl.gd::GDScript::-1::1723522749::0::1::::<>Area2D<>::
+AnalControl.gd::GDScript::-1::1723548464::0::1::::<>Area2D<>::
+VagagaHoleControl.gd::GDScript::-1::1723541645::0::1::::<>Area2D<>::
+RightSpreadControl.gd::GDScript::-1::1723522749::0::1::::<>Area2D<>::
+::res://scene/main/::1723548464
+main.tscn::PackedScene::993908596990877477::1723548464::0::1::::<><>::uid://c20cn6o3gmpcx::::res://scene/back/back.tscn
+::res://states/::1723548395
+BackIdle.gd::GDScript::-1::1723522709::0::1::::BackIdle<>State<>::
+BackStateMachine.gd::GDScript::-1::1723542614::0::1::::<>Node<>::
+ClitCaress.gd::GDScript::-1::1723526366::0::1::::<>State<>::
+ClitLick.gd::GDScript::-1::1723524311::0::1::::<>State<>::
+LeftSpread.gd::GDScript::-1::1723541510::0::1::::<>State<>::
+PussyFingering.gd::GDScript::-1::1723542703::0::1::::<>State<>::
+AnalFingering.gd::GDScript::-1::1723548395::0::1::::<>State<>::
+RightSpread.gd::GDScript::-1::1723520383::0::1::::<>State<>::
 States.gd::GDScript::-1::1723211186::0::1::::State<>Node<>::
 TakeOffPant.gd::GDScript::-1::1723226946::0::1::::TakeOffPant<>State<>::
 TakeOffPanty.gd::GDScript::-1::1723227249::0::1::::TakeOffPanty<>State<>::

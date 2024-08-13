@@ -16,10 +16,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	if (control_node.dragging or control_node.cursor_in_spread) or (Global.spread_at_frame >= 5):
+	if (control_node.dragging or control_node.cursor_in_spread):
 		Transitioned.emit(switch_back, "RightSpread")
-	else:
+	elif Global.spread_at_frame == 0:
 		Transitioned.emit(self, "Idle")
+
 
 func enter():
 	hands.animation = "hand_spread"
@@ -29,6 +30,6 @@ func enter():
 	hands.set_frame(Global.spread_at_frame)
 
 func exit():
-	if control_node.timer.is_stopped():
+	if Global.spread_at_frame == 0:
 		hands.visible = false
 		pussy.animation = "idle"

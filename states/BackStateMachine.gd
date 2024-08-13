@@ -3,11 +3,32 @@ extends Node
 @onready var pussy = $"../Pussy"
 @onready var clothes_area = $"../ClothesArea"
 
+@export var clothes_col : NodePath
+@export var left_spread_col : NodePath
+@export var right_spread_col : NodePath
+@export var clit_col : NodePath
+@export var vagaga_hole_col: NodePath
+@export var anal_col: NodePath
+
 @export var initial_state : State
+
 var current_state : State
 var states : Dictionary = {}
+var state_collision_map = {}
 
 func _ready():
+	state_collision_map = {
+		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col)],
+		"takeoffpant": [get_node(clothes_col)],
+		"takeoffpanty": [get_node(clothes_col)],
+		"rightspread": [get_node(right_spread_col), get_node(left_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col)],
+		"leftspread": [get_node(left_spread_col), get_node(right_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col)],
+		"clitcaress": [get_node(clit_col)],
+		"clitlick": [get_node(clit_col)],
+		"pussyfingering": [get_node(vagaga_hole_col)],
+		"analfingering": [get_node(anal_col)]
+		# Add other states and their collisions here
+	}
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
@@ -24,8 +45,20 @@ func _process(delta):
 func on_child_transition(state, new_state_name):
 	if state != current_state:
 		return
+	set_state(new_state_name.to_lower())
+
+func set_state(state_name: String):
+	# Disable all collisions
+	for state in state_collision_map.keys():
+		for collision in state_collision_map[state]:
+			collision.disabled = true
+	# Enable collisions for the new state
+	if state_collision_map.has(state_name):
+		for collision in state_collision_map[state_name]:
+			collision.disabled = false
 	
-	var new_state = states.get(new_state_name.to_lower())
+	# Transition to the new state
+	var new_state = states.get(state_name)
 	if !new_state:
 		return
 	
@@ -33,5 +66,4 @@ func on_child_transition(state, new_state_name):
 		current_state.exit()
 	
 	new_state.enter()
-	
 	current_state = new_state

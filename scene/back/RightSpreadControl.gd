@@ -37,6 +37,7 @@ func _input(event):
 		update_frame(x_coordinate)
 	elif event.is_released() and dragging:
 		dragging = false
+		cursor_in_spread = false
 		if Global.spread_at_frame < 5 and !dragging:
 			start_play_backward()
 

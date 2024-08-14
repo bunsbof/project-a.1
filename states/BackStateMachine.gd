@@ -12,9 +12,12 @@ extends Node
 
 @export var initial_state : State
 
+var parent_state : State
 var current_state : State
 var states : Dictionary = {}
 var state_collision_map = {}
+var previous_state : State
+
 
 func _ready():
 	state_collision_map = {
@@ -26,7 +29,9 @@ func _ready():
 		"clitcaress": [get_node(clit_col)],
 		"clitlick": [get_node(clit_col)],
 		"pussyfingering": [get_node(vagaga_hole_col)],
-		"analfingering": [get_node(anal_col)]
+		"analfingering": [get_node(anal_col)],
+		"cunnilingus": [get_node(vagaga_hole_col)],
+		"anallick": [get_node(anal_col)]
 		# Add other states and their collisions here
 	}
 	for child in get_children():
@@ -36,11 +41,14 @@ func _ready():
 	if initial_state:
 		initial_state.Enter()
 		current_state = initial_state
+		previous_state = current_state
+		Global.back_state = current_state.name.to_lower()
 
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)
 	pussy.visible = !clothes_area.visible
+
 
 func on_child_transition(state, new_state_name):
 	if state != current_state:
@@ -64,6 +72,14 @@ func set_state(state_name: String):
 	
 	if current_state:
 		current_state.exit()
-	
+
 	new_state.enter()
 	current_state = new_state
+	Global.back_state = state_name
+
+func set_previous_state(value: State) -> void:
+	previous_state = value
+	print("Previous state set to: ", previous_state)
+
+func get_previous_state() -> State:
+	return previous_state

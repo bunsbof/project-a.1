@@ -21,8 +21,7 @@ func update_frame(cursor_position):
 		var rectangle_shape = shape
 		width = rectangle_shape.extents.x * 2
 	var mouse_frame = int(round((cursor_position / width) * (total_frames - 1))) - 2
-	mouse_frame = clamp(mouse_frame, 0, total_frames - 1)
-	Global.spread_at_frame = mouse_frame
+	Global.spread_at_frame = clamp(mouse_frame, 0, total_frames - 1)
 	pussy.set_frame(Global.spread_at_frame)
 	hand_or_tongue.set_frame(Global.spread_at_frame)
 	#print(Global.spread_at_frame)

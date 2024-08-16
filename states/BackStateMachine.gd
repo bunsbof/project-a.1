@@ -2,6 +2,7 @@ extends Node
 
 @onready var pussy = $"../Pussy"
 @onready var clothes_area = $"../ClothesArea"
+@onready var anal_control = $"../AnalControl"
 
 @export var clothes_col : NodePath
 @export var left_spread_col : NodePath
@@ -17,7 +18,7 @@ var current_state : State
 var states : Dictionary = {}
 var state_collision_map = {}
 var previous_state : State
-
+#var twitch_manager: TwitchManager
 
 func _ready():
 	state_collision_map = {
@@ -34,6 +35,11 @@ func _ready():
 		"anallick": [get_node(anal_col)]
 		# Add other states and their collisions here
 	}
+	 #Instantiate TwitchManager and add it as a child
+	#twitch_manager = TwitchManager.new() #this line cause infinity recursion
+	#add_child(twitch_manager)
+
+
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
@@ -44,10 +50,12 @@ func _ready():
 		previous_state = current_state
 		Global.back_state = current_state.name.to_lower()
 
+
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)
 	pussy.visible = !clothes_area.visible
+	anal_control.visible = !clothes_area.visible
 
 
 func on_child_transition(state, new_state_name):
@@ -76,10 +84,12 @@ func set_state(state_name: String):
 	new_state.enter()
 	current_state = new_state
 	Global.back_state = state_name
+	
+	# Start twitching based on the new state
+	#twitch_manager._start_twitching([state_name])
 
 func set_previous_state(value: State) -> void:
 	previous_state = value
-	print("Previous state set to: ", previous_state)
 
 func get_previous_state() -> State:
 	return previous_state

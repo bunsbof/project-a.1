@@ -4,17 +4,20 @@ extends State
 @export var anal_control : NodePath
 @export var collision_node : NodePath
 @export var pussy_sprite : NodePath
+@export var body_sprite : NodePath
 
 var control_node : Area2D
 var tongue : AnimatedSprite2D
 var collision : CollisionShape2D
 var pussy : AnimatedSprite2D
+var body : AnimatedSprite2D
 
 func _ready():
 	control_node = get_node(anal_control)
 	tongue = get_node(tongue_sprite)
 	collision = get_node(collision_node)
 	pussy = get_node(pussy_sprite)
+	body = get_node(body_sprite)
 
 func _physics_process(delta):
 	#print(control_node.dragging, " ", control_node.cursor_in_clit)
@@ -25,6 +28,9 @@ func _physics_process(delta):
 	else:
 		Transitioned.emit(self, previous_state.name)
 
+func Update(delta):
+	body._start_twitching([self.name.to_lower()])
+
 func enter():
 	tongue.animation = "tongue_anal"
 	tongue.visible = true
@@ -33,3 +39,4 @@ func enter():
 func exit():
 	tongue.visible = false
 	pussy.animation = "spread"
+	body.set_states(["idle"])

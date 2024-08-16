@@ -4,15 +4,18 @@ extends State
 @export var hand_sprite : NodePath
 @export var collision_node : NodePath
 @export var switch_back : State
+@export var body_sprite : NodePath
 
 var control_node : Area2D
 var hand : AnimatedSprite2D
 var collision : CollisionShape2D
+var body : AnimatedSprite2D
 
 func _ready():
 	control_node = get_node(anal_sprite_control)
 	hand = get_node(hand_sprite)
 	collision = get_node(collision_node)
+	body = get_node(body_sprite)
 
 func _physics_process(delta):
 	# Disability of both clit caress and clit lick state (only one area to control both but different state for save time)
@@ -22,9 +25,13 @@ func _physics_process(delta):
 	else:
 		Transitioned.emit(self, "Idle")
 
+func Update(delta):
+	body._start_twitching([self.name.to_lower()])
+
 func enter():
 	hand.animation = "hand_fingering_anal"
 	hand.visible = true
 
 func exit():
 	hand.visible = false
+	body.set_states(["idle"])

@@ -1,12 +1,7 @@
 res://scene/main/main.tscn
-res://global/Twitch.gd
 res://scene/back/back.tscn
-res://states/ClitLick.gd
+res://scene/back/SpankRightControl.gd
 res://states/BackStateMachine.gd
-res://scene/back/Body.gd
-res://states/AnalFingering.gd
-res://states/AnalLick.gd
-res://states/ClitCaress.gd
-res://states/Cunnilingus.gd
-res://states/PussyFingering.gd
-res://global/Global.gd
+res://states/SpankRight.gd
+res://scene/back/SpankLeftControl.gd
+res://states/SpankLeft.gd

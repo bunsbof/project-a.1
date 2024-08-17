@@ -10,6 +10,8 @@ extends Node
 @export var clit_col : NodePath
 @export var vagaga_hole_col: NodePath
 @export var anal_col: NodePath
+@export var spank_right_col : NodePath
+@export var spank_left_col : NodePath
 
 @export var initial_state : State
 
@@ -18,11 +20,10 @@ var current_state : State
 var states : Dictionary = {}
 var state_collision_map = {}
 var previous_state : State
-#var twitch_manager: TwitchManager
 
 func _ready():
 	state_collision_map = {
-		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col)],
+		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col), get_node(spank_right_col), get_node(spank_left_col)],
 		"takeoffpant": [get_node(clothes_col)],
 		"takeoffpanty": [get_node(clothes_col)],
 		"rightspread": [get_node(right_spread_col), get_node(left_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col)],
@@ -32,13 +33,10 @@ func _ready():
 		"pussyfingering": [get_node(vagaga_hole_col)],
 		"analfingering": [get_node(anal_col)],
 		"cunnilingus": [get_node(vagaga_hole_col)],
-		"anallick": [get_node(anal_col)]
-		# Add other states and their collisions here
+		"anallick": [get_node(anal_col)],
+		"spankright": [get_node(spank_right_col)],
+		"spankleft": [get_node(spank_left_col)]
 	}
-	 #Instantiate TwitchManager and add it as a child
-	#twitch_manager = TwitchManager.new() #this line cause infinity recursion
-	#add_child(twitch_manager)
-
 
 	for child in get_children():
 		if child is State:
@@ -54,8 +52,8 @@ func _ready():
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)
-	pussy.visible = !clothes_area.visible
-	anal_control.visible = !clothes_area.visible
+	pussy.visible = !clothes_area.visible and !(Global.back_state == "spankright" or Global.back_state == "spankleft")
+	anal_control.visible = !clothes_area.visible and !(Global.back_state == "spankright" or Global.back_state == "spankleft")
 
 
 func on_child_transition(state, new_state_name):
@@ -84,9 +82,6 @@ func set_state(state_name: String):
 	new_state.enter()
 	current_state = new_state
 	Global.back_state = state_name
-	
-	# Start twitching based on the new state
-	#twitch_manager._start_twitching([state_name])
 
 func set_previous_state(value: State) -> void:
 	previous_state = value

@@ -12,6 +12,7 @@ extends Node
 @export var anal_col: NodePath
 @export var spank_right_col : NodePath
 @export var spank_left_col : NodePath
+@export var right_thigh_col : NodePath
 
 @export var initial_state : State
 
@@ -23,7 +24,7 @@ var previous_state : State
 
 func _ready():
 	state_collision_map = {
-		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col), get_node(spank_right_col), get_node(spank_left_col)],
+		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col), get_node(spank_right_col), get_node(spank_left_col), get_node(right_thigh_col)],
 		"takeoffpant": [get_node(clothes_col)],
 		"takeoffpanty": [get_node(clothes_col)],
 		"rightspread": [get_node(right_spread_col), get_node(left_spread_col), get_node(clit_col), get_node(vagaga_hole_col), get_node(anal_col)],
@@ -35,7 +36,8 @@ func _ready():
 		"cunnilingus": [get_node(vagaga_hole_col)],
 		"anallick": [get_node(anal_col)],
 		"spankright": [get_node(spank_right_col)],
-		"spankleft": [get_node(spank_left_col)]
+		"spankleft": [get_node(spank_left_col)],
+		"rightthighlick": [get_node(right_thigh_col)]
 	}
 
 	for child in get_children():

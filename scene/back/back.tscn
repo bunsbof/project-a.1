@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=3 uid="uid://c20cn6o3gmpcx"]
+[gd_scene load_steps=292 format=3 uid="uid://c20cn6o3gmpcx"]
 
 [ext_resource type="Texture2D" uid="uid://b5aoxo1o4lc3g" path="res://assets/back/base/base.png" id="1_11q2n"]
 [ext_resource type="Texture2D" uid="uid://dxft8q75i3loc" path="res://assets/back/clothes/panty_removing.png" id="2_8w7ei"]
@@ -45,12 +45,15 @@
 [ext_resource type="Script" path="res://states/ClitLick.gd" id="24_8fif0"]
 [ext_resource type="Texture2D" uid="uid://bl16et5twn4as" path="res://assets/hands or tongues/hand_spank_left.png" id="25_04yav"]
 [ext_resource type="Texture2D" uid="uid://co2thv8uviq0t" path="res://assets/hands or tongues/hand_spank_right.png" id="26_63dsi"]
+[ext_resource type="Script" path="res://scene/back/RightThigh.gd" id="26_hnmoa"]
 [ext_resource type="Script" path="res://states/PussyFingering.gd" id="27_na4nx"]
 [ext_resource type="Script" path="res://states/AnalFingering.gd" id="30_422sd"]
 [ext_resource type="Script" path="res://states/Cunnilingus.gd" id="33_d4hf7"]
 [ext_resource type="Script" path="res://states/AnalLick.gd" id="34_5xipt"]
+[ext_resource type="Texture2D" uid="uid://b7toess4la2fp" path="res://assets/hands or tongues/tongue_thigh_lick.png" id="38_8p6i2"]
 [ext_resource type="Script" path="res://states/SpankRight.gd" id="45_rnohw"]
 [ext_resource type="Script" path="res://states/SpankLeft.gd" id="50_dm8gj"]
+[ext_resource type="Script" path="res://states/RightThighLick.gd" id="53_mjttr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mhcr"]
 atlas = ExtResource("1_11q2n")
@@ -1138,6 +1141,8 @@ size = Vector2(82, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma3ec"]
 size = Vector2(86, 31)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqi4u"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3xme"]
 atlas = ExtResource("11_eeo80")
 region = Rect2(0, 0, 300, 300)
@@ -1442,6 +1447,42 @@ region = Rect2(900, 0, 300, 300)
 atlas = ExtResource("21_l7ttf")
 region = Rect2(1200, 0, 300, 300)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jck6"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhjw1"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bse0"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yemm"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k78dv"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjln"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crjk6"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia535"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfhne"]
+atlas = ExtResource("38_8p6i2")
+region = Rect2(2400, 0, 300, 300)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1ku4"]
 animations = [{
 "frames": [{
@@ -1726,6 +1767,38 @@ animations = [{
 "loop": false,
 "name": &"tongue_cunni",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jck6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhjw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bse0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yemm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k78dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crjk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia535")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfhne")
+}],
+"loop": false,
+"name": &"tongue_right_thigh",
+"speed": 8.0
 }]
 
 [node name="Back" type="Node2D"]
@@ -1811,10 +1884,19 @@ script = ExtResource("21_1p4ir")
 position = Vector2(75, -73.5)
 shape = SubResource("RectangleShape2D_ma3ec")
 
+[node name="ThighArea" type="Node2D" parent="."]
+
+[node name="RightThigh" type="Area2D" parent="ThighArea"]
+script = ExtResource("26_hnmoa")
+
+[node name="RightThighCol" type="CollisionShape2D" parent="ThighArea/RightThigh"]
+position = Vector2(38, 110)
+shape = SubResource("RectangleShape2D_yqi4u")
+
 [node name="HandOrTongue" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_o1ku4")
-animation = &"hand_spank_left"
+animation = &"tongue_right_thigh"
 
 [node name="BackStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_pdrm4")
@@ -1826,6 +1908,7 @@ vagaga_hole_col = NodePath("../Pussy/VagagaHoleControl/VagagaHoleCol")
 anal_col = NodePath("../AnalControl/AnalCol")
 spank_right_col = NodePath("../SpankArea/SpankRightControl/RightSpankCol")
 spank_left_col = NodePath("../SpankArea/SpankLeftControl/LeftSpankCol")
+right_thigh_col = NodePath("../ThighArea/RightThigh/RightThighCol")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="BackStateMachine"]
@@ -1931,11 +2014,18 @@ panty_sprite = NodePath("../../ClothesArea/Panty")
 spank_control = NodePath("../../SpankArea/SpankLeftControl")
 hand_sprite = NodePath("../../HandOrTongue")
 
+[node name="RightThighLick" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
+script = ExtResource("53_mjttr")
+switch_back = NodePath("../Idle")
+right_thigh_control = NodePath("../../ThighArea/RightThigh")
+tongue_sprite = NodePath("../../HandOrTongue")
+right_thigh_col = NodePath("../../ThighArea/RightThigh/RightThighCol")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 136.0
-offset_top = -32.0
-offset_right = 176.0
-offset_bottom = -9.0
+offset_left = -66.0
+offset_top = -124.0
+offset_right = -26.0
+offset_bottom = -101.0
 text = "Test"
 script = ExtResource("9_p0dft")
 
@@ -1951,10 +2041,11 @@ script = ExtResource("9_p0dft")
 [connection signal="mouse_exited" from="Pussy/VagagaHoleControl" to="Pussy/VagagaHoleControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="AnalControl" to="AnalControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AnalControl" to="AnalControl" method="_on_mouse_exited"]
-[connection signal="input_event" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_input_event"]
 [connection signal="mouse_entered" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="SpankArea/SpankLeftControl" to="SpankArea/SpankLeftControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SpankArea/SpankLeftControl" to="SpankArea/SpankLeftControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="SpankArea/SpankRightControl" to="SpankArea/SpankRightControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SpankArea/SpankRightControl" to="SpankArea/SpankRightControl" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ThighArea/RightThigh" to="ThighArea/RightThigh" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ThighArea/RightThigh" to="ThighArea/RightThigh" method="_on_mouse_exited"]

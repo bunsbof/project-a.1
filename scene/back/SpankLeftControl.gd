@@ -18,6 +18,7 @@ func update_frame(cursor_position):
 	mouse_frame = clamp(mouse_frame, 0, total_frames - 1)
 	hand_or_tongue.set_frame(mouse_frame)
 
+
 func _input(event):
 	if event is InputEventMouseButton and cursor_in_spanking:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -30,7 +31,6 @@ func _input(event):
 		dragging = false
 		cursor_in_spanking = false
 		emit_signal("left_spank_released")
-
 
 func _on_mouse_entered():
 	cursor_in_spanking = true

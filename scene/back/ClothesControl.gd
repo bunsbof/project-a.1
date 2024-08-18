@@ -7,7 +7,7 @@ extends Area2D
 @onready var hand_or_tongue = $"../../HandOrTongue"
 
 var dragging = false
-var which_cloth = null
+var which_cloth
 var cursor_in_clothes = false
 var mouse_frame = 0
 var total_frames
@@ -27,8 +27,10 @@ func update_frame(cursor):
 		var rectangle_shape = shape
 		height = rectangle_shape.extents.y * 2
 	mouse_frame = int(round((cursor / height) * (total_frames))) + 4
-	which_cloth.set_frame(mouse_frame)
-	hand_or_tongue.set_frame(mouse_frame)
+	#print(which_cloth)
+	if which_cloth:
+		which_cloth.set_frame(mouse_frame)
+		hand_or_tongue.set_frame(mouse_frame)
 	#print(which_cloth)
 	if which_cloth == pant and mouse_frame >= total_frames and pant.visible:
 		dragging = false
@@ -36,10 +38,9 @@ func update_frame(cursor):
 	elif which_cloth == panty and mouse_frame >= total_frames and !pant.visible:
 		which_cloth.visible = false
 
-func _on_input_event(viewport, event, shape_idx):
+func _input(event):
 	if event is InputEventMouseButton and cursor_in_clothes:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			if shape_idx == 0:
 				dragging = true
 		elif event.is_released() and dragging:
 			dragging = false

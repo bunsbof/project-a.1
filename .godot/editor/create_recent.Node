@@ -1,3 +1,8 @@
+CanvasLayer
+Button
+MarginContainer
+TextureRect
+Sprite2D
 Node
 CollisionShape2D
 Area2D
@@ -5,6 +10,5 @@ Node2D
 Timer
 AnimatedSprite2D
 Label
-Sprite2D
 AnimationTree
 AnimationPlayer

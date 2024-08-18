@@ -1,7 +1,3 @@
 res://scene/main/main.tscn
 res://scene/back/back.tscn
-res://scene/back/SpankRightControl.gd
-res://states/BackStateMachine.gd
-res://states/SpankRight.gd
-res://scene/back/SpankLeftControl.gd
-res://states/SpankLeft.gd
+res://scene/HUD/hud.tscn

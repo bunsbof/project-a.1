@@ -1,7 +1,9 @@
-res://assets/back/clothes
-res://assets/back/base
+res://scene/HUD
+res://assets/UI
 res://states
 res://assets/hands or tongues
+res://assets/back/clothes
+res://assets/back/base
 res://global
 res://assets/back/private
 res://scene/main

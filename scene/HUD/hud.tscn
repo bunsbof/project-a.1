@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=3 uid="uid://gudf2amcc5nj"]
+
+[ext_resource type="Texture2D" uid="uid://jlve6tqjht3c" path="res://assets/background/wall_bg.png" id="1_4yiqj"]
+[ext_resource type="Texture2D" uid="uid://6ppc3svb53kd" path="res://assets/background/border.png" id="2_bv4r0"]
+[ext_resource type="Texture2D" uid="uid://dkqds52g3mneb" path="res://assets/UI/slider_left_open.png" id="3_8fgja"]
+[ext_resource type="Texture2D" uid="uid://c0qmej6kybhis" path="res://assets/UI/btn_base.png" id="4_uw2co"]
+[ext_resource type="Texture2D" uid="uid://bqxlbsfuxkggk" path="res://assets/UI/btn_pause_hover.png" id="5_k8isn"]
+[ext_resource type="Texture2D" uid="uid://d078uclj07iux" path="res://assets/UI/btn_locked.png" id="6_v5rlv"]
+[ext_resource type="Texture2D" uid="uid://dowafvb7dxccd" path="res://assets/UI/slider_left_close.png" id="7_o36cv"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FrontBG" type="Sprite2D" parent="."]
+position = Vector2(501, 160)
+texture = ExtResource("1_4yiqj")
+
+[node name="BackBG" type="Sprite2D" parent="."]
+position = Vector2(161, 160)
+texture = ExtResource("1_4yiqj")
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(331, 160)
+texture = ExtResource("2_bv4r0")
+
+[node name="SliderMenu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 69.0
+offset_right = 43.0
+offset_bottom = 234.0
+texture = ExtResource("3_8fgja")
+
+[node name="Button" type="Button" parent="SliderMenu"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 44.0
+offset_bottom = 54.0
+scale = Vector2(0.719477, 0.571488)
+icon = ExtResource("4_uw2co")
+flat = true
+
+[node name="Button2" type="Button" parent="SliderMenu"]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 44.0
+offset_bottom = 78.0
+scale = Vector2(0.719477, 0.571488)
+icon = ExtResource("4_uw2co")
+flat = true
+
+[node name="Button3" type="Button" parent="SliderMenu"]
+layout_mode = 0
+offset_top = 58.0
+offset_right = 44.0
+offset_bottom = 102.0
+scale = Vector2(0.719477, 0.571488)
+icon = ExtResource("4_uw2co")
+flat = true
+
+[node name="Button4" type="Button" parent="SliderMenu"]
+layout_mode = 0
+offset_top = 83.0
+offset_right = 44.0
+offset_bottom = 127.0
+scale = Vector2(0.719477, 0.571488)
+icon = ExtResource("4_uw2co")
+flat = true
+
+[node name="Button5" type="Button" parent="SliderMenu"]
+layout_mode = 0
+offset_top = 106.0
+offset_right = 44.0
+offset_bottom = 150.0
+scale = Vector2(0.719477, 0.571488)
+icon = ExtResource("4_uw2co")
+flat = true
+
+[node name="Button6" type="Button" parent="SliderMenu"]
+layout_mode = 0
+offset_top = 129.0
+offset_right = 44.0
+offset_bottom = 173.0
+scale = Vector2(0.719477, 0.571488)
+icon = ExtResource("4_uw2co")
+flat = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 36.0
+offset_bottom = 35.0
+icon = ExtResource("5_k8isn")
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 11.0
+offset_right = 650.0
+offset_bottom = 36.0
+icon = ExtResource("5_k8isn")
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 270.0
+offset_right = 649.0
+offset_bottom = 314.0
+scale = Vector2(0.47742, 0.46014)
+icon = ExtResource("6_v5rlv")
+flat = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 270.0
+offset_right = 622.0
+offset_bottom = 314.0
+scale = Vector2(0.47742, 0.46014)
+icon = ExtResource("6_v5rlv")
+flat = true
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 268.0
+offset_right = 645.0
+offset_bottom = 309.0
+scale = Vector2(0.833897, 0.593014)
+icon = ExtResource("7_o36cv")
+flat = true

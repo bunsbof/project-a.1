@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://gudf2amcc5nj"]
+[gd_scene load_steps=14 format=3 uid="uid://gudf2amcc5nj"]
 
 [ext_resource type="Texture2D" uid="uid://jlve6tqjht3c" path="res://assets/background/wall_bg.png" id="1_4yiqj"]
 [ext_resource type="Texture2D" uid="uid://6ppc3svb53kd" path="res://assets/background/border.png" id="2_bv4r0"]
 [ext_resource type="Texture2D" uid="uid://dkqds52g3mneb" path="res://assets/UI/slider_left_open.png" id="3_8fgja"]
+[ext_resource type="Script" path="res://scene/HUD/SliderMenu.gd" id="4_piki7"]
 [ext_resource type="Texture2D" uid="uid://c0qmej6kybhis" path="res://assets/UI/btn_base.png" id="4_uw2co"]
 [ext_resource type="Texture2D" uid="uid://bqxlbsfuxkggk" path="res://assets/UI/btn_pause_hover.png" id="5_k8isn"]
 [ext_resource type="Texture2D" uid="uid://d078uclj07iux" path="res://assets/UI/btn_locked.png" id="6_v5rlv"]
+[ext_resource type="Script" path="res://scene/HUD/PantBtn.gd" id="6_y7fba"]
 [ext_resource type="Texture2D" uid="uid://dowafvb7dxccd" path="res://assets/UI/slider_left_close.png" id="7_o36cv"]
+[ext_resource type="Script" path="res://scene/HUD/PantyBtn.gd" id="7_wyht7"]
+[ext_resource type="Script" path="res://scene/HUD/ShirtBtn.gd" id="8_epaqj"]
+[ext_resource type="Script" path="res://scene/HUD/TongueBtn.gd" id="9_dj80c"]
+[ext_resource type="Script" path="res://scene/HUD/ToggleBtn.gd" id="12_82ugw"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -25,7 +31,7 @@ position = Vector2(161, 160)
 texture = ExtResource("1_4yiqj")
 
 [node name="Border" type="Sprite2D" parent="."]
-position = Vector2(331, 160)
+position = Vector2(330, 160)
 texture = ExtResource("2_bv4r0")
 
 [node name="SliderMenu" type="TextureRect" parent="."]
@@ -35,8 +41,9 @@ offset_top = 69.0
 offset_right = 43.0
 offset_bottom = 234.0
 texture = ExtResource("3_8fgja")
+script = ExtResource("4_piki7")
 
-[node name="Button" type="Button" parent="SliderMenu"]
+[node name="PantBtn" type="Button" parent="SliderMenu"]
 layout_mode = 0
 offset_top = 10.0
 offset_right = 44.0
@@ -44,8 +51,9 @@ offset_bottom = 54.0
 scale = Vector2(0.719477, 0.571488)
 icon = ExtResource("4_uw2co")
 flat = true
+script = ExtResource("6_y7fba")
 
-[node name="Button2" type="Button" parent="SliderMenu"]
+[node name="PantyBtn" type="Button" parent="SliderMenu"]
 layout_mode = 0
 offset_top = 34.0
 offset_right = 44.0
@@ -53,8 +61,9 @@ offset_bottom = 78.0
 scale = Vector2(0.719477, 0.571488)
 icon = ExtResource("4_uw2co")
 flat = true
+script = ExtResource("7_wyht7")
 
-[node name="Button3" type="Button" parent="SliderMenu"]
+[node name="ShirtBtn" type="Button" parent="SliderMenu"]
 layout_mode = 0
 offset_top = 58.0
 offset_right = 44.0
@@ -62,6 +71,7 @@ offset_bottom = 102.0
 scale = Vector2(0.719477, 0.571488)
 icon = ExtResource("4_uw2co")
 flat = true
+script = ExtResource("8_epaqj")
 
 [node name="Button4" type="Button" parent="SliderMenu"]
 layout_mode = 0
@@ -90,7 +100,7 @@ scale = Vector2(0.719477, 0.571488)
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="Button" type="Button" parent="."]
+[node name="PauseBtn" type="Button" parent="."]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -99,7 +109,7 @@ offset_bottom = 35.0
 icon = ExtResource("5_k8isn")
 flat = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="TipsBtn" type="Button" parent="."]
 layout_mode = 0
 offset_left = 625.0
 offset_top = 11.0
@@ -108,32 +118,39 @@ offset_bottom = 36.0
 icon = ExtResource("5_k8isn")
 flat = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="MarginContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 605.0
-offset_top = 270.0
-offset_right = 649.0
-offset_bottom = 314.0
-scale = Vector2(0.47742, 0.46014)
+offset_left = 546.0
+offset_top = 269.0
+offset_right = 710.0
+offset_bottom = 313.0
+scale = Vector2(0.500586, 0.517962)
+alignment = 2
+
+[node name="Button4" type="Button" parent="MarginContainer"]
+visible = false
+layout_mode = 2
 icon = ExtResource("6_v5rlv")
 flat = true
 
-[node name="Button4" type="Button" parent="."]
-layout_mode = 0
-offset_left = 578.0
-offset_top = 270.0
-offset_right = 622.0
-offset_bottom = 314.0
-scale = Vector2(0.47742, 0.46014)
+[node name="TongueBtn" type="Button" parent="MarginContainer"]
+visible = false
+layout_mode = 2
 icon = ExtResource("6_v5rlv")
 flat = true
+script = ExtResource("9_dj80c")
 
-[node name="Button5" type="Button" parent="."]
-layout_mode = 0
-offset_left = 629.0
-offset_top = 268.0
-offset_right = 645.0
-offset_bottom = 309.0
-scale = Vector2(0.833897, 0.593014)
+[node name="ToggleBtn" type="Button" parent="MarginContainer"]
+layout_mode = 2
 icon = ExtResource("7_o36cv")
 flat = true
+script = ExtResource("12_82ugw")
+
+[connection signal="gui_input" from="SliderMenu" to="SliderMenu" method="_on_gui_input"]
+[connection signal="mouse_entered" from="SliderMenu" to="SliderMenu" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SliderMenu" to="SliderMenu" method="_on_mouse_exited"]
+[connection signal="pressed" from="SliderMenu/PantBtn" to="SliderMenu/PantBtn" method="_on_pressed"]
+[connection signal="pressed" from="SliderMenu/PantyBtn" to="SliderMenu/PantyBtn" method="_on_pressed"]
+[connection signal="pressed" from="SliderMenu/ShirtBtn" to="SliderMenu/ShirtBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/TongueBtn" to="MarginContainer/TongueBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/ToggleBtn" to="MarginContainer/ToggleBtn" method="_on_pressed"]

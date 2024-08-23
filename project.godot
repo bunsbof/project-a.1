@@ -24,7 +24,6 @@ Twitch="*res://global/Twitch.gd"
 
 window/size/viewport_width=1320
 window/size/viewport_height=638
-window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale=2.0
 

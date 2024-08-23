@@ -22,7 +22,8 @@ func _ready():
 
 func _physics_process(delta):
 	# Disability of both clit caress and clit lick state (only one area to control both but different state for save time)
-	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5)) or !Global.front_state == "idle"
+	#print(collision.disabled)
+	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5))
 	
 	if (control_node.dragging or control_node.cursor_in_clit) and !Global.lickable and Global.spread_at_frame == 0:
 		Transitioned.emit(switch_back, "ClitCaress")

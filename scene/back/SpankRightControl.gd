@@ -5,6 +5,7 @@ extends Area2D
 
 var cursor_in_spanking = false
 var dragging = false
+var spank_released = false
 signal right_spank_released 
 
 func update_frame(cursor_position):
@@ -16,6 +17,7 @@ func update_frame(cursor_position):
 		width = rectangle_shape.extents.x * 2
 	var mouse_frame = int(round((cursor_position / width) * (total_frames))) - 2
 	mouse_frame = clamp(mouse_frame, 0, total_frames - 1)
+	#print(mouse_frame)
 	hand_or_tongue.set_frame(mouse_frame)
 
 func _input(event):
@@ -29,6 +31,7 @@ func _input(event):
 	elif event.is_released() and dragging:
 		dragging = false
 		cursor_in_spanking = false
+		spank_released = true
 		emit_signal("right_spank_released")
 
 

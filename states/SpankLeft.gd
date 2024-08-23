@@ -32,7 +32,7 @@ func _ready():
 func _physics_process(delta):
 	if control_node.dragging or control_node.cursor_in_spanking:
 		Transitioned.emit(switch_back, "SpankLeft")
-	elif hand.animation == "hand_spank_left" and hand.frame == 0:
+	elif !control_node.spank_released:
 		Transitioned.emit(self, "Idle")
 
 func enter():
@@ -63,6 +63,7 @@ func _on_animation_finished():
 
 func _exit_state():
 	#hand.visible = false
+	control_node.spank_released = false
 	Transitioned.emit(self, "Idle")
 
 

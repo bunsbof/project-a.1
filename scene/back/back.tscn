@@ -1,4 +1,4 @@
-[gd_scene load_steps=292 format=3 uid="uid://c20cn6o3gmpcx"]
+[gd_scene load_steps=316 format=3 uid="uid://c20cn6o3gmpcx"]
 
 [ext_resource type="Texture2D" uid="uid://b5aoxo1o4lc3g" path="res://assets/back/base/base.png" id="1_11q2n"]
 [ext_resource type="Texture2D" uid="uid://dxft8q75i3loc" path="res://assets/back/clothes/panty_removing.png" id="2_8w7ei"]
@@ -49,6 +49,7 @@
 [ext_resource type="Script" path="res://states/PussyFingering.gd" id="27_na4nx"]
 [ext_resource type="Script" path="res://states/AnalFingering.gd" id="30_422sd"]
 [ext_resource type="Script" path="res://states/Cunnilingus.gd" id="33_d4hf7"]
+[ext_resource type="Texture2D" uid="uid://cigkwajriruj2" path="res://assets/hands or tongues/hand_idle.png" id="33_j7idx"]
 [ext_resource type="Script" path="res://states/AnalLick.gd" id="34_5xipt"]
 [ext_resource type="Texture2D" uid="uid://b7toess4la2fp" path="res://assets/hands or tongues/tongue_thigh_lick.png" id="38_8p6i2"]
 [ext_resource type="Script" path="res://states/SpankRight.gd" id="45_rnohw"]
@@ -1283,6 +1284,98 @@ region = Rect2(1200, 0, 300, 300)
 atlas = ExtResource("7_yvikh")
 region = Rect2(1500, 0, 300, 300)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjyjs"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oviy"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osrrv"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck0vw"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pnvx"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qon2w"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v556u"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k0h0"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q2o5"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3gj8"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(2700, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alwi3"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(3000, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy0vf"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(3300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt3jl"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(3600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaeei"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(3900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4lsx"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(4200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rjfn"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(4500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7time"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(4800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h0wg"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(5100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou4lf"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(5400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_217x5"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(5700, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qvwh"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(6000, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3wme"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(6300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkh38"]
+atlas = ExtResource("33_j7idx")
+region = Rect2(6600, 0, 300, 300)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgmn8"]
 atlas = ExtResource("5_wihmq")
 region = Rect2(0, 0, 300, 300)
@@ -1622,6 +1715,80 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xjyjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oviy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osrrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck0vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pnvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qon2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v556u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k0h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q2o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3gj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alwi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy0vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt3jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaeei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4lsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rjfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7time")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h0wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou4lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_217x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qvwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3wme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkh38")
+}],
+"loop": false,
+"name": &"hands_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cgmn8")
 }, {
 "duration": 1.0,
@@ -1896,7 +2063,7 @@ shape = SubResource("RectangleShape2D_yqi4u")
 [node name="HandOrTongue" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_o1ku4")
-animation = &"tongue_right_thigh"
+animation = &"hands_idle"
 
 [node name="BackStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_pdrm4")
@@ -1909,13 +2076,15 @@ anal_col = NodePath("../AnalControl/AnalCol")
 spank_right_col = NodePath("../SpankArea/SpankRightControl/RightSpankCol")
 spank_left_col = NodePath("../SpankArea/SpankLeftControl/LeftSpankCol")
 right_thigh_col = NodePath("../ThighArea/RightThigh/RightThighCol")
+pant_sprite = NodePath("../ClothesArea/Pant")
+panty_sprite = NodePath("../ClothesArea/Panty")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="BackStateMachine"]
 script = ExtResource("8_x0e05")
 body_sprite = NodePath("../../Body")
-area_control_clothes = NodePath("../../ClothesArea/ClothesControl")
 pussy_sprite = NodePath("../../Pussy")
+hand_sprite = NodePath("../../HandOrTongue")
 
 [node name="TakeOffPant" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("8_tpf11")

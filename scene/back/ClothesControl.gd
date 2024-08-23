@@ -34,9 +34,9 @@ func update_frame(cursor):
 	#print(which_cloth)
 	if which_cloth == pant and mouse_frame >= total_frames and pant.visible:
 		dragging = false
-		which_cloth.visible = false
+		Global.pant_visibility = false
 	elif which_cloth == panty and mouse_frame >= total_frames and !pant.visible:
-		which_cloth.visible = false
+		Global.panty_visibility = false
 
 func _input(event):
 	if event is InputEventMouseButton and cursor_in_clothes:

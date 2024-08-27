@@ -1,4 +1,6 @@
-res://scene/front/front.tscn
+res://scene/menus/pause_menu.tscn
 res://scene/main/main.tscn
 res://scene/back/back.tscn
 res://scene/HUD/hud.tscn
+res://scene/front/front.tscn
+res://scene/menus/pause_menu.gd

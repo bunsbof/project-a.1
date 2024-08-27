@@ -1,7 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://gudf2amcc5nj"]
 
 [ext_resource type="Texture2D" uid="uid://jlve6tqjht3c" path="res://assets/background/wall_bg.png" id="1_4yiqj"]
-[ext_resource type="Texture2D" uid="uid://6ppc3svb53kd" path="res://assets/background/border.png" id="2_bv4r0"]
 [ext_resource type="Texture2D" uid="uid://dkqds52g3mneb" path="res://assets/UI/slider_left_open.png" id="3_8fgja"]
 [ext_resource type="Script" path="res://scene/HUD/SliderMenu.gd" id="4_piki7"]
 [ext_resource type="Texture2D" uid="uid://c0qmej6kybhis" path="res://assets/UI/btn_base.png" id="4_uw2co"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dowafvb7dxccd" path="res://assets/UI/slider_left_close.png" id="7_o36cv"]
 [ext_resource type="Script" path="res://scene/HUD/PantyBtn.gd" id="7_wyht7"]
 [ext_resource type="Script" path="res://scene/HUD/ShirtBtn.gd" id="8_epaqj"]
+[ext_resource type="Script" path="res://scene/HUD/PauseBtn.gd" id="9_5r7er"]
 [ext_resource type="Script" path="res://scene/HUD/TongueBtn.gd" id="9_dj80c"]
 [ext_resource type="Script" path="res://scene/HUD/ToggleBtn.gd" id="12_82ugw"]
 
@@ -30,10 +30,6 @@ texture = ExtResource("1_4yiqj")
 position = Vector2(161, 160)
 texture = ExtResource("1_4yiqj")
 
-[node name="Border" type="Sprite2D" parent="."]
-position = Vector2(330, 160)
-texture = ExtResource("2_bv4r0")
-
 [node name="SliderMenu" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 3.0
@@ -49,6 +45,7 @@ offset_top = 10.0
 offset_right = 44.0
 offset_bottom = 54.0
 scale = Vector2(0.719477, 0.571488)
+focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 script = ExtResource("6_y7fba")
@@ -59,6 +56,7 @@ offset_top = 34.0
 offset_right = 44.0
 offset_bottom = 78.0
 scale = Vector2(0.719477, 0.571488)
+focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 script = ExtResource("7_wyht7")
@@ -69,6 +67,7 @@ offset_top = 58.0
 offset_right = 44.0
 offset_bottom = 102.0
 scale = Vector2(0.719477, 0.571488)
+focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 script = ExtResource("8_epaqj")
@@ -79,6 +78,7 @@ offset_top = 83.0
 offset_right = 44.0
 offset_bottom = 127.0
 scale = Vector2(0.719477, 0.571488)
+focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
@@ -88,6 +88,7 @@ offset_top = 106.0
 offset_right = 44.0
 offset_bottom = 150.0
 scale = Vector2(0.719477, 0.571488)
+focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
@@ -97,6 +98,7 @@ offset_top = 129.0
 offset_right = 44.0
 offset_bottom = 173.0
 scale = Vector2(0.719477, 0.571488)
+focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
@@ -106,8 +108,10 @@ offset_left = 11.0
 offset_top = 10.0
 offset_right = 36.0
 offset_bottom = 35.0
+focus_mode = 0
 icon = ExtResource("5_k8isn")
 flat = true
+script = ExtResource("9_5r7er")
 
 [node name="TipsBtn" type="Button" parent="."]
 layout_mode = 0
@@ -115,6 +119,7 @@ offset_left = 625.0
 offset_top = 11.0
 offset_right = 650.0
 offset_bottom = 36.0
+focus_mode = 0
 icon = ExtResource("5_k8isn")
 flat = true
 
@@ -130,18 +135,21 @@ alignment = 2
 [node name="Button4" type="Button" parent="MarginContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 icon = ExtResource("6_v5rlv")
 flat = true
 
 [node name="TongueBtn" type="Button" parent="MarginContainer"]
 visible = false
 layout_mode = 2
+focus_mode = 0
 icon = ExtResource("6_v5rlv")
 flat = true
 script = ExtResource("9_dj80c")
 
 [node name="ToggleBtn" type="Button" parent="MarginContainer"]
 layout_mode = 2
+focus_mode = 0
 icon = ExtResource("7_o36cv")
 flat = true
 script = ExtResource("12_82ugw")
@@ -152,5 +160,6 @@ script = ExtResource("12_82ugw")
 [connection signal="pressed" from="SliderMenu/PantBtn" to="SliderMenu/PantBtn" method="_on_pressed"]
 [connection signal="pressed" from="SliderMenu/PantyBtn" to="SliderMenu/PantyBtn" method="_on_pressed"]
 [connection signal="pressed" from="SliderMenu/ShirtBtn" to="SliderMenu/ShirtBtn" method="_on_pressed"]
+[connection signal="pressed" from="PauseBtn" to="PauseBtn" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/TongueBtn" to="MarginContainer/TongueBtn" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/ToggleBtn" to="MarginContainer/ToggleBtn" method="_on_pressed"]

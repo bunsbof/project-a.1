@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://e1ef0fpyufwv"]
+
+[ext_resource type="Script" path="res://scene/menus/pause_menu.gd" id="1_447b7"]
+[ext_resource type="FontFile" uid="uid://npfc8a84e78f" path="res://assets/font/VT323-Regular.ttf" id="1_gcwuy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcqve"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uc63"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vby8"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwbsc"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_447b7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2755, 0.871308, 0.95, 0.588235)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="ResumeBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_gcwuy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_pcqve")
+text = "Resume"
+flat = true
+alignment = 0
+
+[node name="LoadBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_gcwuy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_6uc63")
+text = "Load Data"
+flat = true
+alignment = 0
+
+[node name="MainMenuBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_gcwuy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_4vby8")
+text = "Start Screen"
+flat = true
+alignment = 0
+
+[node name="ExitBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_gcwuy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_pwbsc")
+text = "Exit "
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]

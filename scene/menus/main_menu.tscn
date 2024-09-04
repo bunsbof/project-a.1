@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://n0rmhspky4sw"]
+
+[ext_resource type="Script" path="res://scene/menus/main_menu.gd" id="1_dyutc"]
+[ext_resource type="FontFile" uid="uid://npfc8a84e78f" path="res://assets/font/VT323-Regular.ttf" id="1_orfcj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7hm3"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7x0c"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4rn2"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ksxc"]
+bg_color = Color(0.278431, 0.862745, 0.945098, 1)
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dyutc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27451, 0.870588, 0.94902, 0.588235)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitBtn")
+focus_neighbor_bottom = NodePath("../NewGameBtn")
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_orfcj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/hover = SubResource("StyleBoxFlat_n7hm3")
+text = "Continue   "
+flat = true
+alignment = 0
+
+[node name="NewGameBtn" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ContinueBtn")
+focus_neighbor_bottom = NodePath("../LoadBtn")
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_orfcj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/hover = SubResource("StyleBoxFlat_a7x0c")
+text = "New Game"
+flat = true
+alignment = 0
+
+[node name="LoadBtn" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../NewGameBtn")
+focus_neighbor_bottom = NodePath("../SettingBtn")
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_orfcj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/hover = SubResource("StyleBoxFlat_c4rn2")
+text = "Load Data"
+flat = true
+alignment = 0
+
+[node name="SettingBtn" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LoadBtn")
+focus_neighbor_bottom = NodePath("../ExitBtn")
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_orfcj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/hover = SubResource("StyleBoxFlat_a7x0c")
+text = "Options"
+flat = true
+alignment = 0
+
+[node name="ExitBtn" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../SettingBtn")
+focus_neighbor_bottom = NodePath("../ContinueBtn")
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_orfcj")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ksxc")
+text = "Exit "
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_resume_btn_pressed"]

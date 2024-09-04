@@ -1,5 +1,6 @@
 extends Control
 
+@export var main_menu_path: String = "res://scene/menus/main_menu.tscn"
 # Private variable to store pause state
 var _is_paused = false
 
@@ -26,3 +27,9 @@ func _on_resume_btn_pressed():
 # Exit button press handler
 func _on_exit_btn_pressed():
 	get_tree().quit()
+
+
+func _on_main_menu_btn_pressed():
+	#Do some save stuff
+	get_tree().paused = true
+	get_tree().change_scene_to_file(main_menu_path)

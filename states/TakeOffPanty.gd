@@ -1,6 +1,7 @@
 extends State
 class_name TakeOffPanty
 
+@export_group("Related Node")
 @export var pant_sprite: NodePath
 @export var panty_sprite: NodePath
 @export var area_control_clothes: NodePath

@@ -1,5 +1,6 @@
 extends State
 
+@export_group("Related Node")
 @export var vagaga_sprite_control : NodePath
 @export var hand_sprite : NodePath
 @export var pussy_sprite: NodePath
@@ -28,9 +29,6 @@ func _physics_process(delta):
 	else:
 		Transitioned.emit(self, "Idle")
 
-func Update(delta):
-	body._start_twitching([self.name.to_lower()])
-
 func enter():
 	hand.animation = "hand_fingering_vag"
 	hand.visible = true
@@ -39,4 +37,3 @@ func enter():
 func exit():
 	hand.visible = false
 	pussy.animation = "idle"
-	body.set_states(["idle"])

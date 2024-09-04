@@ -1,5 +1,6 @@
 extends State
 
+@export_group("Related Node")
 @export var tongue_sprite : NodePath
 @export var anal_control : NodePath
 @export var collision_node : NodePath
@@ -28,9 +29,6 @@ func _physics_process(delta):
 	else:
 		Transitioned.emit(self, previous_state.name)
 
-func Update(delta):
-	body._start_twitching([self.name.to_lower()])
-
 func enter():
 	tongue.animation = "tongue_anal"
 	tongue.visible = true
@@ -39,4 +37,3 @@ func enter():
 func exit():
 	tongue.visible = false
 	pussy.animation = "spread"
-	body.set_states(["idle"])

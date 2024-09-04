@@ -48,6 +48,7 @@ func _ready():
 		"spankright": [get_node(spank_right_col)],
 		"spankleft": [get_node(spank_left_col)],
 		"rightthighlick": [get_node(right_thigh_col)],
+		"orgasm": [],
 	}
 
 	for child in get_children():

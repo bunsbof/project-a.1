@@ -1,5 +1,6 @@
 extends State
 
+@export_group("Related Node")
 @export var switch_back : State
 @export var body_sprite : NodePath
 @export var pant_sprite : NodePath
@@ -12,7 +13,6 @@ var pant : AnimatedSprite2D
 var panty : AnimatedSprite2D
 var control_node : Area2D
 var hand : AnimatedSprite2D
-var pussy : AnimatedSprite2D
 var animations_playing = 0
 
 func _ready():

@@ -1,5 +1,9 @@
-res://scene/menus
+res://assets/back/base
 res://states
+res://global
+res://assets/icons
+res://scene/menus
+res://scene/main
 res://assets/front/breast
 res://assets/hands or tongues
 res://assets/front/shirt
@@ -8,7 +12,4 @@ res://scene/front
 res://scene/HUD
 res://assets/UI
 res://assets/back/clothes
-res://assets/back/base
-res://global
 res://assets/back/private
-res://scene/main

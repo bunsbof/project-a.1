@@ -7,6 +7,9 @@ extends Area2D
 var cursor_in_clit = false
 var dragging = false
 
+signal caress_dragged
+signal lick_dragged
+
 func update_frame(cursor_position):
 	var centered = clit_col.position
 	var local_position = Vector2(cursor_position.x, cursor_position.y)
@@ -29,6 +32,10 @@ func _input(event):
 	if event is InputEventMouseButton and cursor_in_clit:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = true
+			if Global.spread_at_frame == 0 and !Global.lickable:
+				emit_signal("caress_dragged")
+			elif Global.spread_at_frame == 5 and Global.lickable:
+				emit_signal("lick_dragged")
 	if dragging and event is InputEventMouseMotion:
 		var local_position = to_local(event.position)
 		update_frame(local_position)

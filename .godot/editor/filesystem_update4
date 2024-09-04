@@ -1,6 +1,15 @@
-res://scene/menus/pause_menu.tscn
 res://scene/main/main.tscn
 res://scene/back/back.tscn
 res://scene/HUD/hud.tscn
 res://scene/front/front.tscn
-res://scene/menus/pause_menu.gd
+res://states/ClitCaress.gd
+res://states/States.gd
+res://states/BackStateMachine.gd
+res://states/BackOrgasm.gd
+res://scene/back/Body.gd
+res://states/ClitLick.gd
+res://states/AnalFingering.gd
+res://states/AnalLick.gd
+res://states/Cunnilingus.gd
+res://states/PussyFingering.gd
+res://scene/back/ClitControl.gd

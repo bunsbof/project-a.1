@@ -1,6 +1,7 @@
 extends State
-class_name BackIdle
+#class_name BackIdle
 
+@export_group("Related Node")
 @export var body_sprite: NodePath
 @export var pussy_sprite: NodePath
 @export var hand_sprite: NodePath
@@ -17,9 +18,6 @@ func _ready():
 func enter():
 	body.animation = "idle"
 	pussy.animation = "idle"
-	#hand.visible = false
-	#hand.animation = "hands_idle"
-	#body.play("idle")
 
 func exit():
 	body.stop()

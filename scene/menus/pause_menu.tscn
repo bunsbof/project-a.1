@@ -32,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2755, 0.871308, 0.95, 0.588235)
+color = Color(0.27451, 0.870588, 0.94902, 0.588235)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -44,13 +44,12 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 17
 
 [node name="ResumeBtn" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_gcwuy")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 35
 theme_override_styles/hover = SubResource("StyleBoxFlat_pcqve")
 text = "Resume"
 flat = true
@@ -60,9 +59,19 @@ alignment = 0
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_gcwuy")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 35
 theme_override_styles/hover = SubResource("StyleBoxFlat_6uc63")
 text = "Load Data"
+flat = true
+alignment = 0
+
+[node name="SettingBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_gcwuy")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_6uc63")
+text = "Settings "
 flat = true
 alignment = 0
 
@@ -70,7 +79,7 @@ alignment = 0
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_gcwuy")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 35
 theme_override_styles/hover = SubResource("StyleBoxFlat_4vby8")
 text = "Start Screen"
 flat = true
@@ -80,11 +89,12 @@ alignment = 0
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_gcwuy")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 35
 theme_override_styles/hover = SubResource("StyleBoxFlat_pwbsc")
 text = "Exit "
 flat = true
 alignment = 0
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuBtn" to="." method="_on_main_menu_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]

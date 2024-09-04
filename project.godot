@@ -11,21 +11,20 @@ config_version=5
 [application]
 
 config/name="project-a"
-run/main_scene="res://scene/main/main.tscn"
+run/main_scene="res://scene/menus/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://global/Global.gd"
-Twitch="*res://global/Twitch.gd"
+Data="*res://global/Data.gd"
 
 [display]
 
-window/size/viewport_width=1320
-window/size/viewport_height=638
+window/size/viewport_width=660
+window/size/viewport_height=319
 window/stretch/mode="viewport"
-window/stretch/scale=2.0
 
 [input]
 

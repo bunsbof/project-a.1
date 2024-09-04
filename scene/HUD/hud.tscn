@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://gudf2amcc5nj"]
+[gd_scene load_steps=15 format=3 uid="uid://gudf2amcc5nj"]
 
 [ext_resource type="Texture2D" uid="uid://jlve6tqjht3c" path="res://assets/background/wall_bg.png" id="1_4yiqj"]
+[ext_resource type="Script" path="res://scene/HUD/hud.gd" id="1_5mic1"]
 [ext_resource type="Texture2D" uid="uid://dkqds52g3mneb" path="res://assets/UI/slider_left_open.png" id="3_8fgja"]
 [ext_resource type="Script" path="res://scene/HUD/SliderMenu.gd" id="4_piki7"]
 [ext_resource type="Texture2D" uid="uid://c0qmej6kybhis" path="res://assets/UI/btn_base.png" id="4_uw2co"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5mic1")
 
 [node name="FrontBG" type="Sprite2D" parent="."]
 position = Vector2(501, 160)
@@ -160,6 +162,7 @@ script = ExtResource("12_82ugw")
 [connection signal="pressed" from="SliderMenu/PantBtn" to="SliderMenu/PantBtn" method="_on_pressed"]
 [connection signal="pressed" from="SliderMenu/PantyBtn" to="SliderMenu/PantyBtn" method="_on_pressed"]
 [connection signal="pressed" from="SliderMenu/ShirtBtn" to="SliderMenu/ShirtBtn" method="_on_pressed"]
+[connection signal="pressed" from="SliderMenu/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="PauseBtn" to="PauseBtn" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/TongueBtn" to="MarginContainer/TongueBtn" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/ToggleBtn" to="MarginContainer/ToggleBtn" method="_on_pressed"]

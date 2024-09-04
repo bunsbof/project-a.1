@@ -1,5 +1,6 @@
 extends State
 
+@export_group("Related Node")
 @export var left_spread_control : NodePath
 @export var hands_sprite : NodePath
 @export var switch_back : State

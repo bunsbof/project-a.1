@@ -1,5 +1,6 @@
 extends State
 
+@export_group("Related Node")
 @export var anal_sprite_control : NodePath
 @export var hand_sprite : NodePath
 @export var collision_node : NodePath
@@ -25,13 +26,9 @@ func _physics_process(delta):
 	else:
 		Transitioned.emit(self, "Idle")
 
-func Update(delta):
-	body._start_twitching([self.name.to_lower()])
-
 func enter():
 	hand.animation = "hand_fingering_anal"
 	hand.visible = true
 
 func exit():
 	hand.visible = false
-	body.set_states(["idle"])

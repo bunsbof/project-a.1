@@ -25,7 +25,7 @@ grow_vertical = 2
 script = ExtResource("1_5mic1")
 
 [node name="FrontBG" type="Sprite2D" parent="."]
-position = Vector2(501, 160)
+position = Vector2(526, 160)
 texture = ExtResource("1_4yiqj")
 
 [node name="BackBG" type="Sprite2D" parent="."]
@@ -117,9 +117,9 @@ script = ExtResource("9_5r7er")
 
 [node name="TipsBtn" type="Button" parent="."]
 layout_mode = 0
-offset_left = 625.0
+offset_left = 650.0
 offset_top = 11.0
-offset_right = 650.0
+offset_right = 675.0
 offset_bottom = 36.0
 focus_mode = 0
 icon = ExtResource("5_k8isn")
@@ -127,9 +127,9 @@ flat = true
 
 [node name="MarginContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 546.0
+offset_left = 571.0
 offset_top = 269.0
-offset_right = 710.0
+offset_right = 735.0
 offset_bottom = 313.0
 scale = Vector2(0.500586, 0.517962)
 alignment = 2

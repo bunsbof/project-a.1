@@ -22,7 +22,7 @@ Data="*res://global/Data.gd"
 
 [display]
 
-window/size/viewport_width=660
+window/size/viewport_width=687
 window/size/viewport_height=319
 window/stretch/mode="viewport"
 

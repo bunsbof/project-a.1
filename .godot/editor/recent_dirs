@@ -1,3 +1,5 @@
+res://scene/HUD
+res://assets/background/bars
 res://assets/back/base
 res://states
 res://global
@@ -9,7 +11,6 @@ res://assets/hands or tongues
 res://assets/front/shirt
 res://assets/front
 res://scene/front
-res://scene/HUD
 res://assets/UI
 res://assets/back/clothes
 res://assets/back/private

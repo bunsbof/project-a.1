@@ -1,4 +1,4 @@
-[gd_scene load_steps=341 format=3 uid="uid://c20cn6o3gmpcx"]
+[gd_scene load_steps=340 format=3 uid="uid://c20cn6o3gmpcx"]
 
 [ext_resource type="Texture2D" uid="uid://b5aoxo1o4lc3g" path="res://assets/back/base/base.png" id="1_11q2n"]
 [ext_resource type="Texture2D" uid="uid://dxft8q75i3loc" path="res://assets/back/clothes/panty_removing.png" id="2_8w7ei"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cc4vwmuhjpp2l" path="res://assets/back/base/base_orgasm_lv1.png" id="2_x5iw4"]
 [ext_resource type="Texture2D" uid="uid://brdp0qxx2jd6k" path="res://assets/back/private/clit_lick.png" id="3_o1r7k"]
 [ext_resource type="Texture2D" uid="uid://y6nmqgqlgpl8" path="res://assets/back/private/spread.png" id="3_oykh0"]
-[ext_resource type="Script" path="res://scene/back/Body.gd" id="3_x6uj4"]
 [ext_resource type="Texture2D" uid="uid://uni3dfmdd70b" path="res://assets/back/private/cunnilingus.png" id="4_8g1m6"]
 [ext_resource type="Script" path="res://scene/back/ClothesControl.gd" id="4_8y6hv"]
 [ext_resource type="Script" path="res://scene/back/RightSpreadControl.gd" id="4_sgjgp"]
@@ -2141,7 +2140,6 @@ animations = [{
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ker2b")
 animation = &"orgasm_lv4"
-script = ExtResource("3_x6uj4")
 
 [node name="Pussy" type="AnimatedSprite2D" parent="."]
 visible = false

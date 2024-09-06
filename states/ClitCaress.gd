@@ -49,7 +49,11 @@ func _ready():
 
 func _physics_process(delta):
 	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5)) and !(Global.back_state == "orgasm")
-	
+	if Data.point >= 1000:
+		exit()  # Call exit function to clean up before state transition
+		Transitioned.emit(self, "Orgasm")
+		return  # Stop further processing in this frame after state transition
+		
 	if (control_node.dragging or control_node.cursor_in_clit) and !Global.lickable and Global.spread_at_frame == 0:
 		Transitioned.emit(switch_back, self.name)
 	else:

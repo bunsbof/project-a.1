@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ofpr871k7f6t"]
+[gd_scene load_steps=5 format=3 uid="uid://ofpr871k7f6t"]
 
 [ext_resource type="PackedScene" uid="uid://gudf2amcc5nj" path="res://scene/HUD/hud.tscn" id="1_17dgl"]
 [ext_resource type="PackedScene" uid="uid://c20cn6o3gmpcx" path="res://scene/back/back.tscn" id="1_mmd6o"]
 [ext_resource type="PackedScene" uid="uid://c5diywidqkxib" path="res://scene/front/front.tscn" id="3_u2wy1"]
 [ext_resource type="PackedScene" uid="uid://e1ef0fpyufwv" path="res://scene/menus/pause_menu.tscn" id="4_nvu72"]
-[ext_resource type="Texture2D" uid="uid://doxmwoetr3om0" path="res://assets/background/bars/under.png" id="5_be0u5"]
-[ext_resource type="Texture2D" uid="uid://cvv8r0ybot4qa" path="res://assets/background/bars/Over.png" id="6_lekyn"]
-[ext_resource type="Texture2D" uid="uid://c8mpaly6baugc" path="res://assets/background/bars/progress.png" id="7_yuymy"]
-[ext_resource type="Script" path="res://scene/HUD/BarTest.gd" id="8_af80l"]
 
 [node name="Main" type="Node2D"]
 
@@ -22,17 +18,4 @@ visible = false
 position = Vector2(169, 160)
 
 [node name="Front" parent="." instance=ExtResource("3_u2wy1")]
-position = Vector2(503, 160)
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 359.0
-offset_top = 147.0
-offset_right = 371.0
-offset_bottom = 292.0
-size_flags_vertical = 3
-max_value = 1000.0
-fill_mode = 3
-texture_under = ExtResource("5_be0u5")
-texture_over = ExtResource("6_lekyn")
-texture_progress = ExtResource("7_yuymy")
-script = ExtResource("8_af80l")
+position = Vector2(535, 160)

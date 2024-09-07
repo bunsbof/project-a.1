@@ -1,19 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://gudf2amcc5nj"]
+[gd_scene load_steps=16 format=3 uid="uid://gudf2amcc5nj"]
 
 [ext_resource type="Texture2D" uid="uid://jlve6tqjht3c" path="res://assets/background/wall_bg.png" id="1_4yiqj"]
 [ext_resource type="Script" path="res://scene/HUD/hud.gd" id="1_5mic1"]
 [ext_resource type="Texture2D" uid="uid://dkqds52g3mneb" path="res://assets/UI/slider_left_open.png" id="3_8fgja"]
-[ext_resource type="Script" path="res://scene/HUD/SliderMenu.gd" id="4_piki7"]
 [ext_resource type="Texture2D" uid="uid://c0qmej6kybhis" path="res://assets/UI/btn_base.png" id="4_uw2co"]
 [ext_resource type="Texture2D" uid="uid://bqxlbsfuxkggk" path="res://assets/UI/btn_pause_hover.png" id="5_k8isn"]
 [ext_resource type="Texture2D" uid="uid://d078uclj07iux" path="res://assets/UI/btn_locked.png" id="6_v5rlv"]
-[ext_resource type="Script" path="res://scene/HUD/PantBtn.gd" id="6_y7fba"]
 [ext_resource type="Texture2D" uid="uid://dowafvb7dxccd" path="res://assets/UI/slider_left_close.png" id="7_o36cv"]
-[ext_resource type="Script" path="res://scene/HUD/PantyBtn.gd" id="7_wyht7"]
-[ext_resource type="Script" path="res://scene/HUD/ShirtBtn.gd" id="8_epaqj"]
-[ext_resource type="Script" path="res://scene/HUD/PauseBtn.gd" id="9_5r7er"]
-[ext_resource type="Script" path="res://scene/HUD/TongueBtn.gd" id="9_dj80c"]
-[ext_resource type="Script" path="res://scene/HUD/ToggleBtn.gd" id="12_82ugw"]
+[ext_resource type="Texture2D" uid="uid://cvpanyyrnpq21" path="res://assets/background/bars/heart_under.png" id="8_3kxda"]
+[ext_resource type="Texture2D" uid="uid://doxmwoetr3om0" path="res://assets/background/bars/under.png" id="8_himee"]
+[ext_resource type="Texture2D" uid="uid://cvv8r0ybot4qa" path="res://assets/background/bars/Over.png" id="9_4f2wx"]
+[ext_resource type="Texture2D" uid="uid://0w1brmmin6un" path="res://assets/background/bars/heart_border.png" id="9_61xp5"]
+[ext_resource type="Texture2D" uid="uid://cia07lireajux" path="res://assets/background/bars/progress_red.png" id="10_3vmvi"]
+[ext_resource type="Texture2D" uid="uid://c81qjgstglvji" path="res://assets/background/bars/heart_progress.png" id="10_jsuil"]
+[ext_resource type="Texture2D" uid="uid://c8mpaly6baugc" path="res://assets/background/bars/progress.png" id="10_w8m04"]
+[ext_resource type="Script" path="res://scene/HUD/BarTest.gd" id="11_pq2ey"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -23,6 +24,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5mic1")
+slider_menu = NodePath("SliderMenu")
+toggle_menu = NodePath("Sub Menu/TongueBtn")
+sub_menu = NodePath("Sub Menu")
+horny_bar_node = NodePath("VBoxContainer/HornyBar")
+male_bar_node = NodePath("VBoxContainer/HBoxContainer/MaleBar")
+female_bar_node = NodePath("VBoxContainer/HBoxContainer/FemaleBar")
 
 [node name="FrontBG" type="Sprite2D" parent="."]
 position = Vector2(526, 160)
@@ -39,7 +46,6 @@ offset_top = 69.0
 offset_right = 43.0
 offset_bottom = 234.0
 texture = ExtResource("3_8fgja")
-script = ExtResource("4_piki7")
 
 [node name="PantBtn" type="Button" parent="SliderMenu"]
 layout_mode = 0
@@ -50,7 +56,6 @@ scale = Vector2(0.719477, 0.571488)
 focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
-script = ExtResource("6_y7fba")
 
 [node name="PantyBtn" type="Button" parent="SliderMenu"]
 layout_mode = 0
@@ -61,7 +66,6 @@ scale = Vector2(0.719477, 0.571488)
 focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
-script = ExtResource("7_wyht7")
 
 [node name="ShirtBtn" type="Button" parent="SliderMenu"]
 layout_mode = 0
@@ -72,7 +76,6 @@ scale = Vector2(0.719477, 0.571488)
 focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
-script = ExtResource("8_epaqj")
 
 [node name="Button4" type="Button" parent="SliderMenu"]
 layout_mode = 0
@@ -113,7 +116,6 @@ offset_bottom = 35.0
 focus_mode = 0
 icon = ExtResource("5_k8isn")
 flat = true
-script = ExtResource("9_5r7er")
 
 [node name="TipsBtn" type="Button" parent="."]
 layout_mode = 0
@@ -125,44 +127,86 @@ focus_mode = 0
 icon = ExtResource("5_k8isn")
 flat = true
 
-[node name="MarginContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 571.0
+[node name="ToggleBtn" type="Button" parent="."]
+layout_mode = 2
+offset_left = 645.0
 offset_top = 269.0
-offset_right = 735.0
-offset_bottom = 313.0
-scale = Vector2(0.500586, 0.517962)
-alignment = 2
-
-[node name="Button4" type="Button" parent="MarginContainer"]
-visible = false
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("6_v5rlv")
-flat = true
-
-[node name="TongueBtn" type="Button" parent="MarginContainer"]
-visible = false
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("6_v5rlv")
-flat = true
-script = ExtResource("9_dj80c")
-
-[node name="ToggleBtn" type="Button" parent="MarginContainer"]
-layout_mode = 2
+offset_right = 661.0
+offset_bottom = 310.0
 focus_mode = 0
 icon = ExtResource("7_o36cv")
 flat = true
-script = ExtResource("12_82ugw")
 
-[connection signal="gui_input" from="SliderMenu" to="SliderMenu" method="_on_gui_input"]
-[connection signal="mouse_entered" from="SliderMenu" to="SliderMenu" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="SliderMenu" to="SliderMenu" method="_on_mouse_exited"]
-[connection signal="pressed" from="SliderMenu/PantBtn" to="SliderMenu/PantBtn" method="_on_pressed"]
-[connection signal="pressed" from="SliderMenu/PantyBtn" to="SliderMenu/PantyBtn" method="_on_pressed"]
-[connection signal="pressed" from="SliderMenu/ShirtBtn" to="SliderMenu/ShirtBtn" method="_on_pressed"]
+[node name="Sub Menu" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 562.0
+offset_top = 272.0
+offset_right = 730.0
+offset_bottom = 336.0
+scale = Vector2(0.500586, 0.517962)
+alignment = 2
+
+[node name="Button4" type="Button" parent="Sub Menu"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("6_v5rlv")
+flat = true
+
+[node name="TongueBtn" type="Button" parent="Sub Menu"]
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("6_v5rlv")
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 35.0
+offset_right = 365.0
+offset_bottom = 292.0
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="HornyBar" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+fill_mode = 3
+texture_under = ExtResource("8_3kxda")
+texture_over = ExtResource("9_61xp5")
+texture_progress = ExtResource("10_jsuil")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="MaleBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1000.0
+fill_mode = 3
+texture_under = ExtResource("8_himee")
+texture_over = ExtResource("9_4f2wx")
+texture_progress = ExtResource("10_3vmvi")
+
+[node name="FemaleBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1000.0
+fill_mode = 3
+texture_under = ExtResource("8_himee")
+texture_over = ExtResource("9_4f2wx")
+texture_progress = ExtResource("10_w8m04")
+script = ExtResource("11_pq2ey")
+
+[connection signal="gui_input" from="SliderMenu" to="." method="_on_slider_menu_gui_input"]
+[connection signal="mouse_entered" from="SliderMenu" to="." method="_on_slider_menu_mouse_entered"]
+[connection signal="mouse_exited" from="SliderMenu" to="." method="_on_slider_menu_mouse_exited"]
+[connection signal="pressed" from="SliderMenu/PantBtn" to="." method="_on_pant_btn_pressed"]
+[connection signal="pressed" from="SliderMenu/PantyBtn" to="." method="_on_panty_btn_pressed"]
+[connection signal="pressed" from="SliderMenu/ShirtBtn" to="." method="_on_shirt_btn_pressed"]
 [connection signal="pressed" from="SliderMenu/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="PauseBtn" to="PauseBtn" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/TongueBtn" to="MarginContainer/TongueBtn" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/ToggleBtn" to="MarginContainer/ToggleBtn" method="_on_pressed"]
+[connection signal="pressed" from="PauseBtn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="ToggleBtn" to="." method="_on_toggle_btn_pressed"]
+[connection signal="pressed" from="Sub Menu/TongueBtn" to="." method="_on_tongue_btn_pressed"]

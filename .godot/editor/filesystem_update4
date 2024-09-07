@@ -1,5 +1,6 @@
-res://scene/main/main.tscn
-res://states/BackStateMachine.gd
-res://scene/back/back.tscn
 res://scene/HUD/hud.tscn
+res://states/BackStateMachine.gd
+res://scene/HUD/hud.gd
+res://scene/main/main.tscn
+res://scene/back/back.tscn
 res://scene/front/front.tscn

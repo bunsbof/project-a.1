@@ -1,8 +1,8 @@
 TextureProgressBar
+HBoxContainer
+VBoxContainer
 ProgressBar
 Node
-VBoxContainer
-HBoxContainer
 Container
 TextureRect
 Button
@@ -12,4 +12,3 @@ Control
 ColorRect
 CenterContainer
 Camera2D
-HSplitContainer

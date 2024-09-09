@@ -80,7 +80,7 @@ func _on_panty_btn_pressed():
 
 
 func _on_shirt_btn_pressed():
-	Global.shirt_visibility = !Global.shirt_visibility
+	Global.emit_signal("shirt_on_off")
 
 
 func _on_pause_btn_pressed():

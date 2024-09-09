@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://gudf2amcc5nj"]
+[gd_scene load_steps=26 format=3 uid="uid://gudf2amcc5nj"]
 
 [ext_resource type="Texture2D" uid="uid://jlve6tqjht3c" path="res://assets/background/wall_bg.png" id="1_4yiqj"]
 [ext_resource type="Script" path="res://scene/HUD/hud.gd" id="1_5mic1"]
 [ext_resource type="Texture2D" uid="uid://dkqds52g3mneb" path="res://assets/UI/slider_left_open.png" id="3_8fgja"]
 [ext_resource type="Texture2D" uid="uid://c0qmej6kybhis" path="res://assets/UI/btn_base.png" id="4_uw2co"]
+[ext_resource type="Texture2D" uid="uid://dwntounjl2s63" path="res://assets/UI/btn_pause_pressed.png" id="5_k4tl0"]
 [ext_resource type="Texture2D" uid="uid://bqxlbsfuxkggk" path="res://assets/UI/btn_pause_hover.png" id="5_k8isn"]
 [ext_resource type="Texture2D" uid="uid://d078uclj07iux" path="res://assets/UI/btn_locked.png" id="6_v5rlv"]
+[ext_resource type="PackedScene" uid="uid://c20cn6o3gmpcx" path="res://scene/back/back.tscn" id="7_jxrtt"]
 [ext_resource type="Texture2D" uid="uid://dowafvb7dxccd" path="res://assets/UI/slider_left_close.png" id="7_o36cv"]
 [ext_resource type="Texture2D" uid="uid://cvpanyyrnpq21" path="res://assets/background/bars/heart_under.png" id="8_3kxda"]
 [ext_resource type="Texture2D" uid="uid://doxmwoetr3om0" path="res://assets/background/bars/under.png" id="8_himee"]
@@ -15,6 +17,26 @@
 [ext_resource type="Texture2D" uid="uid://c81qjgstglvji" path="res://assets/background/bars/heart_progress.png" id="10_jsuil"]
 [ext_resource type="Texture2D" uid="uid://c8mpaly6baugc" path="res://assets/background/bars/progress.png" id="10_w8m04"]
 [ext_resource type="Script" path="res://scene/HUD/BarTest.gd" id="11_pq2ey"]
+[ext_resource type="PackedScene" uid="uid://c5diywidqkxib" path="res://scene/front/front.tscn" id="18_qgcno"]
+[ext_resource type="PackedScene" uid="uid://e1ef0fpyufwv" path="res://scene/menus/pause_menu.tscn" id="19_dulx0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ga43n"]
+texture = ExtResource("5_k8isn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aax3g"]
+texture = ExtResource("5_k8isn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqxek"]
+texture = ExtResource("5_k4tl0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxs0n"]
+texture = ExtResource("5_k8isn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_umxet"]
+texture = ExtResource("5_k8isn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6gak"]
+texture = ExtResource("5_k4tl0")
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -23,31 +45,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_5mic1")
-slider_menu = NodePath("SliderMenu")
-toggle_menu = NodePath("Sub Menu/TongueBtn")
-sub_menu = NodePath("Sub Menu")
-horny_bar_node = NodePath("VBoxContainer/HornyBar")
-male_bar_node = NodePath("VBoxContainer/HBoxContainer/MaleBar")
-female_bar_node = NodePath("VBoxContainer/HBoxContainer/FemaleBar")
+slider_menu = NodePath("MarginContainer/HBoxContainer/TextureRect/SliderMenu")
+toggle_menu = NodePath("MarginContainer/HBoxContainer/TextureRect2/Sub Menu/TongueBtn")
+sub_menu = NodePath("MarginContainer/HBoxContainer/TextureRect2/Sub Menu")
+horny_bar_node = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HornyBar")
+male_bar_node = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MaleBar")
+female_bar_node = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/FemaleBar")
 
-[node name="FrontBG" type="Sprite2D" parent="."]
-position = Vector2(526, 160)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 texture = ExtResource("1_4yiqj")
 
-[node name="BackBG" type="Sprite2D" parent="."]
-position = Vector2(161, 160)
-texture = ExtResource("1_4yiqj")
+[node name="Back" parent="MarginContainer/HBoxContainer/TextureRect" instance=ExtResource("7_jxrtt")]
+position = Vector2(154, 169)
 
-[node name="SliderMenu" type="TextureRect" parent="."]
+[node name="PauseBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 3.0
+offset_left = 24.0
+offset_top = 19.0
+offset_right = 49.0
+offset_bottom = 44.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ga43n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aax3g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fqxek")
+
+[node name="SliderMenu" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureRect"]
+layout_mode = 0
 offset_top = 69.0
-offset_right = 43.0
+offset_right = 40.0
 offset_bottom = 234.0
 texture = ExtResource("3_8fgja")
 
-[node name="PantBtn" type="Button" parent="SliderMenu"]
+[node name="PantBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
 layout_mode = 0
 offset_top = 10.0
 offset_right = 44.0
@@ -57,7 +102,7 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="PantyBtn" type="Button" parent="SliderMenu"]
+[node name="PantyBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
 layout_mode = 0
 offset_top = 34.0
 offset_right = 44.0
@@ -67,7 +112,7 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="ShirtBtn" type="Button" parent="SliderMenu"]
+[node name="ShirtBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
 layout_mode = 0
 offset_top = 58.0
 offset_right = 44.0
@@ -77,7 +122,7 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="Button4" type="Button" parent="SliderMenu"]
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
 layout_mode = 0
 offset_top = 83.0
 offset_right = 44.0
@@ -87,7 +132,7 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="Button5" type="Button" parent="SliderMenu"]
+[node name="Button5" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
 layout_mode = 0
 offset_top = 106.0
 offset_right = 44.0
@@ -97,7 +142,7 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="Button6" type="Button" parent="SliderMenu"]
+[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
 layout_mode = 0
 offset_top = 129.0
 offset_right = 44.0
@@ -107,81 +152,24 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="PauseBtn" type="Button" parent="."]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 36.0
-offset_bottom = 35.0
-focus_mode = 0
-icon = ExtResource("5_k8isn")
-flat = true
-
-[node name="TipsBtn" type="Button" parent="."]
-layout_mode = 0
-offset_left = 650.0
-offset_top = 11.0
-offset_right = 675.0
-offset_bottom = 36.0
-focus_mode = 0
-icon = ExtResource("5_k8isn")
-flat = true
-
-[node name="ToggleBtn" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 645.0
-offset_top = 269.0
-offset_right = 661.0
-offset_bottom = 310.0
-focus_mode = 0
-icon = ExtResource("7_o36cv")
-flat = true
-
-[node name="Sub Menu" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 562.0
-offset_top = 272.0
-offset_right = 730.0
-offset_bottom = 336.0
-scale = Vector2(0.500586, 0.517962)
-alignment = 2
-
-[node name="Button4" type="Button" parent="Sub Menu"]
-visible = false
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("6_v5rlv")
-flat = true
-
-[node name="TongueBtn" type="Button" parent="Sub Menu"]
-layout_mode = 2
-focus_mode = 0
-icon = ExtResource("6_v5rlv")
-flat = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 322.0
-offset_top = 35.0
-offset_right = 365.0
-offset_bottom = 292.0
 theme_override_constants/separation = 70
 alignment = 1
 
-[node name="HornyBar" type="TextureProgressBar" parent="VBoxContainer"]
+[node name="HornyBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 fill_mode = 3
 texture_under = ExtResource("8_3kxda")
 texture_over = ExtResource("9_61xp5")
 texture_progress = ExtResource("10_jsuil")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 19
 alignment = 1
 
-[node name="MaleBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
+[node name="MaleBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 max_value = 1000.0
@@ -190,7 +178,7 @@ texture_under = ExtResource("8_himee")
 texture_over = ExtResource("9_4f2wx")
 texture_progress = ExtResource("10_3vmvi")
 
-[node name="FemaleBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
+[node name="FemaleBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 max_value = 1000.0
@@ -200,13 +188,68 @@ texture_over = ExtResource("9_4f2wx")
 texture_progress = ExtResource("10_w8m04")
 script = ExtResource("11_pq2ey")
 
-[connection signal="gui_input" from="SliderMenu" to="." method="_on_slider_menu_gui_input"]
-[connection signal="mouse_entered" from="SliderMenu" to="." method="_on_slider_menu_mouse_entered"]
-[connection signal="mouse_exited" from="SliderMenu" to="." method="_on_slider_menu_mouse_exited"]
-[connection signal="pressed" from="SliderMenu/PantBtn" to="." method="_on_pant_btn_pressed"]
-[connection signal="pressed" from="SliderMenu/PantyBtn" to="." method="_on_panty_btn_pressed"]
-[connection signal="pressed" from="SliderMenu/ShirtBtn" to="." method="_on_shirt_btn_pressed"]
-[connection signal="pressed" from="SliderMenu/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="PauseBtn" to="." method="_on_pause_btn_pressed"]
-[connection signal="pressed" from="ToggleBtn" to="." method="_on_toggle_btn_pressed"]
-[connection signal="pressed" from="Sub Menu/TongueBtn" to="." method="_on_tongue_btn_pressed"]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4yiqj")
+
+[node name="Front" parent="MarginContainer/HBoxContainer/TextureRect2" instance=ExtResource("18_qgcno")]
+position = Vector2(158, 169)
+
+[node name="TipsBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 17.0
+offset_right = 281.0
+offset_bottom = 42.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dxs0n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_umxet")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_v6gak")
+
+[node name="ToggleBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2"]
+layout_mode = 2
+offset_left = 266.0
+offset_top = 259.0
+offset_right = 282.0
+offset_bottom = 300.0
+focus_mode = 0
+icon = ExtResource("7_o36cv")
+flat = true
+
+[node name="Sub Menu" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TextureRect2"]
+visible = false
+layout_mode = 0
+offset_left = 185.0
+offset_top = 266.0
+offset_right = 349.0
+offset_bottom = 320.0
+scale = Vector2(0.500586, 0.517962)
+alignment = 2
+
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2/Sub Menu"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("6_v5rlv")
+flat = true
+
+[node name="TongueBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2/Sub Menu"]
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("6_v5rlv")
+flat = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("19_dulx0")]
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/PauseBtn" to="." method="_on_pause_btn_pressed"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu" to="." method="_on_slider_menu_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu" to="." method="_on_slider_menu_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu" to="." method="_on_slider_menu_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/PantBtn" to="." method="_on_pant_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/PantyBtn" to="." method="_on_panty_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/ShirtBtn" to="." method="_on_shirt_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/ToggleBtn" to="." method="_on_toggle_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/TongueBtn" to="." method="_on_tongue_btn_pressed"]

@@ -24,7 +24,7 @@ func enter():
 	breast.animation = "left_breast_pull"
 
 func exit():
-	breast.animation = "breast_bounce"
+	pass
 
 func _on_left_pull():
 	breast.play()

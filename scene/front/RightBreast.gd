@@ -22,8 +22,7 @@ func update_frame(cursor_position):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			if cursor_in_squeez:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and cursor_in_squeez:
 				dragging = true
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and cursor_in_pull:
 			clicked = true

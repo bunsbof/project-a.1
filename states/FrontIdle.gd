@@ -17,6 +17,7 @@ func _ready():
 
 func enter():
 	breast.animation = "breast_bounce"
+	shirt.animation = "removing"
 	if shirt.visible and shirt.frame <= 10:
 		breast.frame = 0
 	elif shirt.visible and shirt.frame >= 11:
@@ -31,7 +32,8 @@ func _on_visibility_changed():
 	if shirt.visible and shirt.frame <= 10:
 		breast.frame = 0
 	elif shirt.visible and shirt.frame >= 11:
-		breast.frame = 6
+		breast.play("breast_bounce")
+		#breast.frame = 6
 	
 	if !shirt.visible:
-		breast.play()
+		breast.play("breast_bounce")

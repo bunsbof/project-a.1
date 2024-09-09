@@ -2,8 +2,15 @@ extends Area2D
 
 @onready var shirt = $".."
 @onready var shirt_collision = $ShirtCollision
+@onready var breast = $"../../Breast"
 
 var cursor_in_shirt = false
+var takeOffWaitTime : Timer
+
+func _ready():
+	takeOffWaitTime = Timer.new()
+	add_child(takeOffWaitTime)
+	takeOffWaitTime.connect("timeout", Callable(self, "_on_timeout"))
 
 func update_frame(cursor_position):
 	var shape = shirt_collision.shape
@@ -26,6 +33,9 @@ func update_frame(cursor_position):
 			Global.shirt_frame = total_frames - 1  # Ensure it caps at the max frame
 	#print(Global.shirt_frame)
 	shirt.set_frame(Global.shirt_frame)
+	if shirt.frame >= 12:
+		takeOffWaitTime.wait_time = 0.6
+		takeOffWaitTime.start()
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and cursor_in_shirt:
@@ -41,3 +51,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	cursor_in_shirt = false
+
+func _on_timeout():
+	Global.shirt_visibility = false
+	takeOffWaitTime.stop()

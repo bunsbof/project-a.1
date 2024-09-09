@@ -1,6 +1,9 @@
-res://scene/HUD/hud.tscn
-res://states/BackStateMachine.gd
-res://scene/HUD/hud.gd
-res://scene/main/main.tscn
 res://scene/back/back.tscn
+res://states/BackStateMachine.gd
 res://scene/front/front.tscn
+res://scene/HUD/hud.tscn
+res://global/Global.gd
+res://scene/HUD/hud.gd
+res://states/TakeOffShirt.gd
+res://scene/front/ShirtControl.gd
+res://states/FrontIdle.gd

@@ -11,4 +11,8 @@ var shirt_visibility = true
 var pant_visibility = true
 var panty_visibility = true
 
+var already_seen = {
+	"jobs" : false
+}
+
 signal shirt_on_off

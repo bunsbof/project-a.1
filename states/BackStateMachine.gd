@@ -50,6 +50,7 @@ func _ready():
 		"rightthighlick": [get_node(right_thigh_col)],
 		"orgasm": [],
 	}
+	#pussy.material.set_shader_parameter("pixel_size", 16.0)
 
 	for child in get_children():
 		if child is State:

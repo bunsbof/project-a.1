@@ -1,9 +1,7 @@
-res://scene/back/back.tscn
+res://scene/menus/pause_menu.tscn
 res://states/BackStateMachine.gd
-res://scene/front/front.tscn
+res://scene/back/back.gdshader
+res://scene/CGs/story_telling.tscn
+res://scene/CGs/jobs.tscn
+res://scene/menus/load_saved.tscn
 res://scene/HUD/hud.tscn
-res://global/Global.gd
-res://scene/HUD/hud.gd
-res://states/TakeOffShirt.gd
-res://scene/front/ShirtControl.gd
-res://states/FrontIdle.gd

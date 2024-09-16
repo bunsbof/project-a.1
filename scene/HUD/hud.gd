@@ -1,5 +1,6 @@
 extends Control
 
+
 @export_group("Related Node")
 @export var slider_menu : NodePath
 @export var toggle_menu : NodePath
@@ -103,3 +104,7 @@ func update_health(new_value):
 	male_bar.value = clamp(new_value, 0, 1000)
 	female_bar.value = clamp(new_value, 0, 1000)
 	
+
+
+func _on_button_5_pressed():
+	get_tree().change_scene_to_file("res://scene/CGs/jobs.tscn")

@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://3s7ls8if6w62"]
+
+[ext_resource type="Texture2D" uid="uid://wjcuifqacy2o" path="res://assets/UI/dialogueBG.png" id="1_dp11c"]
+[ext_resource type="Script" path="res://scene/CGs/story_telling.gd" id="1_ft1rm"]
+[ext_resource type="FontFile" uid="uid://npfc8a84e78f" path="res://assets/font/VT323-Regular.ttf" id="2_iw7ah"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w8rsn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jo5d"]
+bg_color = Color(0.0745098, 0.0196078, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncm05"]
+bg_color = Color(0.0745098, 0.0196078, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ym63"]
+bg_color = Color(0.0470588, 0.0117647, 0.0627451, 1)
+
+[node name="StoryTelling" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ft1rm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 112.0
+offset_right = 464.0
+offset_bottom = 135.0
+text = "Animated Or Image story telling "
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 213.0
+offset_right = 672.0
+offset_bottom = 316.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dp11c")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.803124, 0.744463, 0.620857, 1)
+theme_override_fonts/normal_font = ExtResource("2_iw7ah")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Officiis iure rerum voluptates a cumque velit 
+quibusdam sed amet tempora."
+
+[node name="SkipBtn" type="Button" parent="Dialogue"]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 6.0
+offset_right = 640.0
+offset_bottom = 31.0
+scale = Vector2(0.52, 0.6)
+theme_override_fonts/font = ExtResource("2_iw7ah")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w8rsn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5jo5d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ncm05")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3ym63")
+text = "Skip"

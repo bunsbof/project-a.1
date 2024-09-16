@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://e1ef0fpyufwv"]
+[gd_scene load_steps=8 format=3 uid="uid://e1ef0fpyufwv"]
 
 [ext_resource type="Script" path="res://scene/menus/pause_menu.gd" id="1_447b7"]
 [ext_resource type="FontFile" uid="uid://npfc8a84e78f" path="res://assets/font/VT323-Regular.ttf" id="1_gcwuy"]
+[ext_resource type="FontFile" uid="uid://bk63alnbvheij" path="res://assets/font/pixeldroidBoticRegular.ttf" id="2_kjqea"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcqve"]
 bg_color = Color(0.278431, 0.862745, 0.945098, 1)
@@ -48,7 +49,7 @@ layout_mode = 2
 [node name="ResumeBtn" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_gcwuy")
+theme_override_fonts/font = ExtResource("2_kjqea")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/hover = SubResource("StyleBoxFlat_pcqve")
 text = "Resume"

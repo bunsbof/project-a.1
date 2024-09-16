@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://cia07lireajux" path="res://assets/background/bars/progress_red.png" id="10_3vmvi"]
 [ext_resource type="Texture2D" uid="uid://c81qjgstglvji" path="res://assets/background/bars/heart_progress.png" id="10_jsuil"]
 [ext_resource type="Texture2D" uid="uid://c8mpaly6baugc" path="res://assets/background/bars/progress.png" id="10_w8m04"]
-[ext_resource type="Script" path="res://scene/HUD/BarTest.gd" id="11_pq2ey"]
 [ext_resource type="PackedScene" uid="uid://c5diywidqkxib" path="res://scene/front/front.tscn" id="18_qgcno"]
 [ext_resource type="PackedScene" uid="uid://e1ef0fpyufwv" path="res://scene/menus/pause_menu.tscn" id="19_dulx0"]
 
@@ -28,6 +27,23 @@ texture = ExtResource("5_k8isn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqxek"]
 texture = ExtResource("5_k4tl0")
+
+[sub_resource type="GDScript" id="GDScript_e1dvs"]
+script/source = "extends TextureProgressBar
+
+
+  # Starting health
+
+func _ready():
+	Data.connect(\"point_changed\", Callable(self, \"_on_point_changed\"))
+	self.value = Data.point
+
+func _on_point_changed(new_point):
+	update_health(new_point)
+
+func update_health(new_value):
+	self.value = clamp(new_value, 0, 1000)
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxs0n"]
 texture = ExtResource("5_k8isn")
@@ -73,6 +89,7 @@ texture = ExtResource("1_4yiqj")
 
 [node name="Back" parent="MarginContainer/HBoxContainer/TextureRect" instance=ExtResource("7_jxrtt")]
 position = Vector2(154, 169)
+metadata/_edit_group_ = true
 
 [node name="PauseBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect"]
 layout_mode = 0
@@ -186,7 +203,7 @@ fill_mode = 3
 texture_under = ExtResource("8_himee")
 texture_over = ExtResource("9_4f2wx")
 texture_progress = ExtResource("10_w8m04")
-script = ExtResource("11_pq2ey")
+script = SubResource("GDScript_e1dvs")
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -194,6 +211,7 @@ texture = ExtResource("1_4yiqj")
 
 [node name="Front" parent="MarginContainer/HBoxContainer/TextureRect2" instance=ExtResource("18_qgcno")]
 position = Vector2(158, 169)
+metadata/_edit_group_ = true
 
 [node name="TipsBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2"]
 layout_mode = 0
@@ -251,5 +269,6 @@ flat = true
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/PantyBtn" to="." method="_on_panty_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/ShirtBtn" to="." method="_on_shirt_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/ToggleBtn" to="." method="_on_toggle_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/TongueBtn" to="." method="_on_tongue_btn_pressed"]

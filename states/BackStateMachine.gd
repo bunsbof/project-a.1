@@ -66,7 +66,7 @@ func _ready():
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)
-	pussy.visible = !clothes_area.visible and !(Global.back_state == "spankright" or Global.back_state == "spankleft")
+	pussy.visible = !(Global.back_state == "spankright" or Global.back_state == "spankleft")
 	anal_control.visible = !clothes_area.visible and !(Global.back_state == "spankright" or Global.back_state == "spankleft")
 	pant.visible = Global.pant_visibility
 	panty.visible = Global.panty_visibility

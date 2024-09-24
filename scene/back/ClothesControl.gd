@@ -13,12 +13,12 @@ var mouse_frame = 0
 var total_frames
 
 func _ready():
-	total_frames = (11 if which_cloth == pant else 13) + 1
-	which_cloth = pant if pant.visible == true else panty if panty.visible == true else null
+	Global.connect("offable", Callable(self, "_on_handled_changed"))
 	
 func _process(delta):
 	clothes_area.visible = pant.visible or panty.visible
 	which_cloth = pant if pant.visible == true else panty if panty.visible == true else null
+	#clothes_action_col.disabled = Global.takeoffable
 
 func update_frame(cursor):
 	var shape = clothes_action_col.shape
@@ -26,16 +26,19 @@ func update_frame(cursor):
 	if shape is RectangleShape2D:
 		var rectangle_shape = shape
 		height = rectangle_shape.extents.y * 2
-	mouse_frame = int(round((cursor / height) * (total_frames))) + 4
-	#print(which_cloth)
+	total_frames = (11 if which_cloth == pant else 13) + 1
+	#mouse_frame = clamp(int(round((cursor / height) * total_frames)), 0, total_frames - 1)
+	mouse_frame = int(round((cursor / height) * total_frames)) + 4
 	if which_cloth:
 		which_cloth.set_frame(mouse_frame)
 		hand_or_tongue.set_frame(mouse_frame)
-	#print(which_cloth)
-	if which_cloth == pant and mouse_frame >= total_frames and pant.visible:
+	if which_cloth == pant and mouse_frame >= total_frames - 1 and pant.visible:
 		dragging = false
+		cursor_in_clothes = false
 		Global.pant_visibility = false
-	elif which_cloth == panty and mouse_frame >= total_frames and !pant.visible:
+	elif which_cloth == panty and mouse_frame >= total_frames - 1 and !pant.visible:
+		dragging = false
+		cursor_in_clothes = false
 		Global.panty_visibility = false
 
 func _input(event):
@@ -44,6 +47,7 @@ func _input(event):
 				dragging = true
 		elif event.is_released() and dragging:
 			dragging = false
+			cursor_in_clothes = false
 	if dragging and event is InputEventMouseMotion:
 		var local_position = to_local(event.position)
 		var y_coordinate = local_position.y
@@ -54,3 +58,16 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	cursor_in_clothes = dragging
+
+func _on_handled_changed():
+	self.visible = Global.takeoffable
+
+
+func _on_pant_frame_changed():
+	if Global.pant_visibility and Global.back_state == "idle":
+		pant.frame = 0
+
+
+func _on_panty_frame_changed():
+	if Global.panty_visibility and Global.back_state == "idle":
+		panty.frame = 0

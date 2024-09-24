@@ -7,13 +7,14 @@ extends State
 @export var panty_sprite : NodePath
 @export var spank_control : NodePath
 @export var hand_sprite : NodePath
-
+@export var collision_holder : NodePath
 
 var body : AnimatedSprite2D
 var pant : AnimatedSprite2D
 var panty : AnimatedSprite2D
 var control_node : Area2D
 var hand : AnimatedSprite2D
+var collision : CollisionShape2D
 var animations_playing = 0
 
 func _ready():
@@ -22,6 +23,7 @@ func _ready():
 	panty = get_node(panty_sprite)
 	control_node = get_node(spank_control)
 	hand = get_node(hand_sprite)
+	collision = get_node(collision_holder)
 	# Connect to the spank_released signal
 	control_node.connect("right_spank_released", Callable(self, "_on_spank_released"))
 
@@ -31,6 +33,7 @@ func _ready():
 	panty.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta):
+	collision.disabled = (pant.visible and pant.frame > 0) or (panty.visible and panty.frame > 0)
 	if control_node.dragging or control_node.cursor_in_spanking:
 		Transitioned.emit(switch_back, "SpankRight")
 	elif !control_node.spank_released:
@@ -48,7 +51,6 @@ func _on_spank_released():
 	body.animation = "spanked_right"
 	body.play()
 	animations_playing += 1
-
 	if pant.visible:
 		pant.animation = "spanked_right"
 		pant.play()
@@ -75,4 +77,9 @@ func exit():
 	hand.stop()
 	hand.frame = 0
 	hand.visible = false
+	pant.animation = "removing"
+	pant.frame = 0
+	panty.animation = "removing"
+	panty.frame = 0
+	
 

@@ -1,7 +1,9 @@
-CanvasLayer
+Node
+AnimatedSprite2D
 Sprite2D
-ShaderGlobalsOverride
 Button
+CanvasLayer
+ShaderGlobalsOverride
 Label
 MarginContainer
 RichTextLabel
@@ -10,5 +12,3 @@ Control
 Container
 HBoxContainer
 TextureProgressBar
-VBoxContainer
-ProgressBar

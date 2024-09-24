@@ -1,0 +1,9 @@
+res://scene/back/back.tscn::1a81ecfdeef0878aca5b30619b9d0ba0::1727000205::res://.godot/exported/133200997/export-b673feeb08a5a126186ef8fd008b7800-back.scn
+res://scene/CGs/jobs.tscn::df20287c2d55c80d1c3013f7fb6db556::1727000205::res://.godot/exported/133200997/export-d70328595bd9f030be55f7f1b6d73de6-jobs.scn
+res://scene/CGs/story_telling.tscn::4d9f9c4bc31fa030898e7c68d122f6ac::1727000205::res://.godot/exported/133200997/export-c2f71e4ad9d938624db8c30af86d5285-story_telling.scn
+res://scene/front/front.tscn::e6776a3d26c11c023124a684be1655e0::1726378961::res://.godot/exported/133200997/export-a72fac1ccff046f3d060ecb4c4d93d44-front.scn
+res://scene/HUD/hud.tscn::bf6dfd9a500a8dc30bcbe6ff884dc7b1::1727000205::res://.godot/exported/133200997/export-126ae91a812eb25eb2bc49ed415aa7a5-hud.scn
+res://scene/main/main.tscn::67dd30343d95c8ee2acc7d489db7a7b1::1725792079::res://.godot/exported/133200997/export-9d3a47e75767e89ed77c9e4cf11a463a-main.scn
+res://scene/menus/load_saved.tscn::94adacdb5c723bc22cf2292686caa584::1727000205::res://.godot/exported/133200997/export-1f21431260167af4049887536d496523-load_saved.scn
+res://scene/menus/main_menu.tscn::fd9229ae5b14f18181610b522073ce8c::1726145978::res://.godot/exported/133200997/export-083203528619805dd0366ab63436d2de-main_menu.scn
+res://scene/menus/pause_menu.tscn::668fa199da1cd6fefe147f3bc8a9301b::1727000205::res://.godot/exported/133200997/export-e19e88fd858ec9b833dd7b0214ef6d46-pause_menu.scn

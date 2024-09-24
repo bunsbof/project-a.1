@@ -23,7 +23,6 @@ func _physics_process(delta):
 	else:
 		Transitioned.emit(self, "Idle")
 
-
 func enter():
 	hands.animation = "hands_removing_pant" 
 	hands.visible = true

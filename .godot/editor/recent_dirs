@@ -1,4 +1,9 @@
+res://states/FaceState
+res://states
+res://assets/front/faces
 res://assets/back/private
+D:/Games/Dev_Games
+res://assets/UI
 res://assets/hands or tongues
 res://scene/back
 res://scene/CGs
@@ -6,10 +11,8 @@ res://assets/font
 res://assets/front/shirt
 res://scene/menus
 res://scene/HUD
-res://assets/UI
 res://assets/background/bars
 res://assets/back/base
-res://states
 res://global
 res://assets/icons
 res://scene/main

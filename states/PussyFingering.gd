@@ -1,5 +1,7 @@
 extends State
 
+@onready var clothes_area = $"../../ClothesArea"
+
 @export_group("Related Node")
 @export var vagaga_sprite_control : NodePath
 @export var hand_sprite : NodePath
@@ -22,8 +24,7 @@ func _ready():
 	body = get_node(body_sprite)
 
 func _physics_process(delta):
-	# Disability of both clit caress and clit lick state (only one area to control both but different state for save time)
-	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5))
+	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5)) or clothes_area.visible
 	if (control_node.dragging or control_node.cursor_in_vagaga) and !Global.lickable and Global.spread_at_frame == 0:
 		Transitioned.emit(switch_back, "PussyFingering")
 	else:

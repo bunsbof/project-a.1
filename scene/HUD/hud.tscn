@@ -244,8 +244,7 @@ offset_bottom = 320.0
 scale = Vector2(0.500586, 0.517962)
 alignment = 2
 
-[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2/Sub Menu"]
-visible = false
+[node name="ToggleClothesColBtn" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2/Sub Menu"]
 layout_mode = 2
 focus_mode = 0
 icon = ExtResource("6_v5rlv")
@@ -256,6 +255,10 @@ layout_mode = 2
 focus_mode = 0
 icon = ExtResource("6_v5rlv")
 flat = true
+
+[node name="LoadTemp" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2/Sub Menu"]
+layout_mode = 2
+icon = ExtResource("6_v5rlv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -270,5 +273,8 @@ flat = true
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/ShirtBtn" to="." method="_on_shirt_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/ToggleBtn" to="." method="_on_toggle_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/ToggleClothesColBtn" to="." method="_on_toggle_clothes_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/TongueBtn" to="." method="_on_tongue_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/LoadTemp" to="." method="_on_load_temp_pressed"]

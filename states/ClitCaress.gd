@@ -1,6 +1,8 @@
 extends State
-
 class_name ClitCaress
+
+@onready var panty = $"../../ClothesArea/Panty"
+@onready var pant = $"../../ClothesArea/Pant"
 
 @export_group("Related Node")
 @export var switch_back : State
@@ -48,7 +50,8 @@ func _ready():
 	#on_trust_changed()
 
 func _physics_process(delta):
-	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5)) and !(Global.back_state == "orgasm")
+	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5)) and !(Global.back_state == "orgasm") or (pant.visible and pant.frame > 0) or (panty.visible and panty.frame > 0)
+	#collision.disabled = false
 	if Data.point >= 1000:
 		exit()  # Call exit function to clean up before state transition
 		Transitioned.emit(self, "Orgasm")

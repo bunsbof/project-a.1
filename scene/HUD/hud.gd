@@ -108,3 +108,23 @@ func update_health(new_value):
 
 func _on_button_5_pressed():
 	get_tree().change_scene_to_file("res://scene/CGs/jobs.tscn")
+
+
+func _on_toggle_clothes_pressed():
+	Global.takeoffable = !Global.takeoffable
+
+
+func _on_button_6_pressed():
+	var save_game = SaveGame.new()
+	save_game.trust_level = Data.trust_level
+	save_game.point = Data.point
+	save_game.money = Data.money
+	save_game.write_savegame(save_game)
+
+
+func _on_load_temp_pressed():
+	var save_data = SaveGame.load_savegame()
+	if save_data:
+		Data.trust_level = save_data.trust_level
+		Data.point = save_data.point
+		Data.money = save_data.money

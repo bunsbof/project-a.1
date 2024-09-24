@@ -1,4 +1,4 @@
-[gd_scene load_steps=320 format=3 uid="uid://c20cn6o3gmpcx"]
+[gd_scene load_steps=322 format=3 uid="uid://c20cn6o3gmpcx"]
 
 [ext_resource type="Texture2D" uid="uid://b5aoxo1o4lc3g" path="res://assets/back/base/base.png" id="1_11q2n"]
 [ext_resource type="Texture2D" uid="uid://dxft8q75i3loc" path="res://assets/back/clothes/panty_removing.png" id="2_8w7ei"]
@@ -513,8 +513,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5n78i"]
-shader = ExtResource("6_hhsym")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydwd4"]
+size = Vector2(8, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ral3"]
 atlas = ExtResource("2_a8ro7")
@@ -957,8 +957,9 @@ radius = 7.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4lgh"]
 size = Vector2(8, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydwd4"]
-size = Vector2(8, 14)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gv0vn"]
+shader = ExtResource("6_hhsym")
+shader_parameter/size = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wa2m"]
 atlas = ExtResource("2_8w7ei")
@@ -1985,14 +1986,25 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u54eh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irh8q"]
+
 [node name="Back" type="Node2D"]
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ker2b")
 animation = &"idle"
 
+[node name="AnalControl" type="Area2D" parent="."]
+script = ExtResource("10_3ypbd")
+
+[node name="AnalCol" type="CollisionShape2D" parent="AnalControl"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_ydwd4")
+
 [node name="Pussy" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_5n78i")
+modulate = Color(1, 1, 1, 0.898039)
 sprite_frames = SubResource("SpriteFrames_m2crl")
 animation = &"idle"
 
@@ -2027,15 +2039,15 @@ script = ExtResource("9_0vbro")
 [node name="VagagaHoleCol" type="CollisionShape2D" parent="Pussy/VagagaHoleControl"]
 shape = SubResource("RectangleShape2D_f4lgh")
 
-[node name="AnalControl" type="Area2D" parent="."]
-script = ExtResource("10_3ypbd")
-
-[node name="AnalCol" type="CollisionShape2D" parent="AnalControl"]
-position = Vector2(0, -22)
-shape = SubResource("RectangleShape2D_ydwd4")
+[node name="Blur" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.733333)
+material = SubResource("ShaderMaterial_gv0vn")
+position = Vector2(0.5, 9.5)
+scale = Vector2(0.0833333, 0.15)
+texture = ExtResource("2_a5fmy")
+hframes = 23
 
 [node name="ClothesArea" type="Node2D" parent="."]
-visible = false
 
 [node name="Panty" type="AnimatedSprite2D" parent="ClothesArea"]
 sprite_frames = SubResource("SpriteFrames_plgty")
@@ -2081,6 +2093,14 @@ shape = SubResource("RectangleShape2D_yqi4u")
 sprite_frames = SubResource("SpriteFrames_o1ku4")
 animation = &"hands_idle"
 
+[node name="Tentacles" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_u54eh")
+
+[node name="Toys" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_irh8q")
+
 [node name="BackStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_pdrm4")
 clothes_col = NodePath("../ClothesArea/ClothesControl/ClothesActionCol")
@@ -2123,6 +2143,7 @@ right_spread_control = NodePath("../../Pussy/RightSpreadControl")
 hands_sprite = NodePath("../../HandOrTongue")
 switch_back = NodePath("../Idle")
 pussy_sprite = NodePath("../../Pussy")
+collision_node = NodePath("../../Pussy/RightSpreadControl/RightSpreadCol")
 
 [node name="LeftSpread" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("17_xoftl")
@@ -2130,6 +2151,7 @@ left_spread_control = NodePath("../../Pussy/LeftSpreadControl")
 hands_sprite = NodePath("../../HandOrTongue")
 switch_back = NodePath("../Idle")
 pussy_sprite = NodePath("../../Pussy")
+collision_node = NodePath("../../Pussy/LeftSpreadControl/LeftSpreadCol")
 
 [node name="ClitCaress" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("21_71w2k")
@@ -2189,6 +2211,7 @@ pant_sprite = NodePath("../../ClothesArea/Pant")
 panty_sprite = NodePath("../../ClothesArea/Panty")
 spank_control = NodePath("../../SpankArea/SpankRightControl")
 hand_sprite = NodePath("../../HandOrTongue")
+collision_holder = NodePath("../../SpankArea/SpankRightControl/RightSpankCol")
 
 [node name="SpankLeft" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("50_dm8gj")
@@ -2198,6 +2221,7 @@ pant_sprite = NodePath("../../ClothesArea/Pant")
 panty_sprite = NodePath("../../ClothesArea/Panty")
 spank_control = NodePath("../../SpankArea/SpankLeftControl")
 hand_sprite = NodePath("../../HandOrTongue")
+collision_holder = NodePath("../../SpankArea/SpankLeftControl/LeftSpankCol")
 
 [node name="RightThighLick" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("53_mjttr")
@@ -2219,6 +2243,8 @@ offset_bottom = -101.0
 text = "Test"
 script = ExtResource("9_p0dft")
 
+[connection signal="mouse_entered" from="AnalControl" to="AnalControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AnalControl" to="AnalControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pussy/RightSpreadControl" to="Pussy/RightSpreadControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pussy/RightSpreadControl" to="Pussy/RightSpreadControl" method="_on_mouse_exited"]
 [connection signal="timeout" from="Pussy/RightSpreadControl/Timer" to="Pussy/RightSpreadControl" method="_on_timer_timeout"]
@@ -2229,8 +2255,8 @@ script = ExtResource("9_p0dft")
 [connection signal="mouse_exited" from="Pussy/ClitControl" to="Pussy/ClitControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pussy/VagagaHoleControl" to="Pussy/VagagaHoleControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pussy/VagagaHoleControl" to="Pussy/VagagaHoleControl" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AnalControl" to="AnalControl" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AnalControl" to="AnalControl" method="_on_mouse_exited"]
+[connection signal="frame_changed" from="ClothesArea/Panty" to="ClothesArea/ClothesControl" method="_on_panty_frame_changed"]
+[connection signal="frame_changed" from="ClothesArea/Pant" to="ClothesArea/ClothesControl" method="_on_pant_frame_changed"]
 [connection signal="mouse_entered" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="SpankArea/SpankLeftControl" to="SpankArea/SpankLeftControl" method="_on_mouse_entered"]

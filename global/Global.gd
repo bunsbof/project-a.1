@@ -5,6 +5,7 @@ var spread_at_frame = 0
 var lickable = false
 
 var back_state
+
 var front_state
 
 var shirt_visibility = true
@@ -22,3 +23,5 @@ var already_seen = {
 
 signal offable
 signal shirt_on_off
+signal back_state_changed
+signal front_state_changed

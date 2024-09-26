@@ -11,3 +11,6 @@ res://scene/menus/pause_menu.tscn
 res://scene/HUD/hud.tscn
 res://scene/back/back.tscn
 res://scene/menus/main_menu.tscn
+res://states/FaceStateMachine.gd
+res://global/Global.gd
+res://scene/back/Label.gd

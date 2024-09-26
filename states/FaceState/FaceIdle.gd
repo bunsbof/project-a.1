@@ -9,7 +9,13 @@ func _ready():
 	face.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	start_idle_animation()
 
+func enter():
+	start_idle_animation()
+
 func start_idle_animation():
 	# Play a random animation initially
 	var random_index = randi() % animation_names.size()
 	face.play(animation_names[random_index])
+
+func exit():
+	pass

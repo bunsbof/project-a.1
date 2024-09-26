@@ -1839,18 +1839,19 @@ shape = SubResource("RectangleShape2D_jcwbq")
 
 [node name="FaceStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("16_2g1m2")
-initial_state = NodePath("TakeOffShirt")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="FaceStateMachine"]
 script = ExtResource("17_oexjd")
 face_holder = NodePath("../../Face")
 
-[node name="TakeOffShirt" type="Node" parent="FaceStateMachine"]
+[node name="TakeOffShirt" type="Node" parent="FaceStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("18_lc5xi")
 control_node = NodePath("../../Shirt/ShirtControl")
 face_node = NodePath("../../Face")
 shirt_node = NodePath("../../Shirt")
 breast_node = NodePath("../../Breast")
+switch_back = NodePath("../Idle")
 
 [node name="FrontStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_frc6m")
@@ -1899,6 +1900,13 @@ script = ExtResource("17_qeuxe")
 switch_back = NodePath("../Idle")
 left_control_node = NodePath("../../Breast/LeftBreast")
 breast_sprite = NodePath("../../Breast")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -66.0
+offset_top = -124.0
+offset_right = -26.0
+offset_bottom = -101.0
+text = "Test"
 
 [connection signal="mouse_shape_entered" from="Breast/RightBreast" to="Breast/RightBreast" method="_on_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Breast/RightBreast" to="Breast/RightBreast" method="_on_mouse_shape_exited"]

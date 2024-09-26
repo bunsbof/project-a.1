@@ -5,6 +5,7 @@ extends State
 @export var face_node : NodePath
 @export var shirt_node : NodePath
 @export var breast_node : NodePath
+@export var switch_back : State
 
 var animation_names = ["shirt_touch_A_1", "shirt_touch_B_1", "shirt_touch_C_1"]
 
@@ -24,6 +25,12 @@ func _ready():
 	breast.connect("frame_changed", Callable(self, "_on_frame_changed"))
 	face.connect("animation_finished", Callable(self, "_on_face_finished"))
 
+func _physics_process(delta):
+	if Global.front_state == "takeoffshirt":
+		Transitioned.emit(switch_back, self.name)
+	else:
+		Transitioned.emit(self, switch_back.name)
+
 func enter():
 	face.animation = animation_names[1]
 
@@ -36,11 +43,11 @@ func _on_being_takeoff():
 func _on_slow_takeoff():
 	face.play(animation_names[1])
 
-func _on_frame_changed():
-	if breast.animation == "breast_bounce" and breast.frame > 0:
-		face.play(animation_names[2])
-	elif breast.animation == "breast_bounce" and breast.frame == 0:
-		face.play(animation_names[1])
+#func _on_frame_changed():
+	#if breast.animation == "breast_bounce" and breast.frame > 0:
+		#face.play(animation_names[2])
+	#elif breast.animation == "breast_bounce" and breast.frame == 0:
+		#face.play(animation_names[1])
 
 func _on_face_finished():
 	if face.animation == animation_names[2]:

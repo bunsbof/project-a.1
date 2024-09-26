@@ -6,6 +6,11 @@ extends Area2D
 
 var cursor_in_shirt = false
 var takeOffWaitTime : Timer
+var last_click_time = 0.0
+
+signal hover_shirt
+signal being_take_off
+signal slow_take_off
 
 func _ready():
 	takeOffWaitTime = Timer.new()
@@ -43,10 +48,22 @@ func _on_input_event(viewport, event, shape_idx):
 			var local_position = to_local(event.position)
 			var y_coordinate = local_position.y
 			update_frame(y_coordinate)
+			
+			var current_time = Time.get_ticks_msec()
+			if last_click_time != 0:
+				var time_between_click = current_time - last_click_time
+				if time_between_click <= 200:
+					emit_signal("being_take_off")
+				else:
+					emit_signal("slow_take_off")
+			last_click_time = current_time
+			
 
 
 func _on_mouse_entered():
 	cursor_in_shirt = true
+	if (cursor_in_shirt and last_click_time == 0) or (cursor_in_shirt and last_click_time > 200):
+		emit_signal("hover_shirt")
 
 
 func _on_mouse_exited():

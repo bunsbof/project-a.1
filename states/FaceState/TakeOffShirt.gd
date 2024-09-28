@@ -26,7 +26,7 @@ func _ready():
 	face.connect("animation_finished", Callable(self, "_on_face_finished"))
 
 func _physics_process(delta):
-	if Global.front_state == "takeoffshirt":
+	if Global.front_state == self.name.to_lower():
 		Transitioned.emit(switch_back, self.name)
 	else:
 		Transitioned.emit(self, switch_back.name)
@@ -43,11 +43,11 @@ func _on_being_takeoff():
 func _on_slow_takeoff():
 	face.play(animation_names[1])
 
-#func _on_frame_changed():
-	#if breast.animation == "breast_bounce" and breast.frame > 0:
-		#face.play(animation_names[2])
-	#elif breast.animation == "breast_bounce" and breast.frame == 0:
-		#face.play(animation_names[1])
+func _on_frame_changed():
+	if breast.animation == "breast_bounce" and breast.frame > 0 and breast.is_playing():
+		face.play(animation_names[2])
+	elif breast.animation == "breast_bounce" and breast.frame == 0 and !breast.is_playing():
+		face.play(animation_names[1])
 
 func _on_face_finished():
 	if face.animation == animation_names[2]:

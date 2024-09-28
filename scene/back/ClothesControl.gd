@@ -7,22 +7,31 @@ extends Area2D
 @onready var hand_or_tongue = $"../../HandOrTongue"
 
 var dragging = false
-var which_cloth
+var which_cloth :
+	set(value):
+		which_cloth = value
+		Global.clothes_object["which_clothes"] = value
+
 var cursor_in_clothes = false
 var mouse_frame = 0
 var total_frames
 
 func _ready():
 	Global.connect("offable", Callable(self, "_on_handled_changed"))
-	
+
 func _process(delta):
 	clothes_area.visible = pant.visible or panty.visible
 	which_cloth = pant if pant.visible == true else panty if panty.visible == true else null
-	#clothes_action_col.disabled = Global.takeoffable
+	Global.set_dragging(dragging)
+	Global.set_cursor_in_clothes(cursor_in_clothes)
+	
+	#if which_cloth != null:
+		#Global.clothes_object["which_clothes"] = which_cloth
 
 func update_frame(cursor):
 	var shape = clothes_action_col.shape
 	var height = 0
+	which_cloth = pant if pant.visible else panty
 	if shape is RectangleShape2D:
 		var rectangle_shape = shape
 		height = rectangle_shape.extents.y * 2
@@ -36,15 +45,18 @@ func update_frame(cursor):
 		dragging = false
 		cursor_in_clothes = false
 		Global.pant_visibility = false
+		Global.set_pant_hidden(false)
 	elif which_cloth == panty and mouse_frame >= total_frames - 1 and !pant.visible:
 		dragging = false
 		cursor_in_clothes = false
 		Global.panty_visibility = false
+		Global.set_panty_hidden(false)
 
 func _input(event):
 	if event is InputEventMouseButton and cursor_in_clothes:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				dragging = true
+				Global.set_dragging(dragging)
 		elif event.is_released() and dragging:
 			dragging = false
 			cursor_in_clothes = false
@@ -55,6 +67,7 @@ func _input(event):
 
 func _on_mouse_entered():
 	cursor_in_clothes = true
+	Global.set_cursor_in_clothes(cursor_in_clothes)
 
 func _on_mouse_exited():
 	cursor_in_clothes = dragging
@@ -62,12 +75,3 @@ func _on_mouse_exited():
 func _on_handled_changed():
 	self.visible = Global.takeoffable
 
-
-func _on_pant_frame_changed():
-	if Global.pant_visibility and Global.back_state == "idle":
-		pant.frame = 0
-
-
-func _on_panty_frame_changed():
-	if Global.panty_visibility and Global.back_state == "idle":
-		panty.frame = 0

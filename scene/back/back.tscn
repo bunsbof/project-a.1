@@ -1,4 +1,4 @@
-[gd_scene load_steps=322 format=3 uid="uid://c20cn6o3gmpcx"]
+[gd_scene load_steps=321 format=3 uid="uid://c20cn6o3gmpcx"]
 
 [ext_resource type="Texture2D" uid="uid://b5aoxo1o4lc3g" path="res://assets/back/base/base.png" id="1_11q2n"]
 [ext_resource type="Texture2D" uid="uid://dxft8q75i3loc" path="res://assets/back/clothes/panty_removing.png" id="2_8w7ei"]
@@ -26,7 +26,6 @@
 [ext_resource type="Script" path="res://states/BackIdle.gd" id="8_x0e05"]
 [ext_resource type="Script" path="res://scene/back/VagagaHoleControl.gd" id="9_0vbro"]
 [ext_resource type="Script" path="res://states/TakeOffPanty.gd" id="9_4i3yt"]
-[ext_resource type="Script" path="res://scene/back/Label.gd" id="9_p0dft"]
 [ext_resource type="Script" path="res://scene/back/AnalControl.gd" id="10_3ypbd"]
 [ext_resource type="Texture2D" uid="uid://cwr51w63frkik" path="res://assets/hands or tongues/hand_clit_caress.png" id="11_eeo80"]
 [ext_resource type="Texture2D" uid="uid://r7p6uukibcgq" path="res://assets/hands or tongues/hand_fingering_vag.png" id="14_0qp2v"]
@@ -2235,14 +2234,6 @@ script = ExtResource("55_0s86d")
 switch_back = NodePath("../Idle")
 body_sprite = NodePath("../../Body")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -66.0
-offset_top = -124.0
-offset_right = -26.0
-offset_bottom = -101.0
-text = "Test"
-script = ExtResource("9_p0dft")
-
 [connection signal="mouse_entered" from="AnalControl" to="AnalControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AnalControl" to="AnalControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pussy/RightSpreadControl" to="Pussy/RightSpreadControl" method="_on_mouse_entered"]
@@ -2255,8 +2246,6 @@ script = ExtResource("9_p0dft")
 [connection signal="mouse_exited" from="Pussy/ClitControl" to="Pussy/ClitControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pussy/VagagaHoleControl" to="Pussy/VagagaHoleControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pussy/VagagaHoleControl" to="Pussy/VagagaHoleControl" method="_on_mouse_exited"]
-[connection signal="frame_changed" from="ClothesArea/Panty" to="ClothesArea/ClothesControl" method="_on_panty_frame_changed"]
-[connection signal="frame_changed" from="ClothesArea/Pant" to="ClothesArea/ClothesControl" method="_on_pant_frame_changed"]
 [connection signal="mouse_entered" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ClothesArea/ClothesControl" to="ClothesArea/ClothesControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="SpankArea/SpankLeftControl" to="SpankArea/SpankLeftControl" method="_on_mouse_entered"]

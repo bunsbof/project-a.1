@@ -1,5 +1,6 @@
 extends State
 
+@export_group("Related Node")
 @export var face_holder: NodePath
 var animation_names = ["idle_1_1", "idle_2_1", "idle_3_1"]
 var face: AnimatedSprite2D

@@ -40,7 +40,7 @@
 [ext_resource type="Script" path="res://states/FaceState/TakeOffShirt.gd" id="18_lc5xi"]
 [ext_resource type="Script" path="res://states/FaceState/TakeOffPant.gd" id="22_6lls8"]
 [ext_resource type="Script" path="res://states/FaceState/TakeOffPanty.gd" id="26_okx76"]
-[ext_resource type="Script" path="res://states/FaceState/ClitCaress.gd" id="34_so7b7"]
+[ext_resource type="Script" path="res://states/FaceState/Sex.gd" id="34_so7b7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijxjf"]
 atlas = ExtResource("1_7gq81")
@@ -2412,7 +2412,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"left_breast_squeeze",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2574,7 +2574,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"right_breast_squeeze",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2750,7 +2750,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"removing",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcwbq"]
@@ -2768,7 +2768,7 @@ animation = &"sex_A_1"
 
 [node name="Breast" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sp83g")
-animation = &"breast_bounce"
+animation = &"right_breast_squeeze"
 
 [node name="RightBreast" type="Area2D" parent="Breast"]
 script = ExtResource("7_1hqm0")
@@ -2829,7 +2829,7 @@ script = ExtResource("26_okx76")
 face_holder = NodePath("../../Face")
 switch_back = NodePath("../Idle")
 
-[node name="ClitCaress" type="Node" parent="FaceStateMachine" node_paths=PackedStringArray("switch_back")]
+[node name="Sex" type="Node" parent="FaceStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("34_so7b7")
 face_holder = NodePath("../../Face")
 switch_back = NodePath("../Idle")

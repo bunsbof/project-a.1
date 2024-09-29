@@ -24,6 +24,10 @@ func _process(delta):
 	which_cloth = pant if pant.visible == true else panty if panty.visible == true else null
 	Global.set_dragging(dragging)
 	Global.set_cursor_in_clothes(cursor_in_clothes)
+	if pant.animation == "removing":
+		pant.frame = Global.pant_frame
+	if panty.animation == "removing":
+		panty.frame = Global.panty_frame
 	
 	#if which_cloth != null:
 		#Global.clothes_object["which_clothes"] = which_cloth
@@ -38,9 +42,13 @@ func update_frame(cursor):
 	total_frames = (11 if which_cloth == pant else 13) + 1
 	#mouse_frame = clamp(int(round((cursor / height) * total_frames)), 0, total_frames - 1)
 	mouse_frame = int(round((cursor / height) * total_frames)) + 4
+	if which_cloth == pant:
+		Global.pant_frame = mouse_frame
+	elif which_cloth == panty:
+		Global.panty_frame = mouse_frame
 	if which_cloth:
-		which_cloth.set_frame(mouse_frame)
-		hand_or_tongue.set_frame(mouse_frame)
+		which_cloth.set_frame(Global.pant_frame if which_cloth == pant else Global.panty_frame)
+		hand_or_tongue.set_frame(Global.pant_frame if which_cloth == pant else Global.panty_frame)
 	if which_cloth == pant and mouse_frame >= total_frames - 1 and pant.visible:
 		dragging = false
 		cursor_in_clothes = false

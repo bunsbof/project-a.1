@@ -28,12 +28,13 @@ func _ready():
 	control_node.connect("right_spank_released", Callable(self, "_on_spank_released"))
 
 	# Connect animation_finished signals
+	body.connect("frame_changed", Callable(self, "_on_frame_changed"))
 	body.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	pant.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	panty.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta):
-	collision.disabled = (pant.visible and pant.frame > 0) or (panty.visible and panty.frame > 0)
+	#collision.disabled = (pant.visible and pant.frame > 0) or (panty.visible and panty.frame > 0) and (Global.back_state == "rightspread" or Global.back_state == "leftspread")
 	if control_node.dragging or control_node.cursor_in_spanking:
 		Transitioned.emit(switch_back, "SpankRight")
 	elif !control_node.spank_released:
@@ -43,8 +44,15 @@ func enter():
 	hand.animation = "hand_spank_right"
 	hand.frame = 0
 	hand.visible = true
+	if pant.animation == "removing" and pant.frame > 0 and pant.visible:
+		Global.pant_frame = 0
+	if panty.animation == "removing" and panty.frame > 0 and panty.visible:
+		Global.panty_frame = 0
 	#pass
 
+func _on_frame_changed():
+	if body.animation == "spanked_right" and body.frame >= 2:
+		Global.set_sex_dragging(true)
 
 func _on_spank_released():
 	hand.visible = false
@@ -70,6 +78,7 @@ func _on_animation_finished():
 func _exit_state():
 	#hand.visible = false
 	control_node.spank_released = false
+	Global.set_sex_dragging(false)
 	Transitioned.emit(self, "Idle")
 
 
@@ -78,8 +87,8 @@ func exit():
 	hand.frame = 0
 	hand.visible = false
 	pant.animation = "removing"
-	pant.frame = 0
+	#pant.frame = 0
 	panty.animation = "removing"
-	panty.frame = 0
+	#panty.frame = 0
 	
 

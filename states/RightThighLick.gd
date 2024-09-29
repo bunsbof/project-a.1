@@ -36,6 +36,7 @@ func enter():
 
 func _on_right_thigh_lick():
 	tongue.play()
+	Global.set_sex_dragging(true)
 	animations_playing += 1
 
 
@@ -46,6 +47,7 @@ func _on_animation_finished():
 
 func _exit_state():
 	#hand.visible = false
+	Global.set_sex_dragging(false)
 	Transitioned.emit(self, "Idle")
 
 

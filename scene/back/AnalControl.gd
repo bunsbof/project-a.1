@@ -30,12 +30,14 @@ func _input(event):
 	if event is InputEventMouseButton and cursor_in_anal:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = true
+			Global.set_sex_dragging(dragging)
 	if dragging and event is InputEventMouseMotion:
 		var local_position = to_local(event.position)
 		update_frame(local_position)
 	elif event.is_released() and dragging:
 		dragging = false
 		cursor_in_anal = false
+		Global.set_sex_dragging(dragging)
 
 func _on_mouse_entered():
 	cursor_in_anal = true

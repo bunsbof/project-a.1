@@ -29,6 +29,7 @@ func exit():
 
 func _on_right_pull():
 	breast.play()
+	Global.set_sex_dragging(true)
 	animations_playing +=1
 
 func _on_animation_finished():
@@ -39,4 +40,5 @@ func _on_animation_finished():
 func _exit_state():
 	control_node.clicked = false
 	control_node.cursor_in_pull = false
+	Global.set_sex_dragging(false)
 	Transitioned.emit(self, switch_back.name)

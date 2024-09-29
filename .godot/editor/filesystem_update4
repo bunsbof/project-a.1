@@ -9,8 +9,7 @@ res://scene/back/back.tscn
 res://scene/menus/main_menu.tscn
 res://scene/front/front.tscn
 res://scene/back/ClothesControl.gd
-res://states/FaceState/TakeOffPant.gd
-res://states/FaceState/TakeOffPanty.gd
 res://global/Global.gd
-res://states/FaceState/ClitCaress.gd
-res://scene/back/ClitControl.gd
+res://scene/HUD/hud.gd
+res://states/SpankRight.gd
+res://states/SpankLeft.gd

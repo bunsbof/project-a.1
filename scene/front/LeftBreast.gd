@@ -24,6 +24,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and cursor_in_squeez:
 				dragging = true
+				Global.set_sex_dragging(dragging)
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and cursor_in_pull:
 			clicked = true
 			emit_signal("left_pull")
@@ -33,6 +34,7 @@ func _input(event):
 	elif event.is_released() and dragging:
 		dragging = false
 		cursor_in_squeez = false
+		Global.set_sex_dragging(dragging)
 		#print(cursor_in_squeez)
 
 

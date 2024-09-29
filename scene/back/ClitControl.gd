@@ -32,7 +32,7 @@ func _input(event):
 	if event is InputEventMouseButton and cursor_in_clit:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = true
-			Global.set_dragging_clit(dragging)
+			Global.set_sex_dragging(dragging)
 			if Global.spread_at_frame == 0 and !Global.lickable:
 				emit_signal("caress_dragged")
 			elif Global.spread_at_frame == 5 and Global.lickable:
@@ -43,13 +43,10 @@ func _input(event):
 	elif event.is_released() and dragging:
 		dragging = false
 		cursor_in_clit = false
-		Global.set_dragging_clit(dragging)
-		Global.set_cursor_in_clit(cursor_in_clit)
+		Global.set_sex_dragging(dragging)
 
 func _on_mouse_entered():
 	cursor_in_clit = true
-	Global.set_cursor_in_clit(cursor_in_clit)
 
 func _on_mouse_exited():
 	cursor_in_clit = dragging
-	Global.set_cursor_in_clit(cursor_in_clit)

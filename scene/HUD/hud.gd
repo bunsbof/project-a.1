@@ -1,5 +1,7 @@
 extends Control
 
+@onready var pant_btn = $MarginContainer/HBoxContainer/TextureRect/SliderMenu/PantBtn
+@onready var panty_btn = $MarginContainer/HBoxContainer/TextureRect/SliderMenu/PantyBtn
 
 @export_group("Related Node")
 @export var slider_menu : NodePath
@@ -38,10 +40,15 @@ func _ready():
 	horny_bar.value = Data.point
 	male_bar.value = Data.point
 	female_bar.value = Data.point
-	
 
 func _physics_process(delta):
 	slider.visible = Global.back_state == "idle" and Global.front_state == "idle"
+	if Global.pant_visibility and Global.pant_frame > 0:
+		panty_btn.disabled = true
+	else: panty_btn.disabled = false
+	if Global.panty_visibility and Global.panty_frame > 0:
+		pant_btn.disabled = true
+	else: pant_btn.disabled = false
 
 func _on_button_4_pressed():
 	if Data.trust_level >= 4:
@@ -73,10 +80,12 @@ func _on_slider_menu_mouse_exited():
 
 
 func _on_pant_btn_pressed():
+	Global.pant_frame = 0
 	Global.pant_visibility = !Global.pant_visibility
 
 
 func _on_panty_btn_pressed():
+	Global.panty_frame = 0
 	Global.panty_visibility = !Global.panty_visibility
 
 

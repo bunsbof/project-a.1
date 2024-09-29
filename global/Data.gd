@@ -3,6 +3,8 @@ extends Node
 signal trust_level_changed
 signal point_changed
 
+var saved_index = 0
+
 var trust_level = 1:
 	set(value):
 		trust_level = value

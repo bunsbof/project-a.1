@@ -114,3 +114,4 @@ flat = true
 alignment = 0
 
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/NewGameBtn" to="." method="_on_new_game_btn_pressed"]

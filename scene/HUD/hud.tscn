@@ -159,16 +159,6 @@ focus_mode = 0
 icon = ExtResource("4_uw2co")
 flat = true
 
-[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer/TextureRect/SliderMenu"]
-layout_mode = 0
-offset_top = 129.0
-offset_right = 44.0
-offset_bottom = 173.0
-scale = Vector2(0.719477, 0.571488)
-focus_mode = 0
-icon = ExtResource("4_uw2co")
-flat = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 70
@@ -256,10 +246,6 @@ focus_mode = 0
 icon = ExtResource("6_v5rlv")
 flat = true
 
-[node name="LoadTemp" type="Button" parent="MarginContainer/HBoxContainer/TextureRect2/Sub Menu"]
-layout_mode = 2
-icon = ExtResource("6_v5rlv")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("19_dulx0")]
@@ -273,8 +259,6 @@ icon = ExtResource("6_v5rlv")
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/ShirtBtn" to="." method="_on_shirt_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect/SliderMenu/Button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/ToggleBtn" to="." method="_on_toggle_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/ToggleClothesColBtn" to="." method="_on_toggle_clothes_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/TongueBtn" to="." method="_on_tongue_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureRect2/Sub Menu/LoadTemp" to="." method="_on_load_temp_pressed"]

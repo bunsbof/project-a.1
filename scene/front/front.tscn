@@ -2882,13 +2882,6 @@ switch_back = NodePath("../Idle")
 left_control_node = NodePath("../../Breast/LeftBreast")
 breast_sprite = NodePath("../../Breast")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -66.0
-offset_top = -124.0
-offset_right = -26.0
-offset_bottom = -101.0
-text = "Test"
-
 [connection signal="mouse_shape_entered" from="Breast/RightBreast" to="Breast/RightBreast" method="_on_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Breast/RightBreast" to="Breast/RightBreast" method="_on_mouse_shape_exited"]
 [connection signal="mouse_shape_entered" from="Breast/LeftBreast" to="Breast/LeftBreast" method="_on_mouse_shape_entered"]

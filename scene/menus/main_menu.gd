@@ -13,6 +13,7 @@ func _on_resume_btn_pressed():
 		Data.trust_level = loaded_game.trust_level
 		Data.point = loaded_game.point
 		Data.money = loaded_game.money
+		Global.already_seen = loaded_game.already_seen
 		get_tree().change_scene_to_file(main_gameplay_path)
 	else:
 		print("Failed to load the save game.")
@@ -29,4 +30,5 @@ func _on_new_game_btn_pressed():
 	Data.trust_level = save_game.trust_level
 	Data.point = save_game.point
 	Data.money = save_game.money
+	Global.already_seen = save_game.already_seen
 	get_tree().change_scene_to_file(main_gameplay_path)

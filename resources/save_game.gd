@@ -12,6 +12,9 @@ const SAVE_FILES := [
 @export var trust_level: int = 1
 @export var point: float = 70.0
 @export var money: float = 2146.0
+@export var already_seen = {
+	"jobs" : false
+}
 
 # Create folder and files if they don't exist
 func ensure_save_directory_and_files() -> void:

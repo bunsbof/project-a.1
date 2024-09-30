@@ -1,5 +1,12 @@
 extends Control
 
+@onready var resume_btn = $CenterContainer/VBoxContainer/ResumeBtn
+@onready var load_btn = $CenterContainer/VBoxContainer/LoadBtn
+@onready var setting_btn = $CenterContainer/VBoxContainer/SettingBtn
+@onready var main_menu_btn = $CenterContainer/VBoxContainer/MainMenuBtn
+@onready var exit_btn = $CenterContainer/VBoxContainer/ExitBtn
+
+
 @export var main_menu_path: String = "res://scene/menus/main_menu.tscn"
 var _is_paused = false
 
@@ -11,6 +18,8 @@ var is_paused: bool:
 
 func _ready():
 	self.is_paused = false
+	_on_language_changed()
+	Data.connect("language_changed", Callable(self, "_on_language_changed"))
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -23,6 +32,7 @@ func save_game():
 	save_game.point = Data.point
 	save_game.money = Data.money
 	save_game.already_seen = Global.already_seen
+	save_game.current_language = Data.current_language
 	save_game.write_savegame(save_game, Data.saved_index)
 
 func _unhandled_input(event):
@@ -32,6 +42,7 @@ func _unhandled_input(event):
 		save_game.point = Data.point
 		save_game.money = Data.money
 		save_game.already_seen = Global.already_seen
+		save_game.current_language = Data.current_language
 		save_game.write_savegame(save_game, Data.saved_index)
 		self.is_paused = not _is_paused
 
@@ -44,6 +55,7 @@ func _on_exit_btn_pressed():
 	save_game.point = Data.point
 	save_game.money = Data.money
 	save_game.already_seen = Global.already_seen
+	save_game.current_language = Data.current_language
 	save_game.write_savegame(save_game, Data.saved_index)
 	get_tree().quit()
 
@@ -52,3 +64,11 @@ func _on_main_menu_btn_pressed():
 	#Do some save stuff
 	get_tree().paused = true
 	get_tree().change_scene_to_file(main_menu_path)
+
+
+func _on_language_changed():
+	resume_btn.text = tr("continue")
+	main_menu_btn.text = tr("main_menu")
+	load_btn.text = tr("load")
+	setting_btn.text = tr("settings")
+	exit_btn.text = tr("quit")

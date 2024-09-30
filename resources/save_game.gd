@@ -15,10 +15,10 @@ const SAVE_FILES := [
 @export var already_seen = {
 	"jobs" : false
 }
+@export var current_language = "ja"
 
-# Create folder and files if they don't exist
 func ensure_save_directory_and_files() -> void:
-	var dir := DirAccess.open("user://")  # Open the user directory
+	var dir := DirAccess.open("user://")
 	if dir == null:
 		print("Failed to open user directory.")
 		return
@@ -31,7 +31,6 @@ func ensure_save_directory_and_files() -> void:
 		else:
 			print("Save folder created.")
 
-	# Create 4 save files if they don't exist
 	for i in range(SAVE_FILES.size()):
 		if not ResourceLoader.exists(SAVE_FILES[i]):
 			var new_save := SaveGame.new()
@@ -41,17 +40,17 @@ func ensure_save_directory_and_files() -> void:
 			else:
 				print("Failed to create save file: %s. Error: %s" % [SAVE_FILES[i], save_err])
 
-# Write save data to a specific file
 func write_savegame(data: SaveGame, index: int) -> void:
 	if index >= 0 and index < SAVE_FILES.size():
 		trust_level = data.trust_level
 		point = data.point
 		money = data.money
+		already_seen = data.already_seen
+		current_language = data.current_language
 		var err = ResourceSaver.save(self, SAVE_FILES[index])
 		if err != OK:
 			print("Error saving file: %s" % err)
 
-# Load save data from a specific file
 static func load_savegame(index: int) -> SaveGame:
 	if index >= 0 and index < SAVE_FILES.size() and ResourceLoader.exists(SAVE_FILES[index]):
 		return load(SAVE_FILES[index]) as SaveGame

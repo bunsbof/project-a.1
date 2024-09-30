@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja\n"
+
+# Big Text (Dummy Japanese Placeholder)
+msgid "job_title"
+msgstr "ストーリーテリングの分野で活躍する経歴"
+
+msgid "job_big_text_1"
+msgstr "これはテスト用のダミーテキストです。日本語版で使用してください。"
+
+msgid "job_big_text_2"
+msgstr "場能をてに行首ミ書街ミ了兄イえンゅ能究聞カトム複関白あイむわ活国らへぎを来救ヒロシフ目再ヒムオ通時フイ確替フ無安働ンレ"
+
+msgid "job_big_text_3"
+msgstr "10芸くりさ除31碁ょ調転ン関崎ヲルキヤ当提歩ウサミス腺馬あほク対培葉ぜか後温ス索必ハヘトサ守理ア果説うぜ。"
+
+msgid "job_big_text_4"
+msgstr "外誰ホ補企せ稿料チ掘時せもこ化59依ム唯45増ずるぶス条者件チ詳人にひドン膨掲次じふひ下番ド功8保世すゃきリ付徊しむで相酒葉レわせる。"
+
+# Small Text for Buttons
+msgid "resume"
+msgstr "再開"
+
+msgid "continue"
+msgstr "続く"
+
+msgid "new_game"
+msgstr "新しいゲーム"
+
+msgid "load"
+msgstr "負荷"
+
+msgid "main_menu"
+msgstr "メインメニュー"
+
+msgid "settings"
+msgstr "設定"
+
+msgid "quit"
+msgstr "終了"

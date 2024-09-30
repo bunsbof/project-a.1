@@ -37,7 +37,6 @@ func load_dialog():
 		tween.tween_property(rich_text_label, "visible_ratio", 1.0, duration)
 
 	else:
-		Global.already_seen["jobs"] = true
 		queue_free()
 	dialog_index += 1
 

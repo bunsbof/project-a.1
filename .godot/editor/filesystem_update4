@@ -8,13 +8,9 @@ res://scene/HUD/hud.tscn
 res://scene/back/back.tscn
 res://scene/menus/main_menu.tscn
 res://scene/front/front.tscn
-res://scene/back/ClothesControl.gd
-res://global/Global.gd
-res://scene/HUD/hud.gd
-res://states/SpankRight.gd
-res://states/SpankLeft.gd
 res://resources/save_game.gd
 res://scene/menus/main_menu.gd
-res://states/FaceStateMachine.gd
-res://scene/menus/pause_menu.gd
 res://global/Data.gd
+res://scene/menus/pause_menu.gd
+res://scene/CGs/jobs.gd
+res://scene/CGs/story_telling.gd

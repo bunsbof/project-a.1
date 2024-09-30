@@ -34,6 +34,10 @@ pause={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/languages/en.po", "res://assets/languages/ja.po")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

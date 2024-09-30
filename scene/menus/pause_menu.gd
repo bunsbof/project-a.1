@@ -18,6 +18,8 @@ var is_paused: bool:
 
 func _ready():
 	self.is_paused = false
+	#print(Data.current_language)
+	TranslationServer.set_locale(Data.current_language)
 	_on_language_changed()
 	Data.connect("language_changed", Callable(self, "_on_language_changed"))
 

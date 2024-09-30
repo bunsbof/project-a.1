@@ -14,3 +14,4 @@ res://global/Data.gd
 res://scene/menus/pause_menu.gd
 res://scene/CGs/jobs.gd
 res://scene/CGs/story_telling.gd
+res://scene/HUD/hud.gd

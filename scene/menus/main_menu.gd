@@ -49,6 +49,9 @@ func _on_switchlang_btn_pressed():
 		Data.current_language = "ja"
 	else:
 		Data.current_language = "en"
+	var save_game = SaveGame.new()
+	save_game.current_language = Data.current_language
+	save_game.write_savegame(save_game, 0)
 
 func _on_language_changed():
 	continue_btn.text = tr("resume")

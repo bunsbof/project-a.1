@@ -27,6 +27,7 @@ func _ready():
 	var save_game = SaveGame.new()
 	save_game.ensure_save_directory_and_files()
 	call_deferred("_load_initial_save")
+	print(current_language)
 
 func _load_initial_save() -> void:
 	var save_game = SaveGame.load_savegame(0)

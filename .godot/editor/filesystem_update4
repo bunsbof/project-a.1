@@ -8,3 +8,6 @@ res://scene/menus/components/CheckboxOption.tscn
 res://scene/menus/main_menu.tscn
 res://scene/menus/main_menu.gd
 res://scene/menus/components/scripts/OptionBtn.gd
+res://global/Data.gd
+res://scene/menus/components/scripts/CheckboxOption.gd
+res://scene/menus/components/scripts/Setting.gd

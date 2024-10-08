@@ -23,5 +23,3 @@ layout_mode = 2
 
 [node name="OptionControl" parent="VBoxContainer" instance=ExtResource("2_0wpxt")]
 layout_mode = 2
-title_res = "Resolutions"
-resolutions = Array[String](["687×319", "1024×768", "1280×1024", "1366×768", "1920×1080"])

@@ -40,3 +40,18 @@ msgstr "Settings"
 
 msgid "quit"
 msgstr "Quit"
+
+msgid "resolutions"
+msgstr "Resolutions"
+
+msgid "language"
+msgstr "Language"
+
+msgid "fullscreen"
+msgstr "Full Screen"
+
+msgid "lang_japan"
+msgstr "Japanese"
+
+msgid "lang_english"
+msgstr "English"

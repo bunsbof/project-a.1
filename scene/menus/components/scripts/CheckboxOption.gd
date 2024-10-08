@@ -1,9 +1,9 @@
 extends HBoxContainer
 
-
 func _ready():
-	$Label.text = "Full screen"
+	$Label.text = tr("fullscreen")
 	Config.connect("fullscreen_changed", Callable(self, "_on_fullscreen_changed"))
+	Data.connect("language_changed", Callable(self, "_on_language_changed"))
 
 func _process(delta):
 	if Config.full_screen:
@@ -28,3 +28,7 @@ func _on_fullscreen_changed(val):
 	else:
 		$CheckButton.button_pressed = false
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _on_language_changed():
+	TranslationServer.set_locale(Data.current_language)
+	$Label.text = tr("fullscreen")

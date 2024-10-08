@@ -40,3 +40,18 @@ msgstr "設定"
 
 msgid "quit"
 msgstr "終了"
+
+msgid "resolutions"
+msgstr "終了決議"
+
+msgid "language"
+msgstr "言語"
+
+msgid "fullscreen"
+msgstr "全画面表示"
+
+msgid "lang_japan"
+msgstr "日本語"
+
+msgid "lang_english"
+msgstr "英語"

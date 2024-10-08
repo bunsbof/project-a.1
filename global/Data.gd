@@ -31,7 +31,6 @@ func _ready():
 
 func _load_initial_save() -> void:
 	var saved_config = SaveConfig.load_config()
-	print(saved_config.current_language)
 	if saved_config != null:
 		current_language = saved_config.current_language
 		Config.full_screen = saved_config.full_screen

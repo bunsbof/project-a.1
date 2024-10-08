@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi7tgxlmaugp3"]
+
+[ext_resource type="PackedScene" uid="uid://bg6nh1v6w70od" path="res://scene/menus/components/Resolutions.tscn" id="1_hi8le"]
+[ext_resource type="Script" path="res://scene/menus/components/scripts/Setting.gd" id="1_qgesu"]
+[ext_resource type="PackedScene" uid="uid://chhcpg75re7l" path="res://scene/menus/components/Language.tscn" id="2_jn2po"]
+
+[node name="Setting" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qgesu")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Resolutions" parent="TabContainer" instance=ExtResource("1_hi8le")]
+layout_mode = 2
+
+[node name="Language" parent="TabContainer" instance=ExtResource("2_jn2po")]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

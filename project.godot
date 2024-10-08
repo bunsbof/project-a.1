@@ -19,11 +19,13 @@ config/icon="res://icon.svg"
 
 Global="*res://global/Global.gd"
 Data="*res://global/Data.gd"
+Config="*res://global/Config.gd"
 
 [display]
 
 window/size/viewport_width=687
 window/size/viewport_height=319
+window/size/resizable=false
 window/stretch/mode="viewport"
 
 [input]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg6nh1v6w70od"]
+
+[ext_resource type="Script" path="res://scene/menus/components/scripts/Resolutions.gd" id="1_dhp54"]
+[ext_resource type="PackedScene" uid="uid://c25netvhfcylu" path="res://scene/menus/components/CheckboxOption.tscn" id="1_yyiih"]
+[ext_resource type="PackedScene" uid="uid://ex50cnsb7nqx" path="res://scene/menus/components/OptionControl.tscn" id="2_0wpxt"]
+
+[node name="Resolutions" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+script = ExtResource("1_dhp54")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="CheckboxOption" parent="VBoxContainer" instance=ExtResource("1_yyiih")]
+layout_mode = 2
+
+[node name="OptionControl" parent="VBoxContainer" instance=ExtResource("2_0wpxt")]
+layout_mode = 2
+title_res = "Resolutions"
+resolutions = Array[String](["687×319", "1024×768", "1280×1024", "1366×768", "1920×1080"])

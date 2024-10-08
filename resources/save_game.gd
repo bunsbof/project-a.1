@@ -15,7 +15,6 @@ const SAVE_FILES := [
 @export var already_seen = {
 	"jobs" : false
 }
-@export var current_language = "ja"
 
 func ensure_save_directory_and_files() -> void:
 	var dir := DirAccess.open("user://")
@@ -46,7 +45,6 @@ func write_savegame(data: SaveGame, index: int) -> void:
 		point = data.point
 		money = data.money
 		already_seen = data.already_seen
-		current_language = data.current_language
 		var err = ResourceSaver.save(self, SAVE_FILES[index])
 		if err != OK:
 			print("Error saving file: %s" % err)

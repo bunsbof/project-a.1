@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ex50cnsb7nqx"]
+
+[ext_resource type="Script" path="res://scene/menus/components/scripts/OptionBtn.gd" id="1_v6b0i"]
+
+[node name="OptionControl" type="HBoxContainer"]
+offset_right = 263.0
+offset_bottom = 37.0
+script = ExtResource("1_v6b0i")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2

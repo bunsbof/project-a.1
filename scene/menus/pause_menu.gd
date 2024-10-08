@@ -18,8 +18,6 @@ var is_paused: bool:
 
 func _ready():
 	self.is_paused = false
-	#print(Data.current_language)
-	TranslationServer.set_locale(Data.current_language)
 	_on_language_changed()
 	Data.connect("language_changed", Callable(self, "_on_language_changed"))
 
@@ -34,8 +32,7 @@ func save_game():
 	save_game.point = Data.point
 	save_game.money = Data.money
 	save_game.already_seen = Global.already_seen
-	save_game.current_language = Data.current_language
-	save_game.write_savegame(save_game, Data.saved_index)
+	save_game.write_savegame(save_game, 0) #config this later on
 
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
@@ -44,8 +41,7 @@ func _unhandled_input(event):
 		save_game.point = Data.point
 		save_game.money = Data.money
 		save_game.already_seen = Global.already_seen
-		save_game.current_language = Data.current_language
-		save_game.write_savegame(save_game, Data.saved_index)
+		save_game.write_savegame(save_game, 0) #this also
 		self.is_paused = not _is_paused
 
 func _on_resume_btn_pressed():
@@ -57,8 +53,7 @@ func _on_exit_btn_pressed():
 	save_game.point = Data.point
 	save_game.money = Data.money
 	save_game.already_seen = Global.already_seen
-	save_game.current_language = Data.current_language
-	save_game.write_savegame(save_game, Data.saved_index)
+	save_game.write_savegame(save_game, 0) #this
 	get_tree().quit()
 
 
@@ -69,6 +64,7 @@ func _on_main_menu_btn_pressed():
 
 
 func _on_language_changed():
+	TranslationServer.set_locale(Data.current_language)
 	resume_btn.text = tr("continue")
 	main_menu_btn.text = tr("main_menu")
 	load_btn.text = tr("load")

@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 func _ready():
-	$Label.text = tr("fullscreen")
+	$Label.text = tr("fullscreen") + ":"
 	Config.connect("fullscreen_changed", Callable(self, "_on_fullscreen_changed"))
 	Data.connect("language_changed", Callable(self, "_on_language_changed"))
 
@@ -31,4 +31,4 @@ func _on_fullscreen_changed(val):
 
 func _on_language_changed():
 	TranslationServer.set_locale(Data.current_language)
-	$Label.text = tr("fullscreen")
+	$Label.text = tr("fullscreen") + ":"

@@ -28,8 +28,8 @@ func _notification(what):
 
 func save_game():
 	var save_game = SaveGame.new()
-	save_game.trust_level = Data.trust_level
-	save_game.point = Data.point
+	save_game.horny_level = Data.horny_level
+	save_game.female_point = Data.female_point
 	save_game.money = Data.money
 	save_game.already_seen = Global.already_seen
 	save_game.write_savegame(save_game, 0) #config this later on
@@ -37,8 +37,8 @@ func save_game():
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
 		var save_game = SaveGame.new()
-		save_game.trust_level = Data.trust_level
-		save_game.point = Data.point
+		save_game.horny_level = Data.horny_level
+		save_game.female_point = Data.female_point
 		save_game.money = Data.money
 		save_game.already_seen = Global.already_seen
 		save_game.write_savegame(save_game, 0) #this also
@@ -49,8 +49,8 @@ func _on_resume_btn_pressed():
 
 func _on_exit_btn_pressed():
 	var save_game = SaveGame.new()
-	save_game.trust_level = Data.trust_level
-	save_game.point = Data.point
+	save_game.horny_level = Data.horny_level
+	save_game.female_point = Data.female_point
 	save_game.money = Data.money
 	save_game.already_seen = Global.already_seen
 	save_game.write_savegame(save_game, 0) #this

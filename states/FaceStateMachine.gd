@@ -1,5 +1,6 @@
 extends Node
 
+@onready var label = $"../Label"
 
 @export var initial_state : State
 
@@ -20,6 +21,7 @@ func _ready():
 func _process(delta):
 	if current_state:
 		current_state.Update(delta)
+	label.text = current_state.name
 
 
 func on_child_transition(state, new_state_name):

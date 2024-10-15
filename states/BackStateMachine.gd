@@ -13,6 +13,8 @@ extends Node
 @export var spank_right_col : NodePath
 @export var spank_left_col : NodePath
 @export var right_thigh_col : NodePath
+@export var left_grope_col : NodePath
+@export var right_grope_col : NodePath
 
 @export var pant_sprite : NodePath
 @export var panty_sprite : NodePath
@@ -34,7 +36,7 @@ func _ready():
 	pant = get_node(pant_sprite)
 	panty = get_node(panty_sprite)
 	state_collision_map = {
-		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(spank_right_col), get_node(spank_left_col),],
+		"idle": [get_node(clothes_col), get_node(left_spread_col), get_node(right_spread_col), get_node(spank_right_col), get_node(spank_left_col), get_node(left_grope_col), get_node(right_grope_col)],
 		"takeoffpant": [get_node(clothes_col)],
 		"takeoffpanty": [get_node(clothes_col)],
 		"rightspread": [get_node(right_spread_col), get_node(left_spread_col),],
@@ -48,6 +50,8 @@ func _ready():
 		"spankright": [get_node(spank_right_col)],
 		"spankleft": [get_node(spank_left_col)],
 		"rightthighlick": [get_node(right_thigh_col)],
+		"leffgrope": [get_node(left_grope_col)],
+		"rightgrope": [get_node(right_grope_col)],
 		"orgasm": [],
 	}
 	#pussy.material.set_shader_parameter("pixel_size", 16.0)

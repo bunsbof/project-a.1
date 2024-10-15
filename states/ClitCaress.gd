@@ -46,16 +46,14 @@ func _ready():
 	twitch_timer.connect("timeout", Callable(self, "_on_twitch_timer_timeout"))
 	
 	control_node.connect("caress_dragged", Callable(self, "_on_dragged"))
-	Data.connect("trust_level_changed", Callable(self, "on_trust_changed"))
-	#on_trust_changed()
+	Data.connect("horny_level_changed", Callable(self, "on_horny_level_changed"))
 
 func _physics_process(delta):
 	collision.disabled = !((!Global.lickable and Global.spread_at_frame == 0) or (Global.lickable and Global.spread_at_frame == 5)) and !(Global.back_state == "orgasm") or (pant.visible and pant.frame > 0) or (panty.visible and panty.frame > 0)
-	#collision.disabled = false
-	if Data.point >= 1000:
-		exit()  # Call exit function to clean up before state transition
+	if Data.female_point >= 1000:
+		exit()
 		Transitioned.emit(self, "Orgasm")
-		return  # Stop further processing in this frame after state transition
+		return
 		
 	if (control_node.dragging or control_node.cursor_in_clit) and !Global.lickable and Global.spread_at_frame == 0:
 		Transitioned.emit(switch_back, self.name)
@@ -83,19 +81,20 @@ func _start_twitch_timer():
 
 
 func _on_twitch_timer_timeout():
-	body.play("twitch")  # Trigger the twitch animation
-	_start_twitch_timer()  # Restart the timer with a new random interval
+	body.play("twitch")
+	_start_twitch_timer()
 
 
 func _on_dragged():
+	print(sequence, " ", max_duration)
 	data_timer.wait_time = sequence
 	duration_timer.wait_time = max_duration
 	data_timer.start()
 	duration_timer.start()
 	_start_twitch_timer()
 
-func on_trust_changed():
-	match Data.trust_level:
+func on_horny_level_changed():
+	match Data.horny_level:
 		1:
 			earn_weight = 10
 			earn_rate = 5
@@ -133,9 +132,9 @@ func _on_calculated():
 	var random_adjustment = randi() % (2 * earn_rate + 1) - earn_rate
 	var adjusted_earn_weight = earn_weight + random_adjustment
 	if mood:
-		Data.point += adjusted_earn_weight
+		Data.female_point += adjusted_earn_weight
 		Data.money += adjusted_earn_weight / 2
 	elif !mood:
-		Data.point -= adjusted_earn_weight
+		Data.female_point -= adjusted_earn_weight
 		Data.money -= adjusted_earn_weight / 2
-	print("Value: ", random_value, " Point: ", Data.point, " Money: ", Data.money, " Mood: ", mood, " Trust Level: ", Data.trust_level)
+	print("Value: ", random_value, " Point: ", Data.female_point, " Money: ", Data.money, " Mood: ", mood, " Trust Level: ", Data.horny_level)

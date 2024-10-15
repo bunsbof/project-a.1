@@ -18,8 +18,8 @@ func _ready():
 func _on_resume_btn_pressed():
 	var loaded_game = SaveGame.load_savegame(0) #and this
 	if loaded_game:
-		Data.trust_level = loaded_game.trust_level
-		Data.point = loaded_game.point
+		Data.horny_level = loaded_game.horny_level
+		Data.female_point = loaded_game.female_point
 		Data.money = loaded_game.money
 		Global.already_seen = loaded_game.already_seen
 		get_tree().change_scene_to_file(main_gameplay_path)
@@ -29,14 +29,14 @@ func _on_resume_btn_pressed():
 
 func _on_new_game_btn_pressed():
 	var save_game = SaveGame.new()
-	save_game.trust_level = 1
-	save_game.point = 70.0
+	save_game.horny_level = 1
+	save_game.female_point = 70.0
 	save_game.money = 2146.0
 	save_game.already_seen = Global.already_seen
 	save_game.write_savegame(save_game, 0)
 
-	Data.trust_level = save_game.trust_level
-	Data.point = save_game.point
+	Data.horny_level = save_game.horny_level
+	Data.female_point = save_game.female_point
 	Data.money = save_game.money
 	Global.already_seen = save_game.already_seen
 	get_tree().change_scene_to_file(main_gameplay_path)

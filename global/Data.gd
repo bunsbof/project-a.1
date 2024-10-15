@@ -1,20 +1,120 @@
 extends Node
 
-signal trust_level_changed
-signal point_changed
+signal horny_level_changed
+signal female_point_changed
+signal male_point_changed
 signal language_changed
 
 
-var trust_level = 1:
+var horny_level:
 	set(value):
-		trust_level = value
-		emit_signal("trust_level_changed")
+		horny_level = value
+		emit_signal("horny_level_changed", value)
 
-var point: float = 70:
+var female_point: float:
 	set(value):
-		point = value
-		emit_signal("point_changed", point)
-var money: float = 2146
+		female_point = value
+		emit_signal("female_point_changed", female_point)
+
+var male_point: float:
+	set(value):
+		male_point = value
+		emit_signal("male_point_changed", male_point)
+
+var money: float
+var unlocked_CG = UnlockedCG.new()
+#var unlocked_cg = {
+	#"stanima" : {
+		#"lv1": {
+			#"enabled": true,
+			#"activated": false,
+			#"CG1": {
+				#"enabled": false,
+				#"activated": false,
+			#},
+			#"lv2": {
+				#"enabled": false,
+				#"activated": false,
+				#"CG2": {
+					#"enabled": false,
+					#"activated": false,
+				#},
+				#"lv3": {
+					#"enabled": false,
+					#"activated": false,
+					#"CG3": {
+						#"enabled": false,
+						#"activated": false,
+					#},
+					#"lv4": {
+						#"enabled": false,
+						#"activated": false,
+						#"CG1": {
+							#"enabled": false,
+							#"activated": false,
+						#},
+					#}
+				#}
+			#}
+		#}
+	#},
+	#"middle": {
+		#"CG1": {
+			#"enabled": false,
+			#"activated": false,
+		#},
+		#"CG6": {
+			#"enabled": false,
+			#"activated": false,
+		#},
+		#"CG7": {
+			#"enabled": false,
+			#"activated": false,
+		#},
+		#"CG8": {
+			#"enabled": false,
+			#"activated": false,
+		#},
+		#"END": {
+			#"enabled": false,
+			#"activated": false,
+		#},
+	#},
+	#"horny" : {
+		#"lv1": {
+			#"enabled": true,
+			#"activated": false,
+			#"CG1": {
+				#"enabled": false,
+				#"activated": false,
+			#},
+			#"lv2": {
+				#"enabled": false,
+				#"activated": false,
+				#"CG2": {
+					#"enabled": false,
+					#"activated": false,
+				#},
+				#"lv3": {
+					#"enabled": false,
+					#"activated": false,
+					#"CG3": {
+						#"enabled": false,
+						#"activated": false,
+					#},
+					#"lv4": {
+						#"enabled": false,
+						#"activated": false,
+						#"CG1": {
+							#"enabled": false,
+							#"activated": false,
+						#},
+					#}
+				#}
+			#}
+		#}
+	#},
+#}
 
 var current_language : String:
 	set(locale):
@@ -28,6 +128,9 @@ func _ready():
 	var save_config = SaveConfig.new()
 	save_config.ensure_save_directory_and_files()
 	call_deferred("_load_initial_save")
+	#print("Previous: ")
+	#print(unlocked_CG.love["lv1"].cg["lv2"].cg["lv3"].cg["lv4"].activated)
+
 
 func _load_initial_save() -> void:
 	var saved_config = SaveConfig.load_config()

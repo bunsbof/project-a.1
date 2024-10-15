@@ -32,14 +32,14 @@ func _ready():
 	var config = SaveConfig.load_config()
 	match mode:
 		ComponentMode.Resolutions:
-			$Label.text = tr("resolutions")
+			$Label.text = tr("resolutions") + ":"
 			for resolution in resolutions:
 				option_button.add_item(resolution)
 			var index = resolutions.find(config.resolution)
 			option_button.select(index)
 			option_button.connect("item_selected", Callable(self, "_on_resolution_selected"))
 		ComponentMode.Language:
-			$Label.text = tr("language")
+			$Label.text = tr("language") + ":"
 			for lang in language:
 				option_button.add_item(lang)
 			var found_key = null

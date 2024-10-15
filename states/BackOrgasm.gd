@@ -21,7 +21,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if Data.point >= 1000:
+	if Data.female_point >= 1000:
 		Transitioned.emit(switch_back, self.name)
 
 
@@ -36,7 +36,7 @@ func exit():
 		timer.stop()
 
 func on_trust_changed():
-	match Data.trust_level:
+	match Data.horny_level:
 		1:
 			level = "orgasm_lv1"
 			return randf_range(2.0, 5.0)
@@ -56,5 +56,5 @@ func on_trust_changed():
 func _on_timer_timeout():
 	# When the timer ends, transition back to the switch_back state
 	print("Timer ended, switching state...")
-	Data.point -= int((Data.point * random_reset) / 100)
+	Data.female_point -= int((Data.female_point * random_reset) / 100)
 	Transitioned.emit(self, switch_back.name)

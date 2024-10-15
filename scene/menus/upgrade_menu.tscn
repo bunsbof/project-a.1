@@ -1,0 +1,354 @@
+[gd_scene load_steps=2 format=3 uid="uid://n1boidh31qkc"]
+
+[ext_resource type="Script" path="res://scene/menus/components/scripts/upgrade_menu.gd" id="1_al2vk"]
+
+[node name="UpgradeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_al2vk")
+
+[node name="Stanima" type="Button" parent="."]
+layout_mode = 2
+offset_top = 70.0
+offset_right = 90.0
+offset_bottom = 101.0
+size_flags_horizontal = 2
+size_flags_vertical = 4
+focus_mode = 0
+text = "Lv1_Upper"
+
+[node name="LineToCGUpper" type="Line2D" parent="Stanima"]
+z_index = -1
+points = PackedVector2Array(44, 13, 44, -52)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToLv" type="Line2D" parent="Stanima"]
+z_index = -1
+points = PackedVector2Array(42, 12, 192, 12)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGMiddle" type="Line2D" parent="Stanima"]
+z_index = -1
+points = PackedVector2Array(44, 12, 44, 90)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="Lv2_Upper" type="Button" parent="Stanima"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -1.0
+offset_right = 239.0
+offset_bottom = 30.0
+focus_mode = 0
+text = "Lv2_Upper"
+
+[node name="LineToCGUpper" type="Line2D" parent="Stanima/Lv2_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 14, 41, -55)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToLv" type="Line2D" parent="Stanima/Lv2_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 13, 189, 13)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGMiddle" type="Line2D" parent="Stanima/Lv2_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 14, 41, 91)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="Lv3_Upper" type="Button" parent="Stanima/Lv2_Upper"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 1.0
+offset_right = 236.0
+offset_bottom = 32.0
+focus_mode = 0
+text = "Lv3_Upper"
+
+[node name="LineToCGUpper" type="Line2D" parent="Stanima/Lv2_Upper/Lv3_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 14, 41, -55)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToLv" type="Line2D" parent="Stanima/Lv2_Upper/Lv3_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 13, 189, 13)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGMiddle" type="Line2D" parent="Stanima/Lv2_Upper/Lv3_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 14, 41, 91)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="Lv4_Upper" type="Button" parent="Stanima/Lv2_Upper/Lv3_Upper"]
+layout_mode = 0
+offset_left = 149.0
+offset_right = 239.0
+offset_bottom = 31.0
+focus_mode = 0
+text = "Lv4_Upper"
+
+[node name="LineToCGUpper" type="Line2D" parent="Stanima/Lv2_Upper/Lv3_Upper/Lv4_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 14, 41, -55)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGMiddle" type="Line2D" parent="Stanima/Lv2_Upper/Lv3_Upper/Lv4_Upper"]
+z_index = -1
+points = PackedVector2Array(41, 14, 41, 91)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="CG4" type="Button" parent="Stanima/Lv2_Upper/Lv3_Upper/Lv4_Upper"]
+layout_mode = 0
+offset_top = -69.0
+offset_right = 90.0
+offset_bottom = -38.0
+focus_mode = 0
+text = "CG4"
+
+[node name="CG3" type="Button" parent="Stanima/Lv2_Upper/Lv3_Upper"]
+layout_mode = 0
+offset_top = -69.0
+offset_right = 90.0
+offset_bottom = -38.0
+focus_mode = 0
+text = "CG3"
+
+[node name="CG2" type="Button" parent="Stanima/Lv2_Upper"]
+layout_mode = 0
+offset_top = -68.0
+offset_right = 90.0
+offset_bottom = -37.0
+focus_mode = 0
+text = "CG2"
+
+[node name="CG1" type="Button" parent="Stanima"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -69.0
+offset_right = 91.0
+offset_bottom = -38.0
+focus_mode = 0
+text = "CG1"
+
+[node name="CG5" type="Button" parent="."]
+layout_mode = 2
+offset_top = 144.0
+offset_right = 95.0
+offset_bottom = 175.0
+focus_mode = 0
+text = "CG5"
+
+[node name="CG6" type="Button" parent="."]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 243.0
+offset_bottom = 175.0
+focus_mode = 0
+text = "CG6"
+
+[node name="CG7" type="Button" parent="."]
+layout_mode = 2
+offset_left = 296.0
+offset_top = 144.0
+offset_right = 391.0
+offset_bottom = 175.0
+focus_mode = 0
+text = "CG7"
+
+[node name="CG8" type="Button" parent="."]
+layout_mode = 2
+offset_left = 444.0
+offset_top = 144.0
+offset_right = 539.0
+offset_bottom = 175.0
+focus_mode = 0
+text = "CG8"
+
+[node name="LineToCG" type="Line2D" parent="CG8"]
+z_index = -1
+points = PackedVector2Array(40, 15, 189, 15)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="EndCG" type="Button" parent="."]
+layout_mode = 2
+offset_left = 592.0
+offset_top = 144.0
+offset_right = 687.0
+offset_bottom = 175.0
+focus_mode = 0
+text = "End"
+
+[node name="Love" type="Button" parent="."]
+layout_mode = 2
+offset_top = 216.0
+offset_right = 90.0
+offset_bottom = 247.0
+size_flags_horizontal = 2
+size_flags_vertical = 4
+focus_mode = 0
+text = "Lv1_Lower"
+
+[node name="LineToCGMiddle" type="Line2D" parent="Love"]
+z_index = -1
+points = PackedVector2Array(44, 13, 44, -52)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToLv" type="Line2D" parent="Love"]
+z_index = -1
+points = PackedVector2Array(42, 12, 192, 12)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGLower" type="Line2D" parent="Love"]
+z_index = -1
+points = PackedVector2Array(44, 12, 44, 90)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="Lv2_Lower" type="Button" parent="Love"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -1.0
+offset_right = 239.0
+offset_bottom = 30.0
+focus_mode = 0
+text = "Lv2_Lower"
+
+[node name="LineToCGMiddle" type="Line2D" parent="Love/Lv2_Lower"]
+z_index = -1
+points = PackedVector2Array(44, 13, 44, -52)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToLv" type="Line2D" parent="Love/Lv2_Lower"]
+z_index = -1
+points = PackedVector2Array(46, 13, 188, 13)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGLower" type="Line2D" parent="Love/Lv2_Lower"]
+z_index = -1
+points = PackedVector2Array(44, 12, 44, 90)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="Lv3_Lower" type="Button" parent="Love/Lv2_Lower"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 1.0
+offset_right = 236.0
+offset_bottom = 32.0
+focus_mode = 0
+text = "Lv3_Lower"
+
+[node name="LineToCGMiddle" type="Line2D" parent="Love/Lv2_Lower/Lv3_Lower"]
+z_index = -1
+points = PackedVector2Array(44, 13, 44, -52)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToLv" type="Line2D" parent="Love/Lv2_Lower/Lv3_Lower"]
+z_index = -1
+points = PackedVector2Array(46, 12, 191, 12)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGLower" type="Line2D" parent="Love/Lv2_Lower/Lv3_Lower"]
+z_index = -1
+points = PackedVector2Array(44, 12, 44, 90)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="Lv4_Lower" type="Button" parent="Love/Lv2_Lower/Lv3_Lower"]
+layout_mode = 0
+offset_left = 149.0
+offset_right = 239.0
+offset_bottom = 31.0
+focus_mode = 0
+text = "Lv4_Lower"
+
+[node name="LineToCGMiddle" type="Line2D" parent="Love/Lv2_Lower/Lv3_Lower/Lv4_Lower"]
+z_index = -1
+points = PackedVector2Array(44, 13, 44, -52)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="LineToCGLower" type="Line2D" parent="Love/Lv2_Lower/Lv3_Lower/Lv4_Lower"]
+z_index = -1
+points = PackedVector2Array(44, 12, 44, 90)
+width = 4.0
+default_color = Color(0.223103, 0.223103, 0.223103, 1)
+
+[node name="CG12" type="Button" parent="Love/Lv2_Lower/Lv3_Lower/Lv4_Lower"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 90.0
+offset_bottom = 95.0
+focus_mode = 0
+text = "CG12"
+
+[node name="CG11" type="Button" parent="Love/Lv2_Lower/Lv3_Lower"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 90.0
+offset_bottom = 95.0
+focus_mode = 0
+text = "CG11"
+
+[node name="CG10" type="Button" parent="Love/Lv2_Lower"]
+layout_mode = 0
+offset_top = 65.0
+offset_right = 90.0
+offset_bottom = 96.0
+focus_mode = 0
+text = "CG10"
+
+[node name="CG9" type="Button" parent="Love"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 64.0
+offset_right = 91.0
+offset_bottom = 95.0
+focus_mode = 0
+text = "CG9"
+
+[connection signal="pressed" from="Stanima" to="." method="_on_stanima_pressed"]
+[connection signal="pressed" from="Stanima/Lv2_Upper" to="." method="_on_lv_2_upper_pressed"]
+[connection signal="pressed" from="Stanima/Lv2_Upper/Lv3_Upper" to="." method="_on_lv_3_upper_pressed"]
+[connection signal="pressed" from="Stanima/Lv2_Upper/Lv3_Upper/Lv4_Upper" to="." method="_on_lv_4_upper_pressed"]
+[connection signal="pressed" from="Stanima/Lv2_Upper/Lv3_Upper/Lv4_Upper/CG4" to="." method="_on_cg_4_pressed"]
+[connection signal="pressed" from="Stanima/Lv2_Upper/Lv3_Upper/CG3" to="." method="_on_cg_3_pressed"]
+[connection signal="pressed" from="Stanima/Lv2_Upper/CG2" to="." method="_on_cg_2_pressed"]
+[connection signal="pressed" from="Stanima/CG1" to="." method="_on_cg_1_pressed"]
+[connection signal="pressed" from="CG5" to="." method="_on_cg_5_pressed"]
+[connection signal="pressed" from="CG6" to="." method="_on_cg_6_pressed"]
+[connection signal="pressed" from="CG7" to="." method="_on_cg_7_pressed"]
+[connection signal="pressed" from="CG8" to="." method="_on_cg_8_pressed"]
+[connection signal="pressed" from="EndCG" to="." method="_on_end_cg_pressed"]
+[connection signal="pressed" from="Love" to="." method="_on_love_pressed"]
+[connection signal="pressed" from="Love/Lv2_Lower" to="." method="_on_lv_2_lower_pressed"]
+[connection signal="pressed" from="Love/Lv2_Lower/Lv3_Lower" to="." method="_on_lv_3_lower_pressed"]
+[connection signal="pressed" from="Love/Lv2_Lower/Lv3_Lower/Lv4_Lower" to="." method="_on_lv_4_lower_pressed"]
+[connection signal="pressed" from="Love/Lv2_Lower/Lv3_Lower/Lv4_Lower/CG12" to="." method="_on_cg_12_pressed"]
+[connection signal="pressed" from="Love/Lv2_Lower/Lv3_Lower/CG11" to="." method="_on_cg_11_pressed"]
+[connection signal="pressed" from="Love/Lv2_Lower/CG10" to="." method="_on_cg_10_pressed"]
+[connection signal="pressed" from="Love/CG9" to="." method="_on_cg_9_pressed"]

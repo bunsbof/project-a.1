@@ -35,10 +35,10 @@ script/source = "extends TextureProgressBar
   # Starting health
 
 func _ready():
-	Data.connect(\"point_changed\", Callable(self, \"_on_point_changed\"))
-	self.value = Data.point
+	Data.connect(\"female_point_changed\", Callable(self, \"_on_female_point_changed\"))
+	self.value = Data.female_point
 
-func _on_point_changed(new_point):
+func _on_female_point_changed(new_point):
 	update_health(new_point)
 
 func update_health(new_value):

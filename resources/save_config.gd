@@ -6,6 +6,7 @@ const CONFIG_PATH := "user://config.tres"
 @export var current_language = "ja"
 @export var full_screen = false
 @export var resolution = "687×319"
+@export var unlockedCG : Dictionary
 
 func ensure_save_directory_and_files() -> void:
 	if not ResourceLoader.exists(CONFIG_PATH):
@@ -13,7 +14,7 @@ func ensure_save_directory_and_files() -> void:
 		new_config.current_language = current_language
 		new_config.full_screen = full_screen
 		new_config.resolution = resolution
-		
+		new_config.unlockedCG = unlockedCG
 		var err = ResourceSaver.save(new_config, CONFIG_PATH)
 		if err == OK:
 			print("Created config file at: %s" % CONFIG_PATH)
@@ -24,6 +25,7 @@ func write_config(data: SaveConfig) -> void:
 	current_language = data.current_language
 	full_screen = data.full_screen
 	resolution = data.resolution
+	unlockedCG = data.unlockedCG
 	
 	var err = ResourceSaver.save(self, CONFIG_PATH)
 	if err != OK:

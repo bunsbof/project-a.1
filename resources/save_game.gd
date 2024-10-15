@@ -9,8 +9,8 @@ const SAVE_FILES := [
 	"user://saved_games/game_save_4.tres"
 ]
 
-@export var trust_level: int = 1
-@export var point: float = 70.0
+@export var horny_level: int = 1
+@export var female_point: float = 70.0
 @export var money: float = 2146.0
 @export var already_seen = {
 	"jobs" : false
@@ -41,8 +41,8 @@ func ensure_save_directory_and_files() -> void:
 
 func write_savegame(data: SaveGame, index: int) -> void:
 	if index >= 0 and index < SAVE_FILES.size():
-		trust_level = data.trust_level
-		point = data.point
+		horny_level = data.horny_level
+		female_point = data.female_point
 		money = data.money
 		already_seen = data.already_seen
 		var err = ResourceSaver.save(self, SAVE_FILES[index])

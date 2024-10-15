@@ -36,10 +36,10 @@ func _ready():
 			button.connect("mouse_exited", Callable(self, "_on_slider_menu_mouse_exited"))
 	slider.mouse_filter = Control.MOUSE_FILTER_PASS
 	
-	Data.connect("point_changed", Callable(self, "_on_point_changed"))
-	horny_bar.value = Data.point
-	male_bar.value = Data.point
-	female_bar.value = Data.point
+	Data.connect("female_point_changed", Callable(self, "_on_female_point_changed"))
+	#horny_bar.value = Data.point
+	#male_bar.value = Data.point
+	female_bar.value = Data.female_point
 
 func _physics_process(delta):
 	slider.visible = Global.back_state == "idle" and Global.front_state == "idle"
@@ -51,10 +51,10 @@ func _physics_process(delta):
 	else: pant_btn.disabled = false
 
 func _on_button_4_pressed():
-	if Data.trust_level >= 4:
-		Data.trust_level = 0
-	Data.trust_level += 1
-	print(Data.trust_level)
+	if Data.horny_level >= 4:
+		Data.horny_level = 0
+	Data.horny_level += 1
+	print(Data.horny_level)
 
 
 func _on_slider_menu_gui_input(event):
@@ -105,12 +105,12 @@ func _on_toggle_btn_pressed():
 	submenu.visible = !submenu.visible
 
 
-func _on_point_changed(new_point):
+func _on_female_point_changed(new_point):
 	update_health(new_point)
 
 func update_health(new_value):
-	horny_bar.value = clamp(new_value, 0, 1000)
-	male_bar.value = clamp(new_value, 0, 1000)
+	#horny_bar.value = clamp(new_value, 0, 1000)
+	#male_bar.value = clamp(new_value, 0, 1000)
 	female_bar.value = clamp(new_value, 0, 1000)
 	
 

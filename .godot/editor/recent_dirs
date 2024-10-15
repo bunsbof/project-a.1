@@ -1,11 +1,13 @@
-res://scene/menus/components/scripts
-res://global
-res://scene/menus/components
-res://assets/languages
-res://assets/hands or tongues
-res://states/FaceState
 res://assets/front/faces
 res://states
+res://assets/back/base
+res://assets/hands or tongues
+res://scene/menus/components
+res://scene/menus/components/scripts
+res://scene/menus
+res://global
+res://assets/languages
+res://states/FaceState
 res://assets/back/private
 D:/Games/Dev_Games
 res://assets/UI
@@ -13,10 +15,8 @@ res://scene/back
 res://scene/CGs
 res://assets/font
 res://assets/front/shirt
-res://scene/menus
 res://scene/HUD
 res://assets/background/bars
-res://assets/back/base
 res://assets/icons
 res://scene/main
 res://assets/front/breast

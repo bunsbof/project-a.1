@@ -4,7 +4,7 @@ extends State
 @export var face_holder: NodePath
 @export var switch_back : State
 
-var animation_names = ["panty_touch_A_1", "panty_touch_B_1", "panty_touch_C_1"]
+var animation_names
 var face: AnimatedSprite2D
 var is_animating = false
 
@@ -14,6 +14,8 @@ func _ready():
 	Global.connect("cursor_in_clothes_changed", Callable(self, "_on_cursor_in_clothes_changed"))
 	Global.connect("clothing_hidden", Callable(self, "_on_panty_off"))
 	face.connect("animation_finished", Callable(self, "_on_face_finished"))
+	Data.connect("horny_level_changed", Callable(self, "_on_horny_level_changed"))
+	_on_horny_level_changed(Data.horny_level)
 
 func _physics_process(delta):
 	if !is_animating:
@@ -39,6 +41,7 @@ func _on_cursor_in_clothes_changed(new_value):
 		face.play(animation_names[1])
 
 func _on_face_finished():
+	#print("Cac: ", animation_names[2])
 	if face.animation == animation_names[2]:
 		is_animating = false
 		exit()
@@ -47,3 +50,10 @@ func _on_panty_off(which_clothing: String):
 	if which_clothing == "panty":
 		is_animating = true
 		face.play(animation_names[2])
+
+func _on_horny_level_changed(new_horny_level):
+	animation_names = [
+		"panty_touch_A_%d" % new_horny_level,
+		"panty_touch_B_%d" % new_horny_level,
+		"panty_touch_C_%d" % new_horny_level
+	]

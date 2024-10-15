@@ -7,7 +7,7 @@ extends State
 @export var breast_node : NodePath
 @export var switch_back : State
 
-var animation_names = ["shirt_touch_A_1", "shirt_touch_B_1", "shirt_touch_C_1"]
+var animation_names
 
 var control : Area2D
 var face : AnimatedSprite2D
@@ -24,6 +24,8 @@ func _ready():
 	control.connect("slow_take_off", Callable(self, "_on_slow_takeoff"))
 	breast.connect("frame_changed", Callable(self, "_on_frame_changed"))
 	face.connect("animation_finished", Callable(self, "_on_face_finished"))
+	Data.connect("horny_level_changed", Callable(self, "_on_horny_level_changed"))
+	_on_horny_level_changed(Data.horny_level)
 
 func _physics_process(delta):
 	if Global.front_state == self.name.to_lower():
@@ -52,6 +54,13 @@ func _on_frame_changed():
 func _on_face_finished():
 	if face.animation == animation_names[2]:
 		face.play(animation_names[1])
+
+func _on_horny_level_changed(new_horny_level):
+	animation_names = [
+		"shirt_touch_A_%d" % new_horny_level,
+		"shirt_touch_B_%d" % new_horny_level,
+		"shirt_touch_C_%d" % new_horny_level
+	]
 
 func exit():
 	face.animation = animation_names[1]

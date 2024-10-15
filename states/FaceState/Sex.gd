@@ -4,7 +4,7 @@ extends State
 @export var face_holder: NodePath
 @export var switch_back : State
 
-var sex_states : Array = ["clitcaress", "clitlick", "pussyfingering", "analfingering", "cunnilingus", "anallick", "rightthighlick", "rightsqueez", "rightpull", "leftsqueez", "leftpull"]
+var sex_states : Array = ["clitcaress", "clitlick", "pussyfingering", "analfingering", "cunnilingus", "anallick", "rightthighlick", "rightsqueez", "rightpull", "leftsqueez", "leftpull", "leffgrope", "rightgrope"]
 var animation_drag = ["sex_B_1", "sex_C_1"]
 var animation_hover = ["sex_A_1", "sex_D_1"]
 var face: AnimatedSprite2D

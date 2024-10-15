@@ -1,6 +1,7 @@
-[gd_scene load_steps=321 format=3 uid="uid://c20cn6o3gmpcx"]
+[gd_scene load_steps=371 format=3 uid="uid://c20cn6o3gmpcx"]
 
 [ext_resource type="Texture2D" uid="uid://b5aoxo1o4lc3g" path="res://assets/back/base/base.png" id="1_11q2n"]
+[ext_resource type="Texture2D" uid="uid://g02l4ca813i2" path="res://assets/back/base/base_left_grope.png" id="2_3qemk"]
 [ext_resource type="Texture2D" uid="uid://dxft8q75i3loc" path="res://assets/back/clothes/panty_removing.png" id="2_8w7ei"]
 [ext_resource type="Texture2D" uid="uid://dvnmb0ci1012m" path="res://assets/back/private/idle.png" id="2_a5fmy"]
 [ext_resource type="Texture2D" uid="uid://3o12fgca7e31" path="res://assets/back/private/clit_caress.png" id="2_a8ro7"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://y6nmqgqlgpl8" path="res://assets/back/private/spread.png" id="3_oykh0"]
 [ext_resource type="Texture2D" uid="uid://uni3dfmdd70b" path="res://assets/back/private/cunnilingus.png" id="4_8g1m6"]
 [ext_resource type="Script" path="res://scene/back/ClothesControl.gd" id="4_8y6hv"]
+[ext_resource type="Texture2D" uid="uid://dahis2f1lobq3" path="res://assets/back/base/base_right_grope.png" id="4_a8cc2"]
 [ext_resource type="Script" path="res://scene/back/RightSpreadControl.gd" id="4_sgjgp"]
 [ext_resource type="Texture2D" uid="uid://kmerjhe8m2lq" path="res://assets/hands or tongues/hands_removing_pant.png" id="5_wihmq"]
 [ext_resource type="Script" path="res://scene/back/LeftSpreadControl.gd" id="5_xs2f5"]
@@ -47,15 +49,21 @@
 [ext_resource type="Texture2D" uid="uid://co2thv8uviq0t" path="res://assets/hands or tongues/hand_spank_right.png" id="26_63dsi"]
 [ext_resource type="Script" path="res://scene/back/RightThigh.gd" id="26_hnmoa"]
 [ext_resource type="Script" path="res://states/PussyFingering.gd" id="27_na4nx"]
+[ext_resource type="Script" path="res://scene/back/LeftGropeControl.gd" id="28_vcpja"]
 [ext_resource type="Script" path="res://states/AnalFingering.gd" id="30_422sd"]
+[ext_resource type="Script" path="res://scene/back/RightGropeControl.gd" id="30_iwsbb"]
 [ext_resource type="Script" path="res://states/Cunnilingus.gd" id="33_d4hf7"]
 [ext_resource type="Texture2D" uid="uid://cigkwajriruj2" path="res://assets/hands or tongues/hand_idle.png" id="33_j7idx"]
+[ext_resource type="Texture2D" uid="uid://pk282pojr4we" path="res://assets/hands or tongues/hand_left_grope.png" id="33_um02t"]
 [ext_resource type="Script" path="res://states/AnalLick.gd" id="34_5xipt"]
+[ext_resource type="Texture2D" uid="uid://bmq4db7ai1834" path="res://assets/hands or tongues/hand_right_grope.png" id="36_2oqdk"]
 [ext_resource type="Texture2D" uid="uid://b7toess4la2fp" path="res://assets/hands or tongues/tongue_thigh_lick.png" id="38_8p6i2"]
 [ext_resource type="Script" path="res://states/SpankRight.gd" id="45_rnohw"]
 [ext_resource type="Script" path="res://states/SpankLeft.gd" id="50_dm8gj"]
 [ext_resource type="Script" path="res://states/RightThighLick.gd" id="53_mjttr"]
 [ext_resource type="Script" path="res://states/BackOrgasm.gd" id="55_0s86d"]
+[ext_resource type="Script" path="res://states/LeffGrope.gd" id="59_x77sa"]
+[ext_resource type="Script" path="res://states/RightGrope.gd" id="63_7m8lv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mhcr"]
 atlas = ExtResource("1_11q2n")
@@ -149,6 +157,46 @@ region = Rect2(6300, 0, 300, 300)
 atlas = ExtResource("1_11q2n")
 region = Rect2(6600, 0, 300, 300)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug7no"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcqe1"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr3ct"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlgtd"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlwic"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb7e2"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl8dg"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elx7d"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhcr1"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie0og"]
+atlas = ExtResource("2_3qemk")
+region = Rect2(2700, 0, 300, 300)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7pck"]
 atlas = ExtResource("2_x5iw4")
 region = Rect2(0, 0, 300, 300)
@@ -240,6 +288,46 @@ region = Rect2(6300, 0, 300, 300)
 [sub_resource type="AtlasTexture" id="AtlasTexture_54ju4"]
 atlas = ExtResource("2_x5iw4")
 region = Rect2(6600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1mru"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0y71"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vumv7"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg4fx"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcfbo"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3fsr"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giw5l"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koeu0"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_extnw"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7at1"]
+atlas = ExtResource("4_a8cc2")
+region = Rect2(2700, 0, 300, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7byda"]
 atlas = ExtResource("2_vj687")
@@ -379,6 +467,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ug7no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcqe1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr3ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlgtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlwic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb7e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl8dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elx7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhcr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie0og")
+}],
+"loop": false,
+"name": &"left_ass_grope",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j7pck")
 }, {
 "duration": 1.0,
@@ -450,6 +573,41 @@ animations = [{
 "loop": true,
 "name": &"orgasm_lv4",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1mru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0y71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vumv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg4fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcfbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3fsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giw5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koeu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_extnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7at1")
+}],
+"loop": false,
+"name": &"right_ass_grope",
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1313,6 +1471,10 @@ size = Vector2(82, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma3ec"]
 size = Vector2(86, 31)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eicls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6uk4"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqi4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3xme"]
@@ -1374,6 +1536,86 @@ region = Rect2(600, 0, 300, 300)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fcxb"]
 atlas = ExtResource("14_0qp2v")
 region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwfe5"]
+atlas = ExtResource("33_um02t")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptib7"]
+atlas = ExtResource("33_um02t")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cpii"]
+atlas = ExtResource("33_um02t")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgoqb"]
+atlas = ExtResource("33_um02t")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsfha"]
+atlas = ExtResource("33_um02t")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6vwf"]
+atlas = ExtResource("33_um02t")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p3fi"]
+atlas = ExtResource("33_um02t")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uivw6"]
+atlas = ExtResource("33_um02t")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_832wp"]
+atlas = ExtResource("33_um02t")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6qnf"]
+atlas = ExtResource("33_um02t")
+region = Rect2(2700, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m54hr"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0thqu"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxmyd"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm10c"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hnkp"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjs48"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(1500, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulgw7"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(1800, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbosb"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(2100, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0dsu"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(2400, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aykn"]
+atlas = ExtResource("36_2oqdk")
+region = Rect2(2700, 0, 300, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spvpq"]
 atlas = ExtResource("25_04yav")
@@ -1723,6 +1965,76 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pwfe5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptib7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cpii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgoqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsfha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6vwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p3fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uivw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_832wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6qnf")
+}],
+"loop": false,
+"name": &"hand_left_grope",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m54hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0thqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxmyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm10c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hnkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjs48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulgw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbosb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0dsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aykn")
+}],
+"loop": false,
+"name": &"hand_right_grope",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_spvpq")
 }, {
 "duration": 1.0,
@@ -2047,6 +2359,7 @@ texture = ExtResource("2_a5fmy")
 hframes = 23
 
 [node name="ClothesArea" type="Node2D" parent="."]
+visible = false
 
 [node name="Panty" type="AnimatedSprite2D" parent="ClothesArea"]
 sprite_frames = SubResource("SpriteFrames_plgty")
@@ -2078,6 +2391,20 @@ script = ExtResource("21_1p4ir")
 [node name="RightSpankCol" type="CollisionShape2D" parent="SpankArea/SpankRightControl"]
 position = Vector2(75, -73.5)
 shape = SubResource("RectangleShape2D_ma3ec")
+
+[node name="LeftGrope" type="Area2D" parent="SpankArea"]
+script = ExtResource("28_vcpja")
+
+[node name="LeftGropeCol" type="CollisionShape2D" parent="SpankArea/LeftGrope"]
+position = Vector2(-51, -31)
+shape = SubResource("CircleShape2D_eicls")
+
+[node name="RightGrope" type="Area2D" parent="SpankArea"]
+script = ExtResource("30_iwsbb")
+
+[node name="RightGropeCol" type="CollisionShape2D" parent="SpankArea/RightGrope"]
+position = Vector2(50, -30)
+shape = SubResource("CircleShape2D_i6uk4")
 
 [node name="ThighArea" type="Node2D" parent="."]
 
@@ -2111,6 +2438,8 @@ anal_col = NodePath("../AnalControl/AnalCol")
 spank_right_col = NodePath("../SpankArea/SpankRightControl/RightSpankCol")
 spank_left_col = NodePath("../SpankArea/SpankLeftControl/LeftSpankCol")
 right_thigh_col = NodePath("../ThighArea/RightThigh/RightThighCol")
+left_grope_col = NodePath("../SpankArea/LeftGrope/LeftGropeCol")
+right_grope_col = NodePath("../SpankArea/RightGrope/RightGropeCol")
 pant_sprite = NodePath("../ClothesArea/Pant")
 panty_sprite = NodePath("../ClothesArea/Panty")
 initial_state = NodePath("Idle")
@@ -2229,6 +2558,20 @@ right_thigh_control = NodePath("../../ThighArea/RightThigh")
 tongue_sprite = NodePath("../../HandOrTongue")
 right_thigh_col = NodePath("../../ThighArea/RightThigh/RightThighCol")
 
+[node name="LeffGrope" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
+script = ExtResource("59_x77sa")
+switch_back = NodePath("../Idle")
+control = NodePath("../../SpankArea/LeftGrope")
+hand_sprite = NodePath("../../HandOrTongue")
+body_sprite = NodePath("../../Body")
+
+[node name="RightGrope" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
+script = ExtResource("63_7m8lv")
+switch_back = NodePath("../Idle")
+control = NodePath("../../SpankArea/RightGrope")
+hand_sprite = NodePath("../../HandOrTongue")
+body_sprite = NodePath("../../Body")
+
 [node name="Orgasm" type="Node" parent="BackStateMachine" node_paths=PackedStringArray("switch_back")]
 script = ExtResource("55_0s86d")
 switch_back = NodePath("../Idle")
@@ -2252,5 +2595,9 @@ body_sprite = NodePath("../../Body")
 [connection signal="mouse_exited" from="SpankArea/SpankLeftControl" to="SpankArea/SpankLeftControl" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="SpankArea/SpankRightControl" to="SpankArea/SpankRightControl" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SpankArea/SpankRightControl" to="SpankArea/SpankRightControl" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="SpankArea/LeftGrope" to="SpankArea/LeftGrope" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SpankArea/LeftGrope" to="SpankArea/LeftGrope" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="SpankArea/RightGrope" to="SpankArea/RightGrope" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SpankArea/RightGrope" to="SpankArea/RightGrope" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="ThighArea/RightThigh" to="ThighArea/RightThigh" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ThighArea/RightThigh" to="ThighArea/RightThigh" method="_on_mouse_exited"]
